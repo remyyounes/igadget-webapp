@@ -11,6 +11,7 @@ $green1:                  #00c109;
 $green2:                  #78c158;
 $green3:                  #057400;
 $green4:                  #057a01;
+$green5:                  #21DCA3; // price color
 
 // Blues
 $blue1:                   #3500ED;
@@ -28,20 +29,22 @@ $gray1:                   #EEEEEE;
 $gray2:                   #F2F3F5;
 $gray3:                   #c8c8c8;
 $gray4:                   #aaa;
-$gray5:                   #2C2C2C;
-$gray6:                   #CCC;
+$gray5:                   #2C2C2C; // header background
+$gray6:                   #CCC; // icon colors
 $gray7:                   #666;
 $gray8:                   #999;
+$gray9:                   #898A8C; // image carousel arrows
 
 // Oranges
 $orange1:                 #f36721;
+$orange2:                 #FF3C0A; // arrow & button colors
 
 // Typography
 // ----------
 $font_family:             "Helvetica Neue", Helvetica, Verdana;
 $base_font_size:          13px;
 $line_height:             24px;
-$text_color:              $gray5;
+$text_color:              #57585B;
 $body_background_color:   $white;
 $link_color:              $blue1;
 
