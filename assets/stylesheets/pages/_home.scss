@@ -1,0 +1,53 @@
+// Every page should have a class on the body
+// Scope that in each file at the start
+body._home {
+  #_container {
+    ._hero_img {
+      margin: 0 auto 0 auto;
+      width: 100%;
+      max-height: 200px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 200px;
+        vertical-align: center;
+      }
+    }
+    ._callout {
+      overflow: hidden;
+      clear: both;
+      @include background($grad_gray3);
+      border-top: $border_gray3;
+      border-bottom: $border_gray3;
+      ._btn_green2 {
+        margin: 10px auto;
+        height: 35px;
+        width: 170px;
+        padding: 0;
+        .ui-btn-inner {
+          padding: 6px;
+        }
+        .ui-btn-text {
+          color: $white;
+          font-weight: bold;
+          text-transform: uppercase;
+          text-shadow: $text_shadow_green3;
+        }
+      }
+    }
+    #_categories {
+      ._collapsible {
+        &:last-child {
+          // .ui-collapsible-heading, .ui-collapsible-content {
+          //   border-bottom: 0;
+          // }
+        }
+        ._bar_green2 {
+          // &:first-child {
+          //   border-top: 0;
+          // }
+        }
+      }
+    }
+  }
+}

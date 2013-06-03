@@ -1,0 +1,17 @@
+// Footer Styles
+footer._footer {
+  overflow: hidden;
+  padding: $padding;
+  font-size: $base_font_size;
+  text-align: center;
+  border-top: $border_gray8;
+  color: $gray4;
+  // Footer information
+  ._info {
+    padding: 5px;
+  }
+  // Footer copyright
+  ._copyright {
+    padding: 5px;
+  }
+}
