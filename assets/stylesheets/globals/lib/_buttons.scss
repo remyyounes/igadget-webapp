@@ -76,21 +76,21 @@
     @include box-shadow($box-shadow);
   }
 }
-@mixin btn_green1 {
-  @include btn_mixer($grad_green1, false, $white, false, $box_shadow_inset)
+@mixin btn_gray1 {
+  @include btn_mixer($grad_gray1, false, $white, false, $box_shadow_inset)
 }
-@mixin btn_green2 {
-  @include btn_mixer(false, $border_green2_shaded, $white, $text_shadow_gray3, $box_shadow);
-  @include background($grad_green2);
+@mixin btn_gray2 {
+  @include btn_mixer(false, $border_gray1, $white, $text_shadow_gray3, $box_shadow);
+  @include background($grad_gray1);
   position: relative;
   min-width: 120px;
   min-height: 20px;
   font-size: $h2_size;
   font-weight: normal;
 }
-._btn_green1 {
-  @include btn_green1;
+._btn_gray1 {
+  @include btn_gray1;
 }
-._btn_green2 {
-  @include btn_green2;
+._btn_gray2 {
+  @include btn_gray2;
 }

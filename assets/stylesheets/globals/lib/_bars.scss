@@ -69,8 +69,8 @@
   @include bar_base;
   @include bar_link;
   @include background($grad_gray1);
-  border-top: $border_gray3;
-  color: $gray5;
+  border-top: $border_gray1;
+  color: $text_color;
   text-shadow: $text_shadow_gray3;
 }
 
@@ -78,21 +78,20 @@
   @include bar_base;
   @include bar_accordion;
   @include background($grad_gray1);
-  border-top: $border_gray8;
-  border-bottom: $border_gray3;
-  color: $gray5;
+  border-top: $border_gray1;
+  border-bottom: $border_gray1;
+  color: $text_color;
   text-shadow: $text_shadow_gray3;
 }
 
-@mixin bar_green2 {
+@mixin bar_gray3 {
   @include bar_base;
   @include bar_link;
-  @include background($grad_green2);
-  border-top: $border_gray8;
-  border-bottom: $border_green2_shaded;
+  border-top: $border_gray1;
+  border-bottom: $border_gray1;
   color: $white;
   font-weight: normal;
-  text-shadow: $text_shadow_green3;
+  text-shadow: $text_shadow_gray3;
 }
 
 ._bar_gray1 {
@@ -104,5 +103,5 @@
 }
 
 ._bar_green2 {
-  @include bar_green2;
+  @include bar_gray3;
 }

@@ -16,9 +16,9 @@ body._home {
     ._callout {
       overflow: hidden;
       clear: both;
-      @include background($grad_gray3);
-      border-top: $border_gray3;
-      border-bottom: $border_gray3;
+      @include background($grad_gray1);
+      border-top: $border_gray1;
+      border-bottom: $border_gray1;
       ._btn_green2 {
         margin: 10px auto;
         height: 35px;
@@ -31,7 +31,7 @@ body._home {
           color: $white;
           font-weight: bold;
           text-transform: uppercase;
-          text-shadow: $text_shadow_green3;
+          text-shadow: $text_shadow_gray3;
         }
       }
     }

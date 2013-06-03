@@ -1,23 +1,23 @@
 // Header Styles
 #_header {
   overflow: hidden;
-  border-bottom: $border_gray8;
-  @include background($grad_gray1);
+  border-bottom: $border_gray1;
+  background-color: $gray3;
   .ui-header {    
-    border-bottom: $border_gray3;
+    border-bottom: $border_gray1;
     position: relative;
     min-height: 40px;
     ._logo {
       font-size: $h2_size;
       padding: 8px;
-      color: $gray5;
+      color: $text_color;
       font-weight: bold;
       text-shadow: $text_shadow_gray3;
     }
     .ui-btn-right {
       margin: 6px 6px 0 0;
       padding: 5px;
-      border: $border_gray3;
+      border: $border_gray1;
       border-radius: 5px;
       @include background($grad_gray1);
       box-shadow: $box_shadow2;

@@ -7,16 +7,10 @@
 // Color Scheme
 // ------------
 // Greens
-$green1:                  #00c109;
-$green2:                  #78c158;
-$green3:                  #057400;
-$green4:                  #057a01;
-$green5:                  #21DCA3; // price color
+$green1:                  #21DCA3; // price color
 
 // Blues
 $blue1:                   #3500ED;
-$blue2:                   #17338F;
-$blue3:                   #3ca3e0;
 
 // White
 $white:                   #FFFFFF;
@@ -25,19 +19,12 @@ $white:                   #FFFFFF;
 $black:                   #000000;
 
 // Grays
-$gray1:                   #EEEEEE;
-$gray2:                   #F2F3F5;
-$gray3:                   #c8c8c8;
-$gray4:                   #aaa;
-$gray5:                   #2C2C2C; // header background
-$gray6:                   #CCC; // icon colors
-$gray7:                   #666;
-$gray8:                   #999;
-$gray9:                   #898A8C; // image carousel arrows
+$gray1:                   #2C2C2C; // header background
+$gray2:                   #CCC; // icon colors
+$gray3:                   #898A8C; // image carousel arrows
 
 // Oranges
-$orange1:                 #f36721;
-$orange2:                 #FF3C0A; // arrow & button colors
+$orange1:                 #FF3C0A; // arrow & button colors
 
 // Typography
 // ----------
@@ -56,18 +43,15 @@ $h3_size:                 $base_font_size + 3px;
 
 // Borders
 // -------
-$border_green2:           1px solid $green2;
-$border_green2_shaded:    1px solid shade($green2, 20%);
-$border_gray3:            1px solid $gray3;
-$border_gray8:            1px solid $gray8;
+$border_gray1:            1px solid $gray1;
 
 // Gradients
 // ---------
-$grad_green1:             linear-gradient($green1 0, $green4 100%);
-$grad_green2:             linear-gradient(lighten($green2, 5%) 0, $green2 100%);
-$grad_gray2:              linear-gradient(lighten($gray2, 40%) 0, $gray2 100%);
-$grad_gray1:              linear-gradient(lighten($gray1, 40%) 0, $gray1 100%);
-$grad_gray3:              linear-gradient(darken($gray1, 8%) 0%, $gray1 20%, $gray1 80%, darken($gray1, 8%) 100%);
+$grad_gray1:              linear-gradient($gray1 0, $gray1 100%);
+$grad_gray2:              linear-gradient(lighten($gray2, 5%) 0, $gray2 100%);
+$grad_gray3:              linear-gradient(lighten($gray3, 40%) 0, $gray3 100%);
+$grad_gray3_double:       linear-gradient(darken($gray3, 8%) 0%, $gray3 20%, $gray3 80%, darken($gray3, 8%) 100%);
+
 
 // Component Sizing
 // ----------------
@@ -79,10 +63,8 @@ $spacing:                 10px;
 
 // Text Shadows
 // ------------
-$text_shadow_green2:      2px 1px 1px $green2;
-$text_shadow_green3:      2px 1px 1px $green3;
 $text_shadow_gray3:       2px 1px 2px $gray3;
-$text_shadow_black1:      2px 1px 2px $black;
+$text_shadow_black:       2px 1px 2px $black;
 $text_shadow_white:       0 1px $white;
 
 // Box Shadows

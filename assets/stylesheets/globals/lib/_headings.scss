@@ -11,17 +11,17 @@
 // @mixin grad_mixer(gradient, color, text-shadow);
 @mixin heading_mixer ($size, $color, $font_weight, $text_shadow) {
   font-size: $size;
-  color: $color;
+  color: $text_color;
   font-weight: $font_weight;
   text-shadow: $text_shadow;
 }
 
 @mixin _h1 {
-  @include heading_mixer($h1_size, $gray5, normal, $text_shadow_gray3);
+  @include heading_mixer($h1_size, $text_color, normal, $text_shadow_gray3);
 }
 
 @mixin _h2 {
-  @include heading_mixer($h2_size, $gray5, normal, $text_shadow_gray3);
+  @include heading_mixer($h2_size, $text_color, normal, $text_shadow_gray3);
 }
 
 ._h1 {
