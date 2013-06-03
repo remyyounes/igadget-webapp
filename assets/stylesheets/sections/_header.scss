@@ -1,39 +1,52 @@
 // Header Styles
 #_header {
   overflow: hidden;
-  border-bottom: $border_gray1;
-  background-color: $gray3;
+  background-color: $gray1;
+  padding: 5px;
   .ui-header {    
     border-bottom: $border_gray1;
     position: relative;
     min-height: 40px;
     ._logo {
       font-size: $h2_size;
-      padding: 8px;
-      color: $text_color;
+      padding: 20px;
       font-weight: bold;
-      text-shadow: $text_shadow_gray3;
+      display: inline-block;
+      span {
+        color: $white;
+      }
+    }
+    ._divider {
+      border: $border_gray2;
+      float: right;
+      margin-right: 100px;
+      margin-top: 5px;
+      height: 50px;
     }
     .ui-btn-right {
-      margin: 6px 6px 0 0;
-      padding: 5px;
-      border: $border_gray1;
-      border-radius: 5px;
-      @include background($grad_gray1);
-      box-shadow: $box_shadow2;
-      top: 0;
-      right: 0;
+      max-width: 100px;
+      word-wrap: normal;
+      color: $white;
+      font-size: $h2_size;
+      padding: 15px;
+      float: right;
       .ui-btn-inner {
         border-radius: 0;
         padding: 0;
+        text-overflow: clip;
+        overflow: visible;
+        white-space: normal;
+        text-align: left;
+      }
+      &#_search {
+        display: block;
+        padding: 15px;
+        position: relative;
+        .sprites-search {
+          display: block;
+          height: 24px;
+        }
       }
     }
-  }
-}
-#_menu {
-  float: left;
-  width: 100%;
-  #mypanel {
-    outline: 3000px solid rgba(0, 0, 0, 0.5);
   }
 }

@@ -4,23 +4,22 @@ $("./body") {
   template("_jqm_header", "_header", "top") {
     $$("div[data-role='header']") {
       # Logo
-      insert("a", class:"_logo", href:"/", data-role:"none") {
-        insert("h1", "Moovweb")
+      insert("div", class:"_logo") {
+        move_here("/html/body//div[@id='LogoContainer']")
       }
-      # Menu Button (JQM Panel)
-      insert("a", data-role:"button", href:"#mypanel", class:"ui-btn-right") {
-        insert("div", class:"sprites-menu")
+
+      # Divider
+      insert("span", class:"_divider")
+
+      # Search
+      insert("div", id:"_search", data-role:"none", href:"#search", class:"ui-btn-right") {
+        insert("span", class:"sprites-search")
       }
-    }
-  }
-  # Menu Content (JQM Panel)
-  template("_jqm_panel", "_menu", "top") {
-    $$("div") {
-      insert("ul") {
-        insert("li", "Home", class:"_bar_gray1")
-        insert("li", "Category", class:"_bar_gray1")
-        insert("li", "Search", class:"_bar_gray1")
+
+      # Menu Button
+      insert("a", "Browse Categories", data-role:"button", href:"#browse", class:"ui-btn-right") {
       }
     }
   }
+
 }

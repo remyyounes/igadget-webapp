@@ -21,7 +21,6 @@
   text-align: center;
   text-decoration: none;
   border: none;
-  border-radius: $border_radius;
   @include transition(opacity, 0.2s, ease-out);
   a {
     display: block;
@@ -76,8 +75,9 @@
     @include box-shadow($box-shadow);
   }
 }
-@mixin btn_gray1 {
-  @include btn_mixer($grad_gray1, false, $white, false, $box_shadow_inset)
+@mixin btn_orange1 {
+  @include btn_mixer(false, false, $white, false, $box_shadow2);
+  background-color: $orange1;
 }
 @mixin btn_gray2 {
   @include btn_mixer(false, $border_gray1, $white, $text_shadow_gray3, $box_shadow);
@@ -88,8 +88,8 @@
   font-size: $h2_size;
   font-weight: normal;
 }
-._btn_gray1 {
-  @include btn_gray1;
+._btn_orange1 {
+  @include btn_orange1;
 }
 ._btn_gray2 {
   @include btn_gray2;
