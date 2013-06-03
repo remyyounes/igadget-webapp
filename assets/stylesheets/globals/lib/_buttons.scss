@@ -63,7 +63,7 @@
     @include background($grad);
   }
   @if $border {
-    @include border-radius($border);
+    border: $border;
   }
   @if $color {
     color: $color;
@@ -79,9 +79,10 @@
   @include btn_mixer(false, false, $white, false, $box_shadow2);
   background-color: $orange1;
 }
-@mixin btn_gray2 {
-  @include btn_mixer(false, $border_gray1, $white, $text_shadow_gray3, $box_shadow);
-  @include background($grad_gray1);
+@mixin btn_green1 {
+  @include btn_mixer(false, $border_gray2_thick, $white, false, false);
+  border-radius: $border_radius;
+  background: $green1;
   position: relative;
   min-width: 120px;
   min-height: 20px;
@@ -91,6 +92,6 @@
 ._btn_orange1 {
   @include btn_orange1;
 }
-._btn_gray2 {
-  @include btn_gray2;
+._btn_green1 {
+  @include btn_green1;
 }

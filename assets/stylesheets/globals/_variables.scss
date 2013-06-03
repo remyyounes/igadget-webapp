@@ -45,6 +45,7 @@ $h3_size:                 $base_font_size + 3px;
 // -------
 $border_gray1:            1px solid $gray1;
 $border_gray2:            1px solid $gray2;
+$border_gray2_thick:      2px solid $gray2;
 
 // Gradients
 // ---------
@@ -58,7 +59,7 @@ $grad_gray3_double:       linear-gradient(darken($gray3, 8%) 0%, $gray3 20%, $gr
 // ----------------
 $padding:                 10px;
 $margin:                  10px;
-$border_radius:           20px;
+$border_radius:           5px;
 $btn_width:               100px;
 $spacing:                 10px;
 
