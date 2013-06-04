@@ -25,6 +25,13 @@ $("./body") {
         }
       }
 
+      $$("._shop") {
+        insert("a") {
+          attributes(data-role:"button", href:"#categories")
+          text("Shop")
+        }
+      }
+
       # If you are launching a production site for free, you must leave this information.
       # placeholder(".//div[@class='_info']", "Mobile Site Powered By Moovweb")
     }
