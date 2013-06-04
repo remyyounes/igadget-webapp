@@ -22,4 +22,5 @@ $("body") {
   # remove("/html/body//div[@id='Wrapper']/div[@id='LayoutColumn1']")
   # remove("/html/body//div[@id='LayoutColumn1']")
   # remove("/html/body//div[@id='Header']")
+  # remove("/html/body//div[@id='Footer']")
 }
