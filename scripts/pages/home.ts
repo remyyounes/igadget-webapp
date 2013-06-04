@@ -5,6 +5,7 @@ $("./body") {
     move_here("/html/body//div[@id='_header']")
     insert("div", class:"_content", data-role:"content") {
       move_here("/html/body//div[@id='Container']") {
+        # Make product images into jqm buttons
         $(".//div[contains(@class, 'ProductImage')]") {
           $(".//a") {
             attribute("data-role", "button")

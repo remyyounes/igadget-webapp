@@ -5,7 +5,7 @@ $("head") {
 }
 $("body") {
   # Transform product page html
-  insert("div", data-role:"page", id:"product") {
+  insert("div", data-role:"page", id:"cart") {
     move_here("/html/body//div[@id='_header']")
     insert("div", class:"_content", data-role:"content") {
       move_here("/html/body//div[@id='Container']") {

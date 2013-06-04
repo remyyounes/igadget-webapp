@@ -6,6 +6,15 @@ $("./body") {
     template("_footer", "_footer", "after") {
       move_here("/html/body/div[@id='Footer']")
 
+      $$("._cart") {
+        move_here("/html/body//li[@class='CartLink']") {
+          $$("a") {
+            attribute("data-role", "button")
+            text("Cart")
+          }
+        }
+      }
+
       # If you are launching a production site for free, you must leave this information.
       # placeholder(".//div[@class='_info']", "Mobile Site Powered By Moovweb")
     }

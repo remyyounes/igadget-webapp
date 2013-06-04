@@ -28,13 +28,13 @@ match($status) {
       #   @import pages/INSERT PAGETYPE.ts
       # }
 
-      # with(/INSERT URL MATCHER/) {
-      #   log("--> Importing pages/pagetype.ts in mappings.ts")
-      #   @import pages/pagetype.ts
-      # }
+      with(/cart\.php/) {
+        log("--> Importing pages/cart.ts in mappings.ts")
+        @import pages/cart.ts
+      }
 
       # Example:
-      with(/sample\-product/) {
+      with(/(sample\-product|apple\-ipod\-socks)/) {
         log("--> Importing pages/product.ts in mappings.ts")
         @import pages/product.ts
       }
