@@ -4,7 +4,13 @@ $("./body") {
   insert_top("div", id:"home", class:"_home", data-role:"page") {
     move_here("/html/body//div[@id='_header']")
     insert("div", class:"_content", data-role:"content") {
-      move_here("/html/body//div[@id='Container']")
+      move_here("/html/body//div[@id='Container']") {
+        $(".//div[contains(@class, 'ProductImage')]") {
+          $(".//a") {
+            attribute("data-role", "button")
+          }
+        }
+      }
     }
     move_here("/html/body//div[@id='_footer']")
   }
@@ -26,7 +32,11 @@ $("./body") {
   }
 
   # Product Page
-  insert("div", data-role:"page", id:"product") {
-    
-  }
+  # insert("div", data-role:"page", id:"product") {
+
+  # }
+
+  # Remove unwanted content
+  remove("/html/body//div[@id='AjaxLoading']")
+  remove("/html/body//div[@id='TopMenu']")
 }

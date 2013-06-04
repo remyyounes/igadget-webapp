@@ -34,10 +34,10 @@ match($status) {
       # }
 
       # Example:
-      # with(/product/) {
-      #   log("--> Importing pages/product.ts in mappings.ts")
-      #   @import pages/product.ts
-      # }
+      with(/sample\-product/) {
+        log("--> Importing pages/product.ts in mappings.ts")
+        @import pages/product.ts
+      }
 
       else() {
         log("--> No page match in mappings.ts")
