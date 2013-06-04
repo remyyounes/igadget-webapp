@@ -11,9 +11,17 @@ $("./body") {
             attribute("data-role", "button")
           }
         }
+        # Headers
+        $$("h2") {
+          wrap_text_children("span", class:"_h2")
+        }
       }
     }
-    move_here("/html/body//div[@id='_footer']")
+    move_here("/html/body//div[@id='_footer']") {
+      $$("._shop") {
+        add_class("active")
+      }
+    }
   }
 
   # Category Page

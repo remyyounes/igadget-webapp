@@ -21,7 +21,7 @@
 }
 
 @mixin _h2 {
-  @include heading_mixer($h2_size, $text_color, normal, $text_shadow_gray3);
+  @include heading_mixer($h2_size, $text_color, normal, false);
 }
 
 ._h1 {
