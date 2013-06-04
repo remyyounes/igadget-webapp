@@ -6,7 +6,11 @@ $("./body") {
       attribute("data-id", "header")
       # Logo
       insert("div", class:"_logo") {
-        move_here("/html/body//div[@id='LogoContainer']")
+        move_here("/html/body//div[@id='LogoContainer']") {
+          $$("a") {
+            attributes(href:"#home", data-role:"button")
+          }
+        }
       }
 
       # Divider
@@ -19,7 +23,7 @@ $("./body") {
 
       # Menu Button
       insert("a", "Browse Categories", data-role:"button",
-              href:"#LayoutColumn1", class:"ui-btn-right") {
+              href:"#categories", class:"ui-btn-right") {
       }
     }
   }

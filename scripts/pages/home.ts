@@ -1,6 +1,7 @@
 # Homepage Transformation
 $("./body") {
-  insert_top("div", class:"_home", data-role:"page") {
+  # Homepage
+  insert_top("div", id:"home", class:"_home", data-role:"page") {
     move_here("/html/body//div[@id='_header']")
     insert("div", class:"_content", data-role:"content") {
       move_here("/html/body//div[@id='Container']")
@@ -8,10 +9,11 @@ $("./body") {
     move_here("/html/body//div[@id='_footer']")
   }
 
-  $$("#Wrapper") {
-    $$("#LayoutColumn1") {
-      attribute("data-role", "page")
-      move_to("/html/body")
+  # Category Page
+  insert("div", data-role:"page", id:"categories") {  
+    move_here("/html/body//div[@id='Wrapper']/div[@id='LayoutColumn1']") {
+
+      move_to("/html/body/div[@data-id='categories']")
       copy_here("/html/body//div[@id='_header']") {
         move_to("..", "top")
       }
@@ -21,5 +23,10 @@ $("./body") {
       }
       copy_here("/html/body//div[@id='_footer']")
     }
+  }
+
+  # Product Page
+  insert("div", data-role:"page", id:"product") {
+    
   }
 }
