@@ -39,7 +39,7 @@ match($status) {
       }
 
       # Example:
-      with(/(sample\-product|apple\-ipod\-socks)/) {
+      with(/(sample\-product|apple\-ipod\-socks|mac\-pro|logitech)/) {
         log("--> Importing pages/product.ts in mappings.ts")
         @import pages/product.ts
       }
