@@ -32,14 +32,13 @@ $("./body") {
       insert("div", data-role:"content") {
         move_here("../div[contains(@class, 'Block')]")
       }
-      copy_here("/html/body//div[@id='_footer']")
+      copy_here("/html/body//div[@id='_footer']") {
+        $$("._shop") {
+          add_class("active")
+        }
+      }
     }
   }
-
-  # Product Page
-  # insert("div", data-role:"page", id:"product") {
-
-  # }
 
   # Remove unwanted content
   remove("/html/body//div[@id='AjaxLoading']")

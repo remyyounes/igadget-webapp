@@ -12,7 +12,11 @@ $("body") {
         }
       }
     }
-    move_here("/html/body//div[@id='_footer']")
+    move_here("/html/body//div[@id='_footer']") {
+      $$("._cart") {
+        add_class("active")
+      }
+    }
   }
 
   # Remove header content we don't want duplicated

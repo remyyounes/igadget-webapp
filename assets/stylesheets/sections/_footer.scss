@@ -1,11 +1,13 @@
 // Footer Styles
-footer._footer {
+#_footer {
   overflow: hidden;
   @include bar_gray1;
   background-color: black;
   border-top: $border_gray1;
   color: $gray2;
-  > div {
-    text-align: center;
+  text-align: center;
+  padding: 0;
+  ._footer {
+    padding: 0;
   }
 }
