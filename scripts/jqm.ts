@@ -10,9 +10,9 @@ $("/html") {
     insert_before("link", rel: "stylesheet", href: "http://code.jquery.com/mobile/1.3.1/jquery.mobile.structure-1.3.1.css")
   }
   
-  $("body") {
-    # attribute("data-role", "page")
-  }
+  # $("body") {
+  #   attribute("data-role", "page")
+  # }
 
   # Web-App Initialization
   # Move your content into this scaffold in the appropriate places 
@@ -33,14 +33,14 @@ $("/html") {
 
   # jqm.set_all_transitions("slide")
 
-  # Move in Content
-  $("/html/body") {
-    $(".//div[@id='Container']") {
-      attribute("data-role", "content")
-      # Move the container to after the header
-      move_to("../div[@id='_header']", "after")
-    }
-  }
+  # # Move in Content
+  # $("/html/body") {
+  #   $(".//div[@id='Container']") {
+  #     attribute("data-role", "content")
+  #     # Move the container to after the header
+  #     move_to("../div[@id='_header']", "after")
+  #   }
+  # }
 
   # Use data-ajax attribute to prevent node links from being AJAXified. 
   # attribute("data-ajax", "false")

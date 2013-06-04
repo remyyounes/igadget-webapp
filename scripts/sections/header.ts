@@ -3,6 +3,7 @@ $("./body") {
   # JQM Header
   template("_jqm_header", "_header", "top") {
     $$("div[data-role='header']") {
+      attribute("data-id", "header")
       # Logo
       insert("div", class:"_logo") {
         move_here("/html/body//div[@id='LogoContainer']")
@@ -17,7 +18,8 @@ $("./body") {
       }
 
       # Menu Button
-      insert("a", "Browse Categories", data-role:"button", href:"#browse", class:"ui-btn-right") {
+      insert("a", "Browse Categories", data-role:"button",
+              href:"#LayoutColumn1", class:"ui-btn-right") {
       }
     }
   }
