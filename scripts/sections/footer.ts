@@ -19,7 +19,7 @@ $("./body") {
         move_here("/html/body//div[@id='TopMenu']//li[@class='First']") {
           # attribute("style", "float:left;")
           $$("a") {
-            attributes(data-role:"button", data-ajax:"false")
+            attributes(data-role:"button", data-ajax:"true")
             text("More")
           }
         }
