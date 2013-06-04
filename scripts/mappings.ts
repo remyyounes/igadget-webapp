@@ -27,7 +27,10 @@ match($status) {
       #   log("--> Importing pages/INSERT PAGETYPE.ts in mappings.ts")
       #   @import pages/INSERT PAGETYPE.ts
       # }
-
+      with(/search\.php/) {
+        log("--> Importing pages/login.ts in mappings.ts")
+        @import pages/search.ts
+      }
       with(/cart\.php/) {
         log("--> Importing pages/cart.ts in mappings.ts")
         @import pages/cart.ts
