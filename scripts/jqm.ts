@@ -16,7 +16,7 @@ $("/html") {
 
   # Web-App Initialization
   # Move your content into this scaffold in the appropriate places 
-  $("body") {
+  # $("body") {
   #   insert("div", data-role: "page") {
   #     insert("div", data-role: "header")
   #     insert("div", data-role: "content")
@@ -24,12 +24,12 @@ $("/html") {
   #   }
 
     # Uranium Handler
-    insert("script", data-mw_keep: "true") {
-      text() {
-        set("(function() { $(document).live('pageshow', function(event, ui) { Ur.setup(); }); $(document).ready(function() { Ur.setup(); }); })();")
-      }
-    }
-  }
+    # insert("script", data-mw_keep: "true") {
+    #   text() {
+    #     set("(function() { $(document).live('pageshow', function(event, ui) { Ur.setup(); }); $(document).ready(function() { Ur.setup(); }); })();")
+    #   }
+    # }
+  # }
 
   # jqm.set_all_transitions("slide")
 

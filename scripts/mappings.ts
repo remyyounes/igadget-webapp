@@ -31,6 +31,11 @@ match($status) {
       with(/cart\.php/) {
         log("--> Importing pages/cart.ts in mappings.ts")
         @import pages/cart.ts
+      }      
+
+      with(/login\.php/) {
+        log("--> Importing pages/login.ts in mappings.ts")
+        @import pages/login.ts
       }
 
       # Example:

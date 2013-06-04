@@ -39,5 +39,5 @@ $("./body") {
 
   # Remove unwanted content
   remove("/html/body//div[@id='AjaxLoading']")
-  remove("/html/body//div[@id='TopMenu']")
+  # remove("/html/body//div[@id='TopMenu']")
 }
