@@ -17,7 +17,7 @@ $("./body") {
       insert("span", class:"_divider")
 
       # Search
-      insert("div", id:"_search", data-role:"collapsible", href:"#search", class:"ui-btn-right", data-inset:"false") {
+      insert("div", id:"_search", data-role:"collapsible", href:"#search", data-inset:"false") {
         insert("h3", class:"sprites-search")
         insert("div", class:"_collapsible_content") {
           move_here("/html/body//div[@id='SearchForm']")

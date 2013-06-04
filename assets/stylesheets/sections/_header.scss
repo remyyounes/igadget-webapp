@@ -3,13 +3,14 @@
   overflow: hidden;
   background-color: $gray1;
   padding: 5px;
+  min-height: 70px;
   .ui-header {    
     border-bottom: $border_gray1;
     position: relative;
     min-height: 40px;
     ._logo {
       font-size: $h2_size;
-      padding: 20px;
+      padding: 5px;
       font-weight: bold;
       display: inline-block;
       span {
@@ -38,14 +39,21 @@
         white-space: normal;
         text-align: left;
       }
-      &#_search {
+    }
+    #_search {
+      display: block;
+      clear: both;
+      padding: 15px;
+      position: relative;
+      &.ui-collapsible-collapsed {
+        padding: 0;
+      }
+      .sprites-search {
+        position: absolute;
+        top: -37px;
+        right: 135px;
         display: block;
-        padding: 15px;
-        position: relative;
-        .sprites-search {
-          display: block;
-          height: 24px;
-        }
+        height: 24px;
       }
     }
   }
