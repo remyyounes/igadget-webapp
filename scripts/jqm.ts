@@ -11,54 +11,55 @@ $("/html") {
   }
   
   $("body") {
-    attribute("data-role", "page")
+    # attribute("data-role", "page")
   }
 
   # Web-App Initialization
   # Move your content into this scaffold in the appropriate places 
-  # $("body") {
+  $("body") {
   #   insert("div", data-role: "page") {
   #     insert("div", data-role: "header")
   #     insert("div", data-role: "content")
   #     insert("div", data-role: "footer")
   #   }
-  #   # Uranium Handler
-  #   insert("script", data-mw_keep: "true") {
-  #     text() {
-  #       set("(function() { $(document).live('pageshow', function(event, ui) { Ur.setup(); }); $(document).ready(function() { Ur.setup(); }); })();")
-  #     }
-  #   }
-  # }
+
+    # Uranium Handler
+    insert("script", data-mw_keep: "true") {
+      text() {
+        set("(function() { $(document).live('pageshow', function(event, ui) { Ur.setup(); }); $(document).ready(function() { Ur.setup(); }); })();")
+      }
+    }
+  }
+
   # jqm.set_all_transitions("slide")
 
   # Move in Content
-  # $("/html/body") {
-  #   jqm.move_to_header(".//div[@id='Header']") {
-  #     $("./div[@id='Logo']") {
-  #       attribute("data-transition", "pop")
-  #     }
-  #   }
-  #   jqm.move_to_footer(".//div[@id='Footer']")
-  #   jqm.move_to_content(".//div[@id='Container']")
-  # # Use data-ajax attribute to prevent node links from being AJAXified. 
-  # # attribute("data-ajax", "false")
-  # }
+  $("/html/body") {
+    $(".//div[@id='Container']") {
+      attribute("data-role", "content")
+      # Move the container to after the header
+      move_to("../div[@id='_header']", "after")
+    }
+  }
+
+  # Use data-ajax attribute to prevent node links from being AJAXified. 
+  # attribute("data-ajax", "false")
 
   # Remove jQuery Mobile Default Styles
   # # remove default jqm padding on the content
-  # jqm.content() {
-  #   attribute("style", "padding: 0px")
-  # }
-  # # don't let jqm apply default css for all nodes
-  # $("/html/body//*[not(@data-role)]") {
-  #   attribute("data-role", "none")
-  # }
+  jqm.content() {
+    attribute("style", "padding: 0px")
+  }
 
-  # Move Scripts to Body
-  # # Move scripts to bottom of the body
-  # # because the HEAD doesn't get loaded everytime when using JQM
-  # # so if you want your scripts imported they need to be in the body
-  # $("/html//script") {
-  #   move_to("/html/body", "bottom")
-  # }
+  # # don't let jqm apply default css for all nodes
+  $("/html/body//*[not(@data-role)]") {
+    attribute("data-role", "none")
+  }
+
+  # Move scripts to bottom of the body
+  # because the HEAD doesn't get loaded everytime when using JQM
+  # so if you want your scripts imported they need to be in the body
+  $("/html//script") {
+    move_to("/html/body", "bottom")
+  }
 }

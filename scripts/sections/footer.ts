@@ -2,11 +2,12 @@
 $("./body") {
   $(".//div[@id='_header']") {
     # JQM Footer
+    # Inject footer after the header, then container will later be injected after the header as well.
     template("_footer", "footer", "after") {
-      placeholder(".//div[@class='_copyright']", "Copyright © 2013")
+
 
       # If you are launching a production site for free, you must leave this information.
-      placeholder(".//div[@class='_info']", "Mobile Site Powered By Moovweb")
+      # placeholder(".//div[@class='_info']", "Mobile Site Powered By Moovweb")
     }
   }
 }
