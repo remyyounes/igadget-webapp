@@ -24,8 +24,8 @@ $("./body") {
 
       $$("._scan") {
         insert("a") {
-          attributes(data-role:"button", href:"javascript:void()")
-          attribute("onclick", "scan_function()")
+          attributes(data-role:"button", href:"javascript:void(0);")
+          attribute("onclick", "scan_function();")
           text("Scan")
         }
       }
