@@ -52,9 +52,9 @@ $("/html") {
   }
 
   # # don't let jqm apply default css for all nodes
-  $("/html/body//*[not(@data-role)]") {
-    attribute("data-role", "none")
-  }
+  # $("/html/body//*[not(@data-role)]") {
+  #   attribute("data-role", "none")
+  # }
 
   # Move scripts to bottom of the body
   # because the HEAD doesn't get loaded everytime when using JQM

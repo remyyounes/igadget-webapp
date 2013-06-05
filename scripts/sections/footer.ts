@@ -6,12 +6,27 @@ $("./body") {
     template("_footer", "_footer", "after") {
       move_here("/html/body/div[@id='Footer']")
 
+      $$("._shop") {
+        insert("a") {
+          attributes(data-role:"button", href:"#categories")
+          text("Shop")
+        }
+      }
+
       $$("._cart") {
         move_here("/html/body//li[@class='CartLink']") {
           $$("a") {
             attribute("data-role", "button")
             text("Cart")
           }
+        }
+      }
+
+      $$("._scan") {
+        insert("a") {
+          attributes(data-role:"button", href:"javascript:void()")
+          attribute("onclick", "scan_function()")
+          text("Scan")
         }
       }
 
@@ -22,13 +37,6 @@ $("./body") {
             attributes(data-role:"button", data-ajax:"true")
             text("More")
           }
-        }
-      }
-
-      $$("._shop") {
-        insert("a") {
-          attributes(data-role:"button", href:"#categories")
-          text("Shop")
         }
       }
 

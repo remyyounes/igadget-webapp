@@ -18,15 +18,12 @@ match($status) {
     log("--> STATUS: 200")
 
     match($path) {
+      # Home page
       with(/^\/$|^\/\?/) {
         log("--> Importing pages/home.ts in mappings.ts")
         @import "pages/home.ts"
       }
 
-      # with(/INSERT URL MATCHER/) {
-      #   log("--> Importing pages/INSERT PAGETYPE.ts in mappings.ts")
-      #   @import pages/INSERT PAGETYPE.ts
-      # }
       with(/search\.php/) {
         log("--> Importing pages/login.ts in mappings.ts")
         @import pages/search.ts
@@ -36,6 +33,8 @@ match($status) {
         @import pages/cart.ts
       }      
 
+      # Login page has HTTPS access control issue
+      # Access-Control-Allow-Origin: https://www.mysite.com
       with(/login\.php/) {
         log("--> Importing pages/login.ts in mappings.ts")
         @import pages/login.ts
