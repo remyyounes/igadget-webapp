@@ -3,3 +3,14 @@
 function scan_function() {
   alert('Scanning');
 }
+
+// $('._cross_domain').ajax({
+//   type: "GET",
+//   url: this.attr('href'),
+//   contentType: "text/html; charset=utf-8",
+//   crossDomain: true,
+//   dataType: 'jsonp',
+//   success: function (msg) {
+//       alert("Worked!");
+//   }
+// });
