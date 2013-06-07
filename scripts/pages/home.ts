@@ -33,8 +33,9 @@ $("./body") {
         move_to("..", "top")
         $$("._logo") {
           add_class("_back")
-          $$("a") {
-            attributes(data-rel:"back")
+          $$(".sprites-logo") {
+            name("a")
+            attributes(data-rel:"back", data-role:"button")
           }
         }
       }

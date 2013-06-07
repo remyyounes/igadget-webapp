@@ -8,7 +8,8 @@ $("./body") {
       insert("div", class:"_logo") {
         move_here("/html/body//div[@id='LogoContainer']") {
           $$("a") {
-            attributes(href:"#home", data-role:"button", class:"sprites-logo")
+            name("div")
+            attributes(href:"", data-role:"none", class:"sprites-logo")
             text("")
           }
         }

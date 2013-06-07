@@ -8,7 +8,7 @@ $("./body") {
 
       $$("._shop") {
         insert("a") {
-          attributes(data-role:"button", href:"#categories")
+          attributes(data-role:"button", href:"#home")
           insert("div", class:"sprites-shopOff")
           insert("div", "Shop", class:"title")
         }
