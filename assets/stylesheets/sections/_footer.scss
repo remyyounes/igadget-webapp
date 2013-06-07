@@ -9,5 +9,18 @@
   padding: 0;
   ._footer {
     padding: 0;
+    ._flex_box_item_4 {
+      a {
+        margin: 0;
+      }
+      [class*='sprites'] {
+        margin: 0 auto;
+      }
+      .title {
+      }
+      li {
+        list-style-type: none;
+      }
+    }
   }
 }

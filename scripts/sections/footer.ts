@@ -9,15 +9,20 @@ $("./body") {
       $$("._shop") {
         insert("a") {
           attributes(data-role:"button", href:"#categories")
-          text("Shop")
+          insert("div", class:"sprites-shopOff")
+          insert("div", "Shop", class:"title")
         }
       }
 
       $$("._cart") {
         move_here("/html/body//li[@class='CartLink']") {
           $$("a") {
+            text("")
+          }
+          $$("a") {
             attribute("data-role", "button")
-            text("Cart")
+            insert("div", class:"sprites-cartOff")
+            insert("div", "Cart", class:"title")
           }
         }
       }
@@ -26,16 +31,20 @@ $("./body") {
         insert("a") {
           attributes(data-role:"button", href:"javascript:void(0);")
           attribute("onclick", "scan_function();")
-          text("Scan")
+          insert("div", class:"sprites-scanOff")
+          insert("div", "Scan", class:"title")
         }
       }
 
       $$("._more") {
         move_here("/html/body//div[@id='TopMenu']//li[@class='First']") {
-          # attribute("style", "float:left;")
+          $$("a") {
+            text("")
+          }
           $$("a") {
             attributes(data-role:"button", data-ajax:"true")
-            text("More")
+            insert("div", class:"sprites-moreOff")
+            insert("div", "More", class:"title")
           }
         }
       }
