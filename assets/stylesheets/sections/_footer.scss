@@ -1,7 +1,12 @@
 // Footer Styles
 #_footer {
-  overflow: hidden;
   @include bar_gray1;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
   background-color: black;
   border-top: $border_gray1;
   color: $gray2;
