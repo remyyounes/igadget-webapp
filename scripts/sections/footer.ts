@@ -19,6 +19,8 @@ $("./body") {
           $$("a") {
             text("")
             attribute("data-role", "button")
+            # Prefetching the cart page
+            attribute("data-prefetch", " ")
             insert("div", class:"sprites-cartOff")
             insert("div", "Cart", class:"title")
           }
@@ -38,20 +40,20 @@ $("./body") {
         move_here("/html/body//div[@id='TopMenu']//li[@class='First']") {
           $$("a") {
             text("")
-            attributes(data-role:"button", class:"_cross_domain", data-ajax:"true")
+            attributes(data-role:"button", class:"_cross_domain", data-ajax:"false", data-transition:"slide")
             # Rewriting URL to https and to the final redirect location...
             # Seems super hack and difficult to maintain.
             # This also breaks pages
-            # $url = fetch("@href")
-            # inner() {            
-            #   $new_url = url($url) {
-            #     scheme("https")
-            #     path("/login.php")
-            #     param("from", "account.php")
-            #   }
-            # }
-            # log($new_url)
-            # attribute("href", $new_url)
+            $url = fetch("@href")
+            inner() {            
+              $new_url = url($url) {
+                scheme("https")
+                path("/login.php")
+                param("from", "account.php")
+              }
+            }
+            log($new_url)
+            attribute("href", $new_url)
             insert("div", class:"sprites-moreOff")
             insert("div", "More", class:"title")
           }
