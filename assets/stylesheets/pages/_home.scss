@@ -2,6 +2,9 @@
 // Scope that in each file at the start
 ._home {
   #Container {
+    // Keeping entire scroll container in view using margins
+    margin-top: 50px;
+    margin-bottom: 62px;
     padding: 20px $spacing;
     h2 {
       text-align: center;
