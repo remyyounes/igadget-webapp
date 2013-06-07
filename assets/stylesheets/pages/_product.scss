@@ -1,10 +1,8 @@
-
-
-
-
-
 #product {
-
+  ._content {
+    margin-top: 50px;
+    margin-bottom: 62px;
+  }
 	//margin-left: auto;
     //margin-right: auto;
     //text-align: center;
@@ -15,8 +13,7 @@
 		margin-bottom: 10px;
     }
 
-    .Header {
-
+  .Header {
 		text-align:left;
 		font-weight: bold;
 		font-size: 140%;
@@ -33,93 +30,69 @@
 		right: -20px;
 	}
 
-	.p{
+	.p {
 		text-align: left;
 	}
 
-    .ProductThumbImage {
-    	display: block;
-    	margin-left: auto;
-    	margin-right: auto;
-    }
- 
-  	// Product page styling goes here
-  	.ProductMain {    
-
-  		margin: 10px;
-  		padding: 10px;
-  		border: 1px solid;
-  		background-color: rgb(222,222,222);
-  		
-
-    	.price {
-    	
-    		text-align: center;
-    		font-size: 200%;
-    		color:rgb(0, 0, 255);
-    		font-weight: bold;
-
-    	}
-
-    	.title {
-
-    		text-align: left;	
-    		font-weight: bold;
-
-    	}
-
-    	.sku {
-    		display: inline;
-    		text-align: left;
-    	}
-
-    	
-
-    	.quantity {
-    		text-align:left;
-			font-weight: bold;
-			font-size: 140%;
-    		display: inline;
-    	}
-
-    	.ProductDescription {
-
-    	}
-
-    	.ui-select {
-    		border: 1px solid black;
-    		display: inline-block;
-
-    		.ui-btn {
-    			margin: 0;
-    		}
-    	}
-
-    	.BulkDiscount {
-    		display: inline-block;
-    	}
-
-    	.Label{
-			text-align: left;
-			display: inline;
-		}
-
-		.Value{
-			text-align: left;
-			display:inline;
-		}
-
-  	}
-
-
-  	.SimilarProductsByViews {
-
-  		margin-left: auto;
-    	margin-right: auto;
-    	text-align: center;
-    	font-weight: bold;
-    	padding:5px 5px;
-
-  	}
-
+  .ProductThumbImage {
+  	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
   }
+ 
+	// Product page styling goes here
+	.ProductMain {    
+		margin: 10px;
+		padding: 10px;
+		border: 1px solid;
+		background-color: rgb(222,222,222);
+  	.price {
+  		text-align: center;
+  		font-size: 200%;
+  		color:rgb(0, 0, 255);
+  		font-weight: bold;
+  	}
+  	.title {
+  		text-align: left;	
+  		font-weight: bold;
+  	}
+  	.sku {
+  		display: inline;
+  		text-align: left;
+  	}
+  	.quantity {
+  		text-align:left;
+		  font-weight: bold;
+		  font-size: 140%;
+  		display: inline;
+  	}
+  	.ProductDescription {
+
+  	}
+  	.ui-select {
+  		border: 1px solid black;
+  		display: inline-block;
+  		.ui-btn {
+  			margin: 0;
+  		}
+  	}
+  	.BulkDiscount {
+  		display: inline-block;
+  	}
+  	.Label{
+		  text-align: left;
+		  display: inline;
+	   }
+  	.Value{
+  		text-align: left;
+  		display:inline;
+  	}
+	}
+	.SimilarProductsByViews {
+		margin-left: auto;
+  	margin-right: auto;
+  	text-align: center;
+  	font-weight: bold;
+  	padding:5px 5px;
+	}
+}
