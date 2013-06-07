@@ -2,17 +2,29 @@
 #_header {
   overflow: hidden;
   background-color: $gray1;
-  padding: 5px;
-  min-height: 70px;
   .ui-header {    
     border-bottom: $border_gray1;
     position: relative;
     min-height: 40px;
     ._logo {
       font-size: $h2_size;
-      padding: 5px;
+      padding: 8px;
       font-weight: bold;
       display: inline-block;
+      &._back {
+        margin-left: 5px;
+        padding: 6px;
+        .sprites-logo {
+          background: none;
+          min-height: 28px;
+          width: 60px;
+          margin: 0;
+          .ui-btn-inner {
+            margin-top: 8px;
+            @include sprites-buttonArrow;
+          }
+        }
+      }
       span {
         color: $white;
       }
@@ -20,16 +32,16 @@
     ._divider {
       border: $border_gray2;
       float: right;
-      margin-right: 100px;
+      margin-right: 107px;
       margin-top: 5px;
-      height: 50px;
+      height: 40px;
     }
     .ui-btn-right {
       max-width: 100px;
       word-wrap: normal;
       color: $white;
       font-size: $h2_size;
-      padding: 15px;
+      padding: 9px;
       float: right;
       .ui-btn-inner {
         border-radius: 0;
@@ -43,17 +55,40 @@
     #_search {
       display: block;
       clear: both;
-      padding: 15px;
       position: relative;
       &.ui-collapsible-collapsed {
         padding: 0;
       }
+
       .sprites-search {
         position: absolute;
-        top: -37px;
+        top: -35px;
         right: 135px;
         display: block;
-        height: 24px;
+      }
+      ._collapsible_content {
+        position: relative;
+        overflow: hidden;
+        padding: 0px 10px 5px 10px;
+        ._search_input {
+          background: $white;
+          overflow: hidden; 
+          ._search_label {
+            float: left;
+            width: 28px;
+            margin: 7px;
+            border-right: $border_gray1;
+            background-color: $white;
+          }
+          #search_query {
+            float: left;
+            min-width: 300px;
+            background: $white;
+            border-radius: 0;
+            padding: 10px 0;
+            margin: 0;
+          }
+        }
       }
     }
   }

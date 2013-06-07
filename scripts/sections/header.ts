@@ -8,7 +8,8 @@ $("./body") {
       insert("div", class:"_logo") {
         move_here("/html/body//div[@id='LogoContainer']") {
           $$("a") {
-            attributes(href:"#home", data-role:"button")
+            attributes(href:"#home", data-role:"button", class:"sprites-logo")
+            text("")
           }
         }
       }
@@ -20,7 +21,23 @@ $("./body") {
       insert("div", id:"_search", data-role:"collapsible", href:"#search", data-inset:"false") {
         insert("h3", class:"sprites-search")
         insert("div", class:"_collapsible_content") {
-          move_here("/html/body//div[@id='SearchForm']")
+          move_here("/html/body//div[@id='SearchForm']") {
+            $$("[for='search_query']") {
+              text("")
+              add_class("_search_label sprites-searchBar")
+              wrap("div", class:"_search_input") {
+                move_here("../..//input[@id='search_query']") {
+                  attribute("data-role", "none")
+                }
+              }
+            }
+            $$("[type='image']") {
+              remove()
+            }
+            $$(" > p") {
+              remove()
+            }
+          }
         }
       }
 

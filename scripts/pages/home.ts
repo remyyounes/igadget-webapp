@@ -25,15 +25,17 @@ $("./body") {
   }
 
   # Category Page
-  insert("div", data-role:"page", id:"categories") { 
-    attribute("data-add-back-btn", "true")
+  insert("div", data-role:"page", id:"categories", data-add-back-btn: "false") { 
     move_here("/html/body//div[@id='Wrapper']/div[@id='LayoutColumn1']") {
 
       move_to("/html/body/div[@data-id='categories']")
       copy_here("/html/body//div[@id='_header']") {
         move_to("..", "top")
         $$("._logo") {
-          remove()
+          add_class("_back")
+          $$("a") {
+            attributes(data-rel:"back")
+          }
         }
       }
 

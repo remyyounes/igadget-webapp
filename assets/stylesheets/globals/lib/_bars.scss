@@ -28,7 +28,7 @@
 @mixin bar_link {
   @include bar_base;
   &:after {
-    @include sprites-blackArrowRight;
+    @include sprites-caratGrayCarousel;
     position: absolute;
     top: 50%;
     right: 9px;
@@ -50,7 +50,7 @@
     font-size: 32px;
     margin-top: -19px;
     content: "";
-    @include sprites-blackMinus;
+    // @include sprites-blackMinus;
   }
 
   /* accordion closed */
@@ -62,7 +62,7 @@
       font-size: 32px;
       margin-top: -19px;
       content: "";
-      @include sprites-blackPlus;
+      // @include sprites-blackPlus;
     }
   }
 }
