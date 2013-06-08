@@ -20,7 +20,8 @@ $("body") {
       }
     }
   }
-  insert("script", "window.location.hash = 'login';")
+  # insert("script", "window.location.hash = 'login';")
+  insert("script", "$.mobile.changePage('/login.php?from=account.php');")
 }
 
 

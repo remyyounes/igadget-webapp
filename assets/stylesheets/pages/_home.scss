@@ -1,6 +1,7 @@
 // Every page should have a class on the body
 // Scope that in each file at the start
 ._home {
+  padding-top: 0 !important;
   #Container {
     // Keeping entire scroll container in view using margins
     margin-top: 50px;

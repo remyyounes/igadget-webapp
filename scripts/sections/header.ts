@@ -3,7 +3,9 @@ $("./body") {
   # JQM Header
   template("_jqm_header", "_header", "top") {
     $$("div[data-role='header']") {
-      attribute("data-id", "header")
+      attributes(data-id:"header")
+      # data-postition="fixed"
+
       # Logo
       insert("div", class:"_logo") {
         move_here("/html/body//div[@id='LogoContainer']") {
