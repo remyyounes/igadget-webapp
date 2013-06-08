@@ -35,7 +35,7 @@ match($status) {
 
       # Login page has HTTPS access control issue
       # Access-Control-Allow-Origin: https://www.mysite.com
-      with(/login\.php/) {
+      with(/login\.php|account\.php/) {
         log("--> Importing pages/login.ts in mappings.ts")
         @import pages/login.ts
       }

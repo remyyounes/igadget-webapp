@@ -1,5 +1,3 @@
-@import "home.ts"
-
 $("body") {
   # Transform product page html
   insert("div", data-role:"page", id:"login") {
@@ -20,16 +18,17 @@ $("body") {
       }
     }
   }
+  # Manual Redirects
   # insert("script", "window.location.hash = 'login';")
-  insert("script", "$.mobile.changePage('/login.php?from=account.php');")
+  # insert("script", "$.mobile.changePage('/login.php?from=account.php');")
+ 
+  # Remove header content we don't want duplicated
+  remove("/html/body//div[@id='AjaxLoading']")
+  remove("/html/body//div[@id='TopMenu']")
+  remove("/html/body//div[@id='Menu']")
+  remove("/html/body//div[@id='Wrapper']/div[@id='LayoutColumn1']")
+  remove("/html/body//div[@id='LayoutColumn1']")
+  remove("/html/body//div[@id='Header']")
+  remove("/html/body//div[@id='Footer']")
 }
 
-
-# Remove header content we don't want duplicated
-remove("/html/body//div[@id='AjaxLoading']")
-remove("/html/body//div[@id='TopMenu']")
-remove("/html/body//div[@id='Menu']")
-remove("/html/body//div[@id='Wrapper']/div[@id='LayoutColumn1']")
-remove("/html/body//div[@id='LayoutColumn1']")
-remove("/html/body//div[@id='Header']")
-remove("/html/body//div[@id='Footer']")
