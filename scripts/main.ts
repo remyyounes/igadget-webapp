@@ -1,6 +1,6 @@
 # The main file executed by Tritium. The start of all other files.
 
-#########
+######################
 #check for app cookie
 $is_app = "false"
 
@@ -14,7 +14,7 @@ match($cookie) {
 }
 
 log("APPPP: is_app: ", $is_app)
-##########
+######################
 
 
 match($content_type) {
