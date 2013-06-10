@@ -41,7 +41,7 @@ $("./body") {
         move_here("/html/body//div[@id='TopMenu']//li[@class='First']") {
           $$("a") {
             text("")
-            attributes(data-role:"button", class:"_cross_domain", data-ajax:"true", data-transition:"slide")
+            attributes(data-role:"button", class:"_cross_domain", data-ajax:"true", data-transition:"fade")
             # attribute("data-prefetch", " ")
             # Rewriting URL to http always
             attribute("href", rewrite_insecure(fetch("@href")))

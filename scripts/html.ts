@@ -63,3 +63,8 @@ $("/html") {
   ###############################
 
 }
+
+# Script for redirects, won't run otherwise because there is no HTML element and so mappings.ts won't be called... weird I thought parser created that regardless?
+match($status, "302") {
+  @import "redirect.ts"
+}

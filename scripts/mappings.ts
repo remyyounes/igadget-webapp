@@ -11,7 +11,7 @@
 match($status) {
 
   with(/302/) {
-    log("--> STATUS: 302") # redirect: just let it go through
+    log("--> STATUS: 302, redirect.ts has been used to redirect.")
   }
 
   with(/200/) {

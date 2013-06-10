@@ -16,7 +16,7 @@ match($cookie) {
 log("APPPP: is_app: ", $is_app)
 ######################
 
-
+log("Content Type: " + $content_type)
 match($content_type) {
   with(/html/) {
     # Rewrite the xmlns nodes before the html parser clobbers them
@@ -26,7 +26,6 @@ match($content_type) {
     # simply remove the "UTF-8" argument.  e.g. html(){ ... }
     html("UTF-8") {
       @import device_detection.ts
-      
       @import "html.ts"
     }
 

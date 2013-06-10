@@ -32,7 +32,9 @@ $("/html") {
     # }
   # }
 
-  jqm.set_all_transitions("slide")
+  $("//a[not(@data-transition)]") {
+    attribute("data-transition", "slide")
+  }
 
   # # Move in Content
   # $("/html/body") {
