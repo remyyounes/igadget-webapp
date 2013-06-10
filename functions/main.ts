@@ -311,6 +311,14 @@
     attribute(%attribute_name, %text_to_prepend + fetch("./@"+%attribute_name))
 }
 
+@func XMLNode.rewrite_insecure(Text %url) {
+  inner() {            
+    $new_url = url(%url) {
+      scheme("http")
+    }
+  }
+  $new_url
+}
 
 # Import Template Functions
 @import templates.ts

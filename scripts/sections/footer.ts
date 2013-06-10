@@ -41,20 +41,10 @@ $("./body") {
         move_here("/html/body//div[@id='TopMenu']//li[@class='First']") {
           $$("a") {
             text("")
-            attributes(data-role:"button", class:"_cross_domain", data-ajax:"true", data-transition:"slide", data-prefetch:" ")
-            # Rewriting URL to https and to the final redirect location...
-            # Seems super hack and difficult to maintain.
-            # This also breaks pages
-            # $url = fetch("@href")
-            # inner() {            
-            #   $new_url = url($url) {
-            #     scheme("https")
-            #     path("/login.php")
-            #     param("from", "account.php")
-            #   }
-            # }
-            # log($new_url)
-            # attribute("href", $new_url)
+            attributes(data-role:"button", class:"_cross_domain", data-ajax:"true", data-transition:"slide")
+            # attribute("data-prefetch", " ")
+            # Rewriting URL to http always
+            attribute("href", rewrite_insecure(fetch("@href")))
             insert("div", class:"sprites-moreOff")
             insert("div", "More", class:"title")
           }
