@@ -45,13 +45,20 @@
       margin-top: 5px;
       height: 40px;
     }
-    .ui-btn-right {
+    .browse_btn {
       max-width: 100px;
       word-wrap: normal;
       color: $white;
       font-size: $h2_size;
       padding: 9px;
       float: right;
+      &:after {
+        position: absolute;
+        bottom: 12px;
+        right: 16px;
+        content: "";
+        @include sprites-caratOrangeBrowse;
+      }
       .ui-btn-inner {
         border-radius: 0;
         padding: 0;

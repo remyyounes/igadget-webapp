@@ -46,7 +46,7 @@ $("./body") {
 
       # Menu Button
       insert("a", "Browse Categories", data-role:"button",
-              href:"#categories", class:"ui-btn-right") {
+              href:"#categories", class:"ui-btn-right browse_btn") {
       }
     }
   }
