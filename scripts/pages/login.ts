@@ -4,11 +4,41 @@ $("body") {
     copy_here("/html/body//div[@id='_header']")
     insert("div", class:"_content", data-role:"content") {
       copy_here("/html/body//div[@id='Container']") {
-        # Make product images into jqm buttons
-        $(".//div[contains(@class, 'ProductImage')]") {
-          $(".//a") {
-            attribute("data-role", "button")
+        $$("#LoginBreadcrumb") {
+          remove()
+        }
+        insert_top("div", "Your Account", class:"title _h1") {
+          insert_after("hr")
+        }
+        $$("h2") {
+          add_class("_h2")
+        }
+        $$(".AccountLogin") {
+          move_to("..", "top")
+          $$("form") {
+            add_class("_form")
+            $$("#login_email") {
+              attribute("placeholder", "email")
+            }
+            $$("#login_pass") {
+              attribute("placeholder", "password")
+            }
+            remove(".//dt")
           }
+          $$("h2") {
+            text("Login")
+          }
+          $$(".Submit") {
+            add_class("_btn_green1")
+            $$("a") {
+              add_class("forgot_password")
+              move_to("../..")
+            }
+            remove(".//br")
+          }
+        }
+        $$("#LoginForm") {
+
         }
       }
     }

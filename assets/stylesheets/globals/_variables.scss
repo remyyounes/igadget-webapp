@@ -35,6 +35,7 @@ $black:                   #000000;
 $gray1:                   #2C2C2C; // header background
 $gray2:                   #CCC; // icon colors
 $gray3:                   #898A8C; // image carousel arrows
+$gray4:                   #eee;
 
 // Oranges
 $orange1:                 #FF3C0A; // arrow & button colors
@@ -60,6 +61,7 @@ $border_gray1:            1px solid $gray1;
 $border_gray2:            1px solid $gray2;
 $border_gray2_thick:      2px solid $gray2;
 $border_gray3:            1px solid $gray3;
+$border_gray4:            1px solid $gray4;
 
 // Gradients
 // ---------
@@ -76,6 +78,7 @@ $margin:                  10px;
 $border_radius:           5px;
 $btn_width:               100px;
 $spacing:                 10px;
+$line_height:             17pt;
 
 // Text Shadows
 // ------------
@@ -87,4 +90,5 @@ $text_shadow_white:       0 1px $white;
 // -----------
 $box_shadow:              0 1px 3px rgba(0,0,0,0.9), 0 -1px 2px rgba(250,250,250,0.8);
 $box_shadow2:             0 1px 4px rgba(40,40,40,0.9), 0 -1px 1px rgba(250,250,250,0.8);
+$box_shadow_wide:         0 0 9px rgba(0,0,0,0.3);
 $box_shadow_inset:        inset 0 1px 0 rgba(255,255,255,0.75), inset 0 -1px 1px rgba(255,255,255,.3);
