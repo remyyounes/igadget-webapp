@@ -17,7 +17,8 @@ $("/html") {
   # Remove all script tags not marked with "data-keep" attribute
   # remove_desktop_js();
 
-  
+  # new performance logging function
+  # print_asset_count()  
 
   add_assets()
 

@@ -4,6 +4,19 @@
 // Global values for color schemes and basic styles
 // for Moovweb project
 
+// Fonts
+@font-face {
+  font-family: 'grotesque';
+  src: image-url('fonts/GroteMT.ttf') format('truetype');
+  // src: image-url('entypo-webfont.eot');
+  // src: image-url('entypo-webfont.eot?#iefix') format('embedded-opentype'),
+  //      image-url('entypo-webfont.woff') format('woff'),
+  //      image-url('entypo-webfont.ttf') format('truetype'),
+  //      image-url('entypo-webfont.svg#entyporegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 // Color Scheme
 // ------------
 // Greens
@@ -28,7 +41,7 @@ $orange1:                 #FF3C0A; // arrow & button colors
 
 // Typography
 // ----------
-$font_family:             "Helvetica Neue", Helvetica, Verdana;
+$font_family:             grotesque, "Helvetica Neue", Helvetica, Verdana;
 $base_font_size:          13px;
 $line_height:             24px;
 $text_color:              #57585B;
