@@ -41,7 +41,16 @@ $("./body") {
       }
 
       insert("div", data-role:"content") {
-        move_here("../div[contains(@class, 'Block')]")
+        move_here("../div[contains(@class, 'Block')]") {
+          # Hide unwanted elements
+          $$("h2, #subscribe_form") {
+            add_class("hidden")
+          }
+          # Style categories
+          $$("li") {
+            add_class("_bar_white1")
+          }
+        }
       }
       copy_here("/html/body//div[@id='_footer']") {
         $$("._shop") {

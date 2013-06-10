@@ -22,6 +22,9 @@
 #categories {
   #SideCategoryList {
     margin-top: 50px;
+    li:first-child {
+      border-top: 0;
+    }
   }
   #SideNewsletterBox {
     margin-bottom: 62px;
