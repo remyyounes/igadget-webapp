@@ -1,5 +1,22 @@
 # The main file executed by Tritium. The start of all other files.
 
+######################
+#check for app cookie
+$is_app = "false"
+
+match($cookie) {
+  with(/mw-phonegap-ios\=true/){
+    $is_app = "mw-phonegap-ios"
+  }
+  with(/mw-phonegap-android\=true/){
+    $is_app = "mw-phonegap-android"
+  }
+}
+
+log("APPPP: is_app: ", $is_app)
+######################
+
+
 match($content_type) {
   with(/html/) {
     # Rewrite the xmlns nodes before the html parser clobbers them
@@ -21,5 +38,12 @@ match($content_type) {
   # }
   else() {
     log(concat("Passing through ", $content_type, " unmodified"))
+  }
+}
+
+#mw-app: hack to send empty response when phonegap requests for cordova_plugins.json
+match($is_app, /phonegap/) {
+  match($path, /\A\/cordova\_plugins\.json\z/) {
+    set("")
   }
 }

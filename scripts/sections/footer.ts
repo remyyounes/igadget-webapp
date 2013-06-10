@@ -30,7 +30,8 @@ $("./body") {
       $$("._scan") {
         insert("a") {
           attributes(data-role:"button", href:"javascript:void(0);")
-          attribute("onclick", "scan_function();")
+          //attribute("onclick", "scan_function();")
+          attribute("onclick", "ScanditSDK_Scan()")
           insert("div", class:"sprites-scanOff")
           insert("div", "Scan", class:"title")
         }
