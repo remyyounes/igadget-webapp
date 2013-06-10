@@ -75,8 +75,10 @@
       &.ui-collapsible-collapsed {
         padding: 0;
       }
-
-      .sprites-search {
+      .sprites-searchTap {
+        &.ui-collapsible-heading-collapsed {
+          @include sprites-search;
+        }
         position: absolute;
         top: -35px;
         right: 135px;
