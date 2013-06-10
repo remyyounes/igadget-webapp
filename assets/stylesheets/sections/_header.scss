@@ -24,8 +24,14 @@
           margin: 0;
           .ui-btn-inner {
             margin-top: 8px;
+            width: 120px !important;
             @include sprites-buttonArrow;
           }
+        }   
+        ._back_text {
+          position: absolute;
+          left: -32px;
+          top: -3px;
         }
       }
       span {

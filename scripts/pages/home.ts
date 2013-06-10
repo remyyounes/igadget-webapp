@@ -36,6 +36,7 @@ $("./body") {
           $$(".sprites-logo") {
             name("a")
             attributes(data-rel:"back", data-role:"button")
+            insert("span", "BACK", class:"_back_text")
           }
         }
       }
