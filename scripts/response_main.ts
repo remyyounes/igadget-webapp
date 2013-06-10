@@ -2,6 +2,8 @@
 parse_headers() {
 
 }
+
+# Overriding redirect status returns because we are using JQM to AJAX content in.
 match($status, "302") {
   $override_status = "200"
   $status_200 = "OK"
