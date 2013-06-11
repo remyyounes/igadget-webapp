@@ -67,6 +67,8 @@ insert("html") {
           }
           # AJAX
           else() {
+            # Need to change page either on document.ready() for full page reload or just once it's AJAXed in...
+            insert("script", "$.mobile.changePage('"+$new_location+"');", type:"text/javascript")
             insert("script", "$(document).ready(function(){$.mobile.changePage('"+$new_location+"')});", type:"text/javascript")
             log("AJAX PAGE")
           }
