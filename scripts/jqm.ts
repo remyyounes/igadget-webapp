@@ -1,5 +1,6 @@
 # jQuery Mobile Initialization
 $("/html") {
+  # Important: scripts are backwards so they are in the proper order
   $("./head") {
     remove("//script[contains(@src, 'jquery')]")
     insert_top("script", src: asset("javascript/jquery.mobile.subpage.js"))

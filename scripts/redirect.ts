@@ -6,7 +6,7 @@ insert("html") {
   insert("head")
   insert("body") {
     insert("div", data-role:"page", id:"redirect") {
-      insert("div", data-role:"header")
+      # insert("div", data-role:"header")
       insert("div", data-role:"content") {
         # Rewriting location logic
         # Don't forget to override the $status code in response_main.ts      
@@ -15,14 +15,14 @@ insert("html") {
         # solution: rewrite $location and compare it to $host, use $secure to see if it's true or false and compare to $location scheme().
         # alternative: could also use $location before rewritten and compare to $source_host depending on when you want to do the comparison.
 
-        # what if it does a full page reload into a redirect?
+        # problem: what if it does a full page reload into a redirect?
         # then we don't have JQM initialized on the page any more...
 
-        $cors = "true"
 
+        # Check Scheme
+        $cors = "true"
         inner() {
           $new_location = url($location) {
-            # Check Scheme
             match(scheme()) {
               with("https") {
                 match($secure, "true") {
@@ -67,12 +67,28 @@ insert("html") {
           }
           # AJAX
           else() {
-            insert("script", "$.mobile.changePage('"+$new_location+"');", type:"text/javascript")
+            insert("script", "$(document).ready(function(){$.mobile.changePage('"+$new_location+"')});", type:"text/javascript")
             log("AJAX PAGE")
           }
         }
       }
-      insert("div", data-role:"footer")
+      # insert("div", data-role:"footer")
     }
+  }
+  # Important: scripts are backwards so they are in the proper order
+  add_assets()
+  $("head") {
+    remove("//script[contains(@src, 'jquery')]")
+    insert_top("script", src: asset("javascript/jquery.mobile.subpage.js"))
+    insert_top("link", rel: "stylesheet", href: "http://code.jquery.com/mobile/1.3.1/jquery.mobile.structure-1.3.1.css")
+    insert_top("script", src: "http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js")
+    insert_top("script", src: asset("javascript/jqm-custom-config.js"))
+    insert_top("script", src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+  }
+  $("//a[not(@data-transition)]") {
+    attribute("data-transition", "slide")
+  }
+  jqm.content() {
+    attribute("style", "padding: 0px")
   }
 }
