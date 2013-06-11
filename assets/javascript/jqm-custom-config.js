@@ -3,6 +3,3 @@ $(document).bind("mobileinit", function(){
     // ajaxEnabled: false
   });
 });
-
-// Caching pages in the DOM
-$.mobile.page.prototype.options.domCache = true;

@@ -14,3 +14,6 @@ function scan_function() {
 //       alert("Worked!");
 //   }
 // });
+
+// Caching pages in the DOM
+$.mobile.page.prototype.options.domCache = true;

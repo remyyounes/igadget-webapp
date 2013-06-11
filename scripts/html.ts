@@ -1,5 +1,4 @@
 # HTML Transformations go here
-
 $("/html") {
   rewrite_links()
   absolutize_srcs()
@@ -30,8 +29,6 @@ $("/html") {
   @import "jqm.ts"
 
   @import "optimize.ts"
-
-  log($host)
 
   ###############################
   #ADD ALL JS ASSETS FOR THE APP
@@ -65,7 +62,7 @@ $("/html") {
 
 }
 
-# Script for redirects, won't run otherwise because there is no HTML element and so mappings.ts won't be called... weird I thought parser created that regardless?
+# Script for redirects, won't run otherwise because there is no HTML element and so mappings.ts won't be called...
 match($status, "302") {
   @import "redirect.ts"
 }
