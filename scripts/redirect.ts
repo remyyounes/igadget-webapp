@@ -15,10 +15,6 @@ insert("html") {
         # solution: rewrite $location and compare it to $host, use $secure to see if it's true or false and compare to $location scheme().
         # alternative: could also use $location before rewritten and compare to $source_host depending on when you want to do the comparison.
 
-        # problem: what if it does a full page reload into a redirect?
-        # then we don't have JQM initialized on the page any more...
-
-
         # Check Scheme
         $cors = "true"
         inner() {
@@ -77,7 +73,9 @@ insert("html") {
       # insert("div", data-role:"footer")
     }
   }
+
   # Important: scripts are backwards so they are in the proper order
+  # Need to add assets and init JQM for full page reloads, since it's in the head it won't duplicate content if it's AJAXed in.
   add_assets()
   $("head") {
     remove("//script[contains(@src, 'jquery')]")

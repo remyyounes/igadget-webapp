@@ -49,10 +49,7 @@ $("body") {
       }
     }
   }
-  # Manual Redirects
-  # insert("script", "window.location.hash = 'login';")
-  # insert("script", "$.mobile.changePage('/login.php?from=account.php');")
- 
+
   # Remove header content we don't want duplicated
   remove("/html/body//div[@id='AjaxLoading']")
   remove("/html/body//div[@id='TopMenu']")
