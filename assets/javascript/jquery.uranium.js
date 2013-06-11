@@ -787,9 +787,11 @@
       var components = set.components;
       this.container = set["set"];
       this.items = $(components).filter("[data-ur-carousel-component='scroll_container']")[0];
-      if (this.items.length == 0) {
-        $.error("carousel missing item components");
-        return false;
+      if(this.items) {
+        if (this.items.length == 0) {
+          $.error("carousel missing item components");
+          return false;
+        }
       }
 
       // Optionally:
@@ -1032,16 +1034,17 @@
           $(self.items).width(totalWidth + "px");
         });
         
+        if(items[self.itemIndex]) {        
+          var cumulativeOffset = -items[self.itemIndex].offsetLeft; // initial offset
+          if (self.options.center) {
+            var centerOffset = parseInt((snapWidth - items[self.itemIndex].offsetWidth)/2);
+            cumulativeOffset += centerOffset; // CHECK
+          }
+          if (oldWidth)
+            self.destinationOffset = cumulativeOffset;
 
-        var cumulativeOffset = -items[self.itemIndex].offsetLeft; // initial offset
-        if (self.options.center) {
-          var centerOffset = parseInt((snapWidth - items[self.itemIndex].offsetWidth)/2);
-          cumulativeOffset += centerOffset; // CHECK
+          translateX(cumulativeOffset);
         }
-        if (oldWidth)
-          self.destinationOffset = cumulativeOffset;
-
-        translateX(cumulativeOffset);
 
       };
 
