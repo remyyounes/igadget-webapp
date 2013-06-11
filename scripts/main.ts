@@ -1,5 +1,10 @@
 # The main file executed by Tritium. The start of all other files.
 
+$detected_content_type = $content_type
+match($x_requested_with, /XMLHttpRequest/) {
+  $detected_content_type = "application/x-ajax"
+}
+
 ######################
 #check for app cookie
 $is_app = "false"
@@ -16,8 +21,8 @@ match($cookie) {
 log("APPPP: is_app: ", $is_app)
 ######################
 
-log("Content Type: " + $content_type)
-match($content_type) {
+log("Detected Content Type: " + $detected_content_type)
+match($detected_content_type) {
   with(/html/) {
     # Rewrite the xmlns nodes before the html parser clobbers them
     replace(/\<(\/?)(\w+)\:\w+\>/, "$2_mwns_")
@@ -31,6 +36,10 @@ match($content_type) {
 
     # Rewrite the xmlns nodes to restore them
     replace(/(\<(\/?)(\w+))_mwns_(\:\w+\>)/, "$1$4") 
+  }
+  with(/ajax/) {
+    log("--> Importing ajax.ts")
+    @import "ajax.ts"
   }
   # with(/javascript/) {
   #   @import "ajax.ts"
