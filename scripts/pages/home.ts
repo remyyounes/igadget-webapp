@@ -15,6 +15,27 @@ $("./body") {
         $$("h2") {
           wrap_text_children("span", class:"_h2")
         }
+
+        $$("#LayoutColumn2, #LayoutColumn3") {
+          $$(".Block") {
+            attribute("data-ur-set", "carousel")
+            attribute("data-ur-carousel-component", "view_container")
+            attribute("data-ur-id", fetch("@id"))
+            insert("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"prev") {
+              text("Prev")
+            }
+            insert("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"next") {
+              text("Next")
+            }
+            $$(".BlockContent") {
+              attribute("data-ur-carousel-component", "scroll_container")
+              $$("li") {
+                attribute("data-ur-carousel-component", "item")
+              }
+            }
+            insert("div", data-ur-carousel-component:"dots")
+          }
+        }
       }
     }
     move_here("/html/body//div[@id='_footer']") {
