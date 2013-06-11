@@ -30,7 +30,7 @@ $("./body") {
       $$("._scan") {
         insert("a") {
           attributes(data-role:"button", href:"javascript:void(0);")
-          //attribute("onclick", "scan_function();")
+          # attribute("onclick", "scan_function();")
           attribute("onclick", "ScanditSDK_Scan()")
           insert("div", class:"sprites-scanOff")
           insert("div", "Scan", class:"title")
@@ -44,8 +44,8 @@ $("./body") {
             attributes(data-role:"button", class:"_cross_domain", data-ajax:"true", data-transition:"fade")
             # attribute("data-prefetch", " ")
             
-            # Rewriting URL to http always
-            attribute("href", rewrite_insecure(fetch("@href")))
+            # Rewriting URL to insecure (can't work in prod)
+            # attribute("href", rewrite_insecure(fetch("@href")))
             insert("div", class:"sprites-moreOff")
             insert("div", "More", class:"title")
           }

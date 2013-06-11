@@ -17,7 +17,7 @@ $("body") {
           move_to("..", "top")
           $$("form") {
             add_class("_form")
-            attribute("action", rewrite_insecure(fetch("@action")))
+            # attribute("action", rewrite_insecure(fetch("@action")))
             $$("#login_email") {
               attribute("placeholder", "email")
             }

@@ -31,6 +31,7 @@ $("/html") {
 
   @import "optimize.ts"
 
+  log($host)
 
   ###############################
   #ADD ALL JS ASSETS FOR THE APP

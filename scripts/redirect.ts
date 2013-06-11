@@ -9,13 +9,16 @@ insert("html") {
       insert("div", data-role:"content") {
         # Rewriting location logic
         # Don't forget to override the $status code in response_main.ts      
-        $new_location = rewrite_insecure($location)
+        # $new_location = rewrite_insecure($location)
         inner() {
           $new_location = url($new_location) {
             host($host)
           }
         }
         log("NEW LOCATION: " + $new_location)
+        # update JS history so back button works properly
+        # has to be an AJAX 302 also, check for $x_requested_with header
+        # $isAjax global variable using above header
         insert("script", "$.mobile.changePage('"+$new_location+"');")
         export("Location", $new_location)
       }
