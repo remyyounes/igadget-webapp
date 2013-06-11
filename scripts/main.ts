@@ -1,9 +1,9 @@
 # The main file executed by Tritium. The start of all other files.
 
 $detected_content_type = $content_type
-match($x_requested_with, /XMLHttpRequest/) {
-  $detected_content_type = "application/x-ajax"
-}
+# match($x_requested_with, /XMLHttpRequest/) {
+#   $detected_content_type = "application/x-ajax"
+# }
 
 ######################
 #check for app cookie
