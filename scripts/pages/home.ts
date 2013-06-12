@@ -19,23 +19,33 @@ $("./body") {
         $$("#LayoutColumn2, #LayoutColumn3") {
           $$(".Block") {
             attribute("data-ur-set", "carousel")
+            attribute("data-role", "none")
             attribute("data-ur-carousel-component", "view_container")
             attribute("data-ur-id", fetch("@id"))
             insert("span", "-- count --",data-ur-carousel-component:"count")
             insert("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"prev") {
               text("Prev")
+              attribute("data-role", "none")
             }
             insert("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"next") {
               text("Next")
+              attribute("data-role", "none")
             }
             $$(".BlockContent") {
               attribute("data-ur-carousel-component", "scroll_container")
+              attribute("data-role", "none")
               $$("li") {
                 attribute("data-ur-carousel-component", "item")
                 attribute("alt", index())
+                attribute("data-role", "none")
               }
             }
-            insert("div", data-ur-carousel-component:"dots")
+            insert("div", data-ur-carousel-component:"dots") {
+              attribute("data-role", "none")
+            }
+            # $(".//*") {
+            #   attribute("data-role", "none")
+            # }
           }
         }
       }

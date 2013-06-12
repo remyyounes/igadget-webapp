@@ -1,7 +1,16 @@
 $("body") {
   # Transform product page html
   insert("div", data-role:"page", id:"cart") {
-    move_here("/html/body//div[@id='_header']")
+    move_here("/html/body//div[@id='_header']") {
+      $$("._logo") {
+        add_class("_back")
+        $$(".sprites-logo") {
+          name("a")
+          attributes(data-rel:"back", data-role:"button")
+          insert("span", "BACK", class:"_back_text")
+        }
+      }
+    }
     insert("div", class:"_content", data-role:"content") {
       move_here("/html/body//div[@id='Container']") {
         # Make product images into jqm buttons
@@ -23,6 +32,9 @@ $("body") {
           $$(".mw_was_tfoot") {
             add_class("totals")
             move_to("..", "bottom")
+            $$(".EstimateShippingLink") {
+              # add_class("_btn_green1")
+            }
           }
           $$(".mw_was_tbody") {
             add_class("cart_items")
@@ -51,8 +63,15 @@ $("body") {
           }
         }
 
+        $$("#SideCouponCodeBox") {
+          remove(".//p")
+          $(".//*") {
+            attribute("data-role", "none")
+          }
+        }
+
         # Remove content we don't need
-        $$("#CartBreadcrumb, #SideProductRecentlyViewed, #SideTopSellers, #SuggestiveCartContent") {
+        $$("#CartBreadcrumb, #SideProductRecentlyViewed, #SideTopSellers, #SuggestiveCartContent, .KeepShopping") {
           remove()
         }
       }

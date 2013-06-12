@@ -3,6 +3,7 @@
     background: $gray2;
     #CartHeader {
       background: $white;
+      padding: 10px 20px;
     }
     #CartContent {
       background: $white;
@@ -26,8 +27,8 @@
           }
           .CartItemQuantity {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
+            bottom: 20px;
+            right: 20px;
             &:before {
               content: "QTY";
             }
@@ -51,8 +52,9 @@
       .totals {
         float: right;
         padding: 10px;
-        a {
-          color: $text_color;
+        .EstimateShippingLink {
+          margin: 0;
+          font-size: $h3_size;
         }
         div {
           float: left;
@@ -61,6 +63,16 @@
         > div {
           float: right;
           clear: both;
+        }
+      }
+    }
+    #LayoutColumn3 {
+      #SideCouponCodeBox {
+        #couponcode {
+          max-width: 80%;
+        }
+        input[type="image"] {
+          float: right;
         }
       }
     }

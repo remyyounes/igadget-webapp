@@ -847,6 +847,8 @@
           translateSuffix = ")";
         }
 
+        itemz = self.items;
+
         $(self.items).filter("[data-ur-carousel-component='item']").each(function(obj, i) {
           if ($(obj).attr("data-ur-state") == "active")
             self.itemIndex = i;
@@ -1023,14 +1025,19 @@
             $(items[i]).width(length + "px");
             totalWidth += length;
           }
-          else {
-            $(items[i]).load(function() {
-              totalWidth += $(this).width();
-            });
+          if (self.options.fill == 0) {
+            if($(items[i]).width() > 0) {
+              totalWidth += $(items[i]).width();
+            }
+            else {
+              $(items[i]).on('load',function() {
+                totalWidth += $(this).width();
+              });
+            }
           }
         }
 
-        $(window).load(function() {
+        $(window).on('load', function() {
           $(self.items).width(totalWidth + "px");
         });
         
