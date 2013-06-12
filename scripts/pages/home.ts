@@ -21,6 +21,7 @@ $("./body") {
             attribute("data-ur-set", "carousel")
             attribute("data-ur-carousel-component", "view_container")
             attribute("data-ur-id", fetch("@id"))
+            insert("span", "-- count --",data-ur-carousel-component:"count")
             insert("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"prev") {
               text("Prev")
             }
@@ -31,6 +32,7 @@ $("./body") {
               attribute("data-ur-carousel-component", "scroll_container")
               $$("li") {
                 attribute("data-ur-carousel-component", "item")
+                attribute("alt", index())
               }
             }
             insert("div", data-ur-carousel-component:"dots")

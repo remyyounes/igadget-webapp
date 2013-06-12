@@ -22,7 +22,7 @@ $("./body") {
             text("")
             attribute("data-role", "button")
             # Prefetching the cart page
-            attribute("data-prefetch", " ")
+            attribute("data-prefetch", "data-prefetch")
             insert("div", class:"sprites-cartOff")
             insert("div", "Cart", class:"title")
           }

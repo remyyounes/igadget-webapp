@@ -34,6 +34,10 @@
       }
       ._btn_green1 {
         margin: 5px 0;
+        padding: 0;
+        span {
+          font-size: $h2_size;
+        }
       }
       .forgot_password {
         color: $orange1;
@@ -43,6 +47,13 @@
         .ui-submit {
           margin: 0;
         }
+      }
+    }
+    .CreateAccount {      
+      ._signup {
+        margin: 20px 0;
+        padding: 11px;
+        font-size: $h2_size;
       }
     }
   }

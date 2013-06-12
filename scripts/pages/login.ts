@@ -38,8 +38,12 @@ $("body") {
             remove(".//br")
           }
         }
-        $$("#LoginForm") {
-
+        $$(".CreateAccount") {
+          move_here(".//a") {
+            text("Create an Account")
+            add_class("_btn_green1 _signup")
+          }
+          remove("./div | h2")
         }
       }
     }
