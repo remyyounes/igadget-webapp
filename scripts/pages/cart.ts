@@ -10,6 +10,44 @@ $("body") {
             attribute("data-role", "button")
           }
         }
+        $$("#CartHeader") {
+          add_class("_bar_header")
+        }
+        $$("#CartContent") {
+          move_here("../../div[@id='LayoutColumn3']")
+          table_dump(".//table")
+          $$(".mw_was_thead") {
+            add_class("labels")
+            remove()
+          }
+          $$(".mw_was_tfoot") {
+            add_class("totals")
+            move_to("..", "bottom")
+          }
+          $$(".mw_was_tbody") {
+            add_class("cart_items")
+            $$("> div") {
+              add_class("_flex_box")
+              $$(".CartThumb") {
+                add_class("_flex_box_item_2")
+              }
+              $$(".ProductName") {
+                wrap("div", class:"_flex_box_item_1") {
+                  move_here("../div[contains(@class, 'CartItemQuantity')]")
+                  move_here("../div[contains(@class, 'CartItemIndividualPrice')]")
+                }
+              }
+              $$(".CartItemTotalPrice") {
+                remove()
+              }
+            }
+          }
+        }
+
+        # Remove content we don't need
+        $$("#CartBreadcrumb, #SideProductRecentlyViewed, #SideTopSellers, #SuggestiveCartContent") {
+          remove()
+        }
       }
     }
     move_here("/html/body//div[@id='_footer']") {
