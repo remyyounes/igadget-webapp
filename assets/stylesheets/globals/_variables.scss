@@ -6,8 +6,8 @@
 
 // Fonts
 @font-face {
-  font-family: 'grotesque';
-  src: image-url('fonts/GroteMT.ttf') format('truetype');
+  font-family: 'GrotesqueMT';
+  src: image-url('fonts/GrotesqueMT.ttf') format('truetype');
   // src: image-url('entypo-webfont.eot');
   // src: image-url('entypo-webfont.eot?#iefix') format('embedded-opentype'),
   //      image-url('entypo-webfont.woff') format('woff'),
@@ -42,7 +42,7 @@ $orange1:                 #FF3C0A; // arrow & button colors
 
 // Typography
 // ----------
-$font_family:             grotesque, "Helvetica Neue", Helvetica, Verdana;
+$font_family:             GrotesqueMT, "Helvetica Neue", Helvetica, Verdana;
 $base_font_size:          13px;
 $line_height:             24px;
 $text_color:              #57585B;
