@@ -16,6 +16,11 @@
         // box-shadow: 0 1px 0 $gray1;
       }
     }
+    #LayoutColumn2 {
+      .Block {
+        overflow: hidden;
+      }
+    }
     [data-ur-set="carousel"] {
       position: relative;
       margin: 35px 0;
