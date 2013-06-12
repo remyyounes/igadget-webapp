@@ -22,11 +22,13 @@ $("./body") {
             attribute("data-role", "none")
             attribute("data-ur-carousel-component", "view_container")
             attribute("data-ur-id", fetch("@id"))
+            attribute("data-ur-fill", "1")
+            attribute("data-ur-clones", "0")
             # insert("span", "-- count --",data-ur-carousel-component:"count")
-            insert("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"prev") {
+            insert_top("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"prev") {
               attribute("data-role", "none")
             }
-            insert("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"next") {
+            insert_top("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"next") {
               attribute("data-role", "none")
             }
             $$(".ProductList") {
@@ -36,8 +38,10 @@ $("./body") {
                 attribute("data-ur-carousel-component", "item")
                 attribute("alt", index())
                 attribute("data-role", "none")
-                add_class("_flex_box")
                 $$(".ProductImage") {
+                  wrap("div", class:"_flex_box") {
+                    move_here("../div[@class='ProductDetails']")
+                  }
                   add_class("_flex_box_item_1")
                   $(".//*") {
                     attribute("data-role", "none")
@@ -45,8 +49,8 @@ $("./body") {
                 }
                 $$(".ProductDetails") {
                   wrap("div", class:"_flex_box_item_1") {
-                    move_here("../div[@class='ProductPriceRating'] |
-                              ../div[@class='ProductActionAdd']")
+                    move_here("../../div[@class='ProductPriceRating'] |
+                              ../../div[@class='ProductActionAdd']")
                   }
                   $(".//*") {
                     attribute("data-role", "none")

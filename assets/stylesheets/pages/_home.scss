@@ -22,7 +22,10 @@
       overflow: hidden;
       [data-ur-carousel-component="scroll_container"] {
         [data-ur-carousel-component="item"] {
-          // max-width: 200px;
+          height: 130px;
+          .ProductImage {
+            text-align: center;
+          }
         }
       }
       [data-ur-carousel-component="dots"] {
@@ -34,17 +37,23 @@
       }
       [data-ur-carousel-button-type="prev"] {
         clear: both;
+        // float: left;
+        // margin-top: -90px;
         position: absolute;
         top: 50%;
-        left: 0;
+        left: 10px;
+        z-index: 5;
         @include sprites-caratGrayCarousel;
         @include transform(rotate(180deg));
       }
       [data-ur-carousel-button-type="next"] {
         clear: both;
+        // float: right;
+        // margin-top: -90px;
         position: absolute;
         top: 50%;
-        right: 0;
+        right: 10px;
+        z-index: 5;
         @include sprites-caratGrayCarousel;
       }
     }
