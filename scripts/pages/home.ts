@@ -17,27 +17,41 @@ $("./body") {
         }
 
         $$("#LayoutColumn2, #LayoutColumn3") {
-          $$(".Block") {
+          $$(".BlockContent") {
             attribute("data-ur-set", "carousel")
             attribute("data-role", "none")
             attribute("data-ur-carousel-component", "view_container")
             attribute("data-ur-id", fetch("@id"))
-            insert("span", "-- count --",data-ur-carousel-component:"count")
+            # insert("span", "-- count --",data-ur-carousel-component:"count")
             insert("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"prev") {
-              text("Prev")
               attribute("data-role", "none")
             }
             insert("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"next") {
-              text("Next")
               attribute("data-role", "none")
             }
-            $$(".BlockContent") {
+            $$(".ProductList") {
               attribute("data-ur-carousel-component", "scroll_container")
               attribute("data-role", "none")
               $$("li") {
                 attribute("data-ur-carousel-component", "item")
                 attribute("alt", index())
                 attribute("data-role", "none")
+                add_class("_flex_box")
+                $$(".ProductImage") {
+                  add_class("_flex_box_item_1")
+                  $(".//*") {
+                    attribute("data-role", "none")
+                  }
+                }
+                $$(".ProductDetails") {
+                  wrap("div", class:"_flex_box_item_1") {
+                    move_here("../div[@class='ProductPriceRating'] |
+                              ../div[@class='ProductActionAdd']")
+                  }
+                  $(".//*") {
+                    attribute("data-role", "none")
+                  }
+                }
               }
             }
             insert("div", data-ur-carousel-component:"dots") {
@@ -95,6 +109,7 @@ $("./body") {
   }
 
   # Remove unwanted content
+  remove("/html/body//div[@id='SideCartContents']")
   remove("/html/body//div[@id='AjaxLoading']")
   remove("/html/body//div[@id='TopMenu']")
   remove("/html/body//div[@id='Menu']")
