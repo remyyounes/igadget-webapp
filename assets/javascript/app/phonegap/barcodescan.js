@@ -11,7 +11,7 @@ function success(concatResult) {
     */
     //alert("Success:  " + concatResult);
     productURL = "http://" + window.location.hostname + "/sample-product-incase-sports-armband-for-ipod-nano";
-    alert(productURL);
+    //alert(productURL);
     window.location = productURL; 
 }
             
