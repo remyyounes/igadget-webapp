@@ -1,0 +1,13 @@
+#search {
+  #Container {
+    // Keeping entire scroll container in view using margins
+    margin-top: 50px;
+    margin-bottom: 62px;
+    #SearchResultsProduct {
+      .ProductRightCol {
+        clear: both;
+        display: block;
+      }
+    }
+  }
+}

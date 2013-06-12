@@ -1,5 +1,7 @@
 #product {
-  line-height: $line_height;
+  #Container {
+    line-height: $line_height;
+  }
   ._content {
     margin-top: 50px;
     margin-bottom: 62px;
