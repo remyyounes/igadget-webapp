@@ -5,7 +5,16 @@ $("body") {
       # data-role="content"
       # data-role="footer"
   insert("div", data-role:"page", id:"product") {
-    move_here("/html/body//div[@id='_header']")
+    move_here("/html/body//div[@id='_header']") {
+      $$("._logo") {
+        add_class("_back")
+        $$(".sprites-logo") {
+          name("a")
+          attributes(data-rel:"back", data-role:"button")
+          insert("span", "BACK", class:"_back_text")
+        }
+      }
+    }
     insert("div", class:"_content", data-role:"content") {
       move_here("/html/body//div[@id='Container']") {
         # Make product images into jqm buttons
@@ -15,6 +24,14 @@ $("body") {
           }
         }
         # Product page transformations go here
+
+        $$(".ProductThumbImage") {
+          $$("a") {
+            name("div")
+            remove("@href")
+            remove("@onclick")
+          }
+        }
 
         # Remove unnecessary page elements
         remove("/html/body//div[@id='ProductBreadcrumb']")
@@ -131,14 +148,19 @@ $("body") {
 
         #quantity selection box
         #$(".//div[@class='Value AddCartButton']//div[@class='ui-select']//span[@class='ui-btn-inner']/.."){
-        $(".//div[@class='Value AddCartButton']/span[@class='FloatLeft']"){
-          $("./select") {
-            add_class("mw_testing")
-          }
+        $(".//div[@class='Value AddCartButton']"){
+          # $("./select") {
+          #   add_class("mw_testing")
+          # }
           #$("./div[@class='ui-select']"){
             #attribute("class","quantitybox")
           #remove()
           #}
+          $$("input[type='image']") {
+            name("div")
+            text("Add to Cart")
+            add_class("_btn_green1")
+          }
         }
 
         #rating heading

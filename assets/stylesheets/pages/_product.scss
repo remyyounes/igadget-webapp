@@ -1,4 +1,5 @@
 #product {
+  line-height: $line_height;
   ._content {
     margin-top: 50px;
     margin-bottom: 62px;
@@ -16,7 +17,7 @@
   .Header {
 		text-align:left;
 		font-weight: bold;
-		font-size: 140%;
+		font-size: $h2_size;
 	}
 
 	.ProdDesc {
@@ -45,12 +46,14 @@
 		margin: 10px;
 		padding: 10px;
 		border: 1px solid;
-		background-color: rgb(222,222,222);
+		background-color: $gray4;
   	.price {
   		text-align: center;
-  		font-size: 200%;
-  		color:rgb(0, 0, 255);
-  		font-weight: bold;
+      font-weight: bold;
+      em {
+  		  font-size: $h1_size + 3;
+  		  color: $green1;
+      }
   	}
   	.title {
   		text-align: left;	
@@ -63,16 +66,24 @@
   	.quantity {
   		text-align:left;
 		  font-weight: bold;
-		  font-size: 140%;
+		  font-size: $h2_size;
   		display: inline;
   	}
   	.ProductDescription {
 
   	}
   	.ui-select {
-  		border: 1px solid black;
+  		border: $border_gray2;
   		display: inline-block;
-  		.ui-btn {
+      background: white;
+      &:after {
+        content: " ";
+        position: absolute;
+        bottom: 50%;
+        right: 10px;
+        @include sprites-formQtyTriangle;
+      }
+      .ui-btn {
   			margin: 0;
   		}
   	}
