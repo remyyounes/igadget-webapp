@@ -7,7 +7,62 @@
     #CartContent {
       background: $white;
       margin: 15px;
-      padding: 20px;
+      padding: 10px;
+      .cart_items {
+        ._flex_box {
+          position: relative;
+          border-bottom: $border_gray2;
+          padding: 10px;
+          .CartThumb {
+            padding: 0 10px;
+          }
+          .ProductName {
+            float: left;
+            margin: 10px 0;
+            font-weight: bold;
+            a {
+              color: $text_color;
+            }
+          }
+          .CartItemQuantity {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            &:before {
+              content: "QTY";
+            }
+          }
+          .CartItemIndividualPrice {
+            float: left;
+            clear: both;
+            color: $green1;
+          }
+        }
+      }
+      #cartForm {
+        // update quantity button
+        .FloatLeft {
+          padding: 20px; 
+        }
+      }
+      .ProceedToCheckout {
+        clear: both;
+      }
+      .totals {
+        float: right;
+        padding: 10px;
+        a {
+          color: $text_color;
+        }
+        div {
+          float: left;
+          margin: 5px;
+        }
+        > div {
+          float: right;
+          clear: both;
+        }
+      }
     }
   }
 }

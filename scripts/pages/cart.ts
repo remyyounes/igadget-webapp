@@ -29,11 +29,18 @@ $("body") {
             $$("> div") {
               add_class("_flex_box")
               $$(".CartThumb") {
-                add_class("_flex_box_item_2")
+                add_class("_flex_box_item_1")
               }
               $$(".ProductName") {
-                wrap("div", class:"_flex_box_item_1") {
-                  move_here("../div[contains(@class, 'CartItemQuantity')]")
+                wrap("div", class:"_flex_box_item_3") {
+                  move_here("../div[contains(@class, 'CartItemQuantity')]") {
+                    $(".//*") {
+                      attribute("data-role", "none")
+                    }
+                    $$("a") {
+                      remove()
+                    }
+                  }
                   move_here("../div[contains(@class, 'CartItemIndividualPrice')]")
                 }
               }
