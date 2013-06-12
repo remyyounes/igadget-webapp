@@ -119,4 +119,5 @@ $("./body") {
   remove("/html/body//div[@id='Menu']")
   remove("/html/body//div[@id='Header']")
   remove("/html/body//div[@id='Footer']")
+  remove("/html/body//img[@alt='RSS']")
 }
