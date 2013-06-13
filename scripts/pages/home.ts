@@ -3,8 +3,10 @@ $("./body") {
   # Homepage
   insert_top("div", id:"home", class:"_home", data-role:"page") {
     move_here("/html/body//div[@id='_header']")
-    insert("div", class:"_content", data-role:"content", data-iscroll:"data-iscroll") {
+    insert("div", class:"_content", data-role:"content") {
+      # attribute("data-iscroll", "data-iscroll")
       move_here("/html/body//div[@id='Container']") {
+        # adding iscroll
         # Make product images into jqm buttons
         $(".//div[contains(@class, 'ProductImage')]") {
           $(".//a") {
@@ -24,7 +26,7 @@ $("./body") {
             attribute("data-ur-id", fetch("@id"))
             attribute("data-ur-fill", "1")
             attribute("data-ur-clones", "0")
-            attribute("data-ur-vertical-scroll", "disabled")
+            # attribute("data-ur-vertical-scroll", "disabled")
             # insert("span", "-- count --",data-ur-carousel-component:"count")
             insert_top("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"prev") {
               attribute("data-role", "none")

@@ -4,7 +4,6 @@ $("./body") {
   template("_jqm_header", "_header", "top") {
     $$("div[data-role='header']") {
       attributes(data-id:"header")
-      # data-postition="fixed"
 
       # Logo
       insert("div", class:"_logo") {
