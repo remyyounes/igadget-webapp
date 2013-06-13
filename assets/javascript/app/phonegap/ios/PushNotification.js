@@ -95,7 +95,6 @@ PushNotification.prototype.isPlatformIOS = function () {
 // Registration
 
 PushNotification.prototype.registerForNotificationTypes = function (types, callback) {
-    alert(device.platform)
   if(device.platform == "iPhone" || device.platform == "iPad" || device.platform == "iPod touch" || device.platform == "iOS") {
     this.call_native(callback, "registerForNotificationTypes", [types])
   }
