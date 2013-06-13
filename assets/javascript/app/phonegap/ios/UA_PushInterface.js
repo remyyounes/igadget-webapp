@@ -2,7 +2,7 @@ function UrbanAirship(){
     
     push = window.pushNotification
     
-    alert("push done")
+    //alert("push done")
     
     // Reset Badge on resume
     document.addEventListener("resume", function() {
@@ -35,11 +35,11 @@ function UrbanAirship(){
     push.enablePush()
     push.enableLocation()
     
-    alert("on_push done")
+    //alert("on_push done")
     
-    alert("before registeredfornotTypes")
+    //alert("before registeredfornotTypes")
     push.registerForNotificationTypes(push.notificationType.badge | push.notificationType.sound | push.notificationType.alert)
-    alert("registeredfornotTypes")
+    //alert("registeredfornotTypes")
     
     
     function add_tag(tag) {
