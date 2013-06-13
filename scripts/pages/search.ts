@@ -11,7 +11,8 @@ $("body") {
         }
       }
     }
-    insert("div", class:"_content", data-role:"content") {
+    insert("div", class:"_content", data-role:"content", data-scroll:"y") {
+      attribute("data-iscroll", " ")
       move_here("/html/body//div[@id='Container']") {
         # Make product images into jqm buttons
         $(".//div[contains(@class, 'ProductImage')]") {
@@ -54,9 +55,8 @@ $("body") {
         $$(".CompareButtonContainer, .FeedLink") {
           remove()
         }
-        
-        remove(".//br")
 
+        remove(".//br")
       }
     }
     move_here("/html/body//div[@id='_footer']")

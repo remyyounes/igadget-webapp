@@ -2,4 +2,4 @@
 // input files specified in bundles.yml.
 
 // Caching pages in the DOM
-// $.mobile.page.prototype.options.domCache = true;
+$.mobile.page.prototype.options.domCache = true;
