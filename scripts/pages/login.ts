@@ -2,7 +2,7 @@ $("body") {
   # Transform product page html
   insert("div", data-role:"page", id:"login") {
     move_here("/html/body//div[@id='_header']")
-    insert("div", class:"_content", data-role:"content") {
+    insert("div", class:"_content", data-role:"content", data-iscroll:"data-iscroll") {
       move_here("/html/body//div[@id='Container']") {
         $$("#LoginBreadcrumb") {
           remove()
