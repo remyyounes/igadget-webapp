@@ -1,7 +1,7 @@
 $("body") {
   # Transform product page html
-  insert("div", data-role:"page", id:"search") {
-    move_here("/html/body//div[@id='_header']") {
+  insert_top("div", data-role:"page", id:"search") {
+    move_here("/html/body/div[@id='_header']") {
       $$("._logo") {
         add_class("_back")
         $$(".sprites-logo") {
@@ -58,14 +58,14 @@ $("body") {
         remove(".//br")
       }
     }
-    move_here("/html/body//div[@id='_footer']")
+    move_here("/html/body/div[@id='_footer']")
   }
 
   # Remove header content we don't want duplicated
   remove("/html/body//div[@id='AjaxLoading']")
   remove("/html/body//div[@id='TopMenu']")
   remove("/html/body//div[@id='Menu']")
-  remove("/html/body//div[@id='LayoutColumn1']")
+  remove("/html/body//div[@id='SideNewProducts']")
   remove("/html/body//div[@id='Header']")
   remove("/html/body//div[@id='Footer']")
 }

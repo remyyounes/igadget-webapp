@@ -72,7 +72,7 @@
 @func XMLNode.insert_mobile_meta_tags() {
   $("/html/head") {
     insert("meta", http-equiv: "Content-Type", content: "text/html")
-    insert("meta", name: "viewport", content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0")
+    insert("meta", name: "viewport", content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
     insert("meta", name: "format-detection", content: "telephone=no")
   }
 }

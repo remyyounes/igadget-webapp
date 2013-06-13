@@ -23,6 +23,7 @@ $("/html") {
 
   @import "sections/header.ts"
   @import "sections/footer.ts"
+  @import "sections/category.ts"
 
   @import "mappings.ts"
 

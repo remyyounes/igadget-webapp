@@ -1,9 +1,9 @@
 # The main file executed by Tritium. The start of all other files.
 
 $detected_content_type = $content_type
-# match($x_requested_with, /XMLHttpRequest/) {
-#   $detected_content_type = "application/x-ajax"
-# }
+match($x_requested_with, /XMLHttpRequest/) {
+  $detected_content_type = "application/x-ajax"
+}
 
 ######################
 #check for app cookie
@@ -38,8 +38,15 @@ match($detected_content_type) {
     replace(/(\<(\/?)(\w+))_mwns_(\:\w+\>)/, "$1$4") 
   }
   with(/ajax/) {
-    log("--> Importing ajax.ts")
-    @import "ajax.ts"
+    replace(/\<(\/?)(\w+)\:\w+\>/, "$2_mwns_")
+    html("UTF-8") {
+      @import device_detection.ts
+      @import "html.ts"
+      
+      log("--> Importing ajax.ts")
+      @import "ajax.ts"
+    }
+    replace(/(\<(\/?)(\w+))_mwns_(\:\w+\>)/, "$1$4") 
   }
   # with(/javascript/) {
   #   @import "ajax.ts"

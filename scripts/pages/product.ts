@@ -4,8 +4,8 @@ $("body") {
       # data-role="header"
       # data-role="content"
       # data-role="footer"
-  insert("div", data-role:"page", id:"product") {
-    move_here("/html/body//div[@id='_header']") {
+  insert_top("div", data-role:"page", id:"product") {
+    move_here("/html/body/div[@id='_header']") {
       $$("._logo") {
         add_class("_back")
         $$(".sprites-logo") {
@@ -15,7 +15,7 @@ $("body") {
         }
       }
     }
-    insert("div", class:"_content", data-role:"content", data-iscroll:"data-iscroll") {
+    insert("div", class:"_content", data-role:"content") {
       move_here("/html/body//div[@id='Container']") {
         # Make product images into jqm buttons
         $(".//div[contains(@class, 'ProductImage')]") {
@@ -198,7 +198,7 @@ $("body") {
 
       }
     }
-    move_here("/html/body//div[@id='_footer']") {
+    move_here("/html/body/div[@id='_footer']") {
       $$("._shop") {
         add_class("active")
       }
@@ -209,7 +209,7 @@ $("body") {
   remove("/html/body//div[@id='AjaxLoading']")
   remove("/html/body//div[@id='TopMenu']")
   remove("/html/body//div[@id='Menu']")
-  remove("/html/body//div[@id='LayoutColumn1']")
+  remove("/html/body//div[@id='SideNewProducts']")
   remove("/html/body//div[@id='Header']")
   remove("/html/body//div[@id='Footer']")
 }
