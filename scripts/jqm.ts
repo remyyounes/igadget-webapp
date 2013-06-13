@@ -10,6 +10,7 @@ $("/html") {
 
     insert_top("script", src: asset("javascript/jquery.mobile.iscrollview.js"))
     insert_top("script", src: asset("javascript/iscroll.js"))
+    insert_top("script", src: asset("javascript/jquery.uranium.js"))
     insert_top("script", src: "http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js")
     insert_top("script", src: asset("javascript/jqm-custom-config.js"))
     insert_top("script", src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")

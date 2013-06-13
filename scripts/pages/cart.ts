@@ -1,5 +1,6 @@
 $("body") {
   # Transform product page html
+  # Must be insert_top because JQM looks for first legitimate page to set as active...
   insert_top("div", data-role:"page", id:"cart") {
     move_here("/html/body/div[@id='_header']") {
       $$("._logo") {
@@ -9,6 +10,9 @@ $("body") {
           attributes(data-rel:"back", data-role:"button")
           insert("span", "BACK", class:"_back_text")
         }
+      }
+      $$("> div > a, #_search, ._divider") {
+        remove()
       }
     }
     insert("div", class:"_content", data-role:"content") {
