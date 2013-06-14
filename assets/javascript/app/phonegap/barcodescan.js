@@ -24,7 +24,7 @@ function failure(error) {
 
 function ScanditSDK_Scan()
 {
-    ////alert("before scan")
+    alert("before scan")
     cordova.exec(success, failure, "ScanditSDK", "scan",
                              ["McicjMNJEeKU5+0YSj0U2c769M7xrZaOVx+htZY7Ovk",
                               {"beep": true,
@@ -33,5 +33,5 @@ function ScanditSDK_Scan()
                               "scanningHotspot" : "0.5/0.5",
                               "vibrate" : true
                               }]);
-    //alert("after scan")
+    alert("after scan")
 }
