@@ -83,6 +83,7 @@ insert("html") {
   remove_all_styles()
   remove_html_comments()
   add_assets()
+  @import "app.ts"
   # Important: scripts are backwards so they are in the proper order
   # Need to add assets and init JQM for full page reloads, since it's in the head it won't duplicate content if it's AJAXed in.
   $("head") {
