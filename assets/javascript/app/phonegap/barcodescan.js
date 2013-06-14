@@ -9,11 +9,11 @@ function success(concatResult) {
     navigator.notification.alert(resultArray[1]);
     alert("Scanned " + resultArray[0] + " code: " + resultArray[1]);
     */
-    //alert("SCANNED PRODUCT:  " + concatResult);
+    alert("SCANNED PRODUCT:  " + concatResult);
 
-    productURL = "http://" + window.location.hostname + "/sample-product-incase-sports-armband-for-ipod-nano";
-    alert(productURL);
-    window.location = productURL; 
+    //productURL = "http://" + window.location.hostname + "/sample-product-incase-sports-armband-for-ipod-nano";
+    //alert(productURL);
+    //window.location = productURL; 
 }
             
 function failure(error) {
