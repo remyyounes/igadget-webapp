@@ -3,9 +3,35 @@
     // Keeping entire scroll container in view using margins
     margin-top: 50px;
     margin-bottom: 62px;
+    background: $gray2;
     #SearchResultsProduct {
+      padding: 20px;
       .ProductRightCol {
         clear: both;
+      }
+      .ProductList {
+        background: $white;
+        .ListView {
+          padding: 10px 0;
+          border-bottom: $border_gray2;
+          box-shadow: $box_shadow_wide;
+          .ProductImage {
+
+          }
+          .ProductDetails {
+            max-width: 66%;
+            line-height: $line_height;
+            padding: 10px;
+            .ProductPrice {
+              color: $green1;
+              display: block;
+              clear: both;
+            }
+            a {
+              color: $text_color;
+            }
+          }
+        }
       }
     }
   }

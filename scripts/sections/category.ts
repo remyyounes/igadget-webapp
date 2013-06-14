@@ -14,6 +14,8 @@ $("/html/body") {
         }
       }
       insert("div", data-role:"content") {
+        # adding iscroll
+        attribute("data-iscroll", "data-iscroll")
         move_here("../div[contains(@class, 'Block')]") {
           # Hide unwanted elements
           $$("h2, #subscribe_form") {

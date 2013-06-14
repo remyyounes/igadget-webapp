@@ -91,6 +91,7 @@
 @mixin bar_header {
   @include bar_base;
   color: $text_color;
+  background: $white;
   font-weight: normal;
 }
 

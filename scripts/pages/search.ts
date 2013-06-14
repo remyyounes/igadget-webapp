@@ -36,10 +36,10 @@ $("body") {
         $$(".ProductList") {
           $$("li") {
             add_class("_flex_box")
-            $$("ProductImage") {
-              add_class("_flex_box_item_3")
+            $$(".ProductImage") {
+              add_class("_flex_box_item_2")
             }
-            $$("ProductDetails") {
+            $$(".ProductDetails") {
               add_class("_flex_box_item_1")
             }
             $$(".ProductQty") {
