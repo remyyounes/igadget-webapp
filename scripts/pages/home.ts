@@ -5,9 +5,9 @@ $("./body") {
   insert_top("div", id:"home", class:"_home", data-role:"page") {
     move_here("/html/body/div[@id='_header']")
     insert("div", class:"_content", data-role:"content") {
-      # attribute("data-iscroll", "data-iscroll")
+      # adding iscroll
+      attribute("data-iscroll", "data-iscroll")
       move_here("/html/body//div[@id='Container']") {
-        # adding iscroll
         # Make product images into jqm buttons
         $(".//div[contains(@class, 'ProductImage')]") {
           $(".//a") {
@@ -30,44 +30,42 @@ $("./body") {
             # attribute("data-ur-vertical-scroll", "disabled")
             # insert("span", "-- count --",data-ur-carousel-component:"count")
             insert_top("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"prev") {
-              attribute("data-role", "none")
+              insert("div", class:"sprites-caratGrayCarousel")
             }
             insert_top("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"next") {
-              attribute("data-role", "none")
+              insert("div", class:"sprites-caratGrayCarousel")
             }
             $$(".ProductList") {
               attribute("data-ur-carousel-component", "scroll_container")
-              attribute("data-role", "none")
               $$("li") {
                 attribute("data-ur-carousel-component", "item")
                 attribute("alt", index())
-                attribute("data-role", "none")
                 $$(".ProductImage") {
-                  wrap("div", class:"_flex_box") {
+                  wrap("div", class:"_flex_box _image") {
                     move_here("../div[@class='ProductDetails']")
                   }
                   add_class("_flex_box_item_1")
-                  $(".//*") {
-                    attribute("data-role", "none")
-                  }
                 }
                 $$(".ProductDetails") {
-                  wrap("div", class:"_flex_box_item_1") {
+                  wrap("div", class:"_flex_box_item_1 _details") {
                     move_here("../../div[@class='ProductPriceRating'] |
                               ../../div[@class='ProductActionAdd']")
                   }
                   $(".//*") {
                     attribute("data-role", "none")
                   }
+                  $$("strong") {
+                    unwrap()
+                  }
+                }
+                $$(".ProductActionAdd") {
+                  remove()
                 }
               }
             }
             insert("div", data-ur-carousel-component:"dots") {
               attribute("data-role", "none")
             }
-            # $(".//*") {
-            #   attribute("data-role", "none")
-            # }
           }
         }
       }
