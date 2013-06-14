@@ -7,26 +7,38 @@
     .ProductList {
       background: $white;
       margin: 20px;
-      .ListView {
+      ._flex_box {
         padding: 10px 0;
         border-bottom: $border_gray2;
         box-shadow: $box_shadow_wide;
         .ProductImage {
-
+          max-width: 50%;
+          text-align: center;
         }
         .ProductDetails {
-          max-width: 66%;
           line-height: $line_height;
           padding: 10px;
           max-height: 200px;
           overflow: hidden;
-          .ProductPrice {
+          .ProductPriceRating {
             color: $green1;
             display: block;
             clear: both;
+            font-size: $h2_size;
+            .Rating {
+              display: block;
+              clear: both;
+            }
           }
           a {
             color: $text_color;
+          }
+          ._btn_green1 {
+            float: left;
+            padding: 13px 10px 7px 10px;
+            a {
+              color: $white;
+            }
           }
         }
       }

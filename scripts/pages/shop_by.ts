@@ -15,9 +15,11 @@ $("body") {
     insert("div", class:"_content", data-role:"content") {
       move_here("/html/body//div[@id='Container']") {
         # remove sorting for now
-        $$(".SortBox, #CategoryBreadcrumb, .SubCategoryList") {
+        $$(".SortBox, #CategoryBreadcrumb, .SubCategoryList, .CompareButton, .TopSellerNumber") {
           remove()
         }
+        remove(".//img[@alt='RSS']")
+
         $$("h2") {
           add_class("_h2 _bar_header")
         }
@@ -40,6 +42,9 @@ $("body") {
             }
             $$(".ProductCompareButton") {
               remove()
+            }
+            $$(".ProductActionAdd") {
+              add_class("_btn_green1")
             }
           }
         }
