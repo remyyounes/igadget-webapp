@@ -82,12 +82,27 @@
       }
     }
     #LayoutColumn3 {
-      #SideCouponCodeBox {
+      #SideCouponCodeBox, #SideGiftCertificateCodeBox {
+        clear: both;
+        padding: 10px 0;
+        margin: 10px 0;
+        overflow: hidden;
+        border: $border_gray2;
+        background: $gray4;
+        .BlockContent {
+          margin: 0 10px;
+        }
         #couponcode {
           max-width: 80%;
         }
+        h2 {
+          padding: 0 14px;
+        }
+        input {
+          float: left;
+        }
         input[type="image"] {
-          float: right;
+          margin: 6px 10px;
         }
       }
     }

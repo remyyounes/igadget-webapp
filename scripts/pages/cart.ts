@@ -74,8 +74,8 @@ $("body") {
           }
         }
 
-        $$("#SideCouponCodeBox") {
-          remove(".//p")
+        $$("#SideCouponCodeBox, #SideGiftCertificateCodeBox") {
+          remove(".//p | .//hr")
           $(".//*") {
             attribute("data-role", "none")
           }
