@@ -1,16 +1,6 @@
-# Match the Ajax path
-match($path) {
-  with(/foo/) {
-    html_fragment() {
-      log("--> Importing ajax/foo.ts in ajax.ts")
-      # @import ajax/foo.ts
-    }
-  }
-  else() {
-    log("--> No AJAX mapping found.")
-  }
+# Ajax specific handling if necessary
+$("/html/body") {
+  remove("./div[@id='categories']")
+  # Init jQuery Uranium widgets
+  insert("script", "$('body').Uranium('init');")
 }
-
-# needed for product images
-# replace("%24", "$")
-# replace("&amp;", "&")

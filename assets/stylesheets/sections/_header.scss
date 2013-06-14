@@ -30,8 +30,8 @@
         }   
         ._back_text {
           position: absolute;
-          left: -32px;
-          top: -3px;
+          left: 15px;
+          top: -1px;
         }
       }
       span {
@@ -55,7 +55,7 @@
       &:after {
         position: absolute;
         bottom: 12px;
-        right: 16px;
+        right: 14px;
         content: "";
         @include sprites-caratOrangeBrowse;
       }
@@ -100,7 +100,7 @@
           }
           #search_query {
             float: left;
-            min-width: 300px;
+            min-width: 250px;
             background: $white;
             border-radius: 0;
             padding: 10px 0;

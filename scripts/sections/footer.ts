@@ -9,6 +9,8 @@ $("./body") {
       $$("._shop") {
         insert("a") {
           attributes(data-role:"button", href:"/")
+          # Prefetching the home page
+          attribute("data-prefetch", "data-prefetch")
           # Testing AJAX on Access-Control-Allow-Origin: "*"
           # attributes(data-role:"button", href:"http://www.html5rocks.com/en/")
           insert("div", class:"sprites-shopOff")

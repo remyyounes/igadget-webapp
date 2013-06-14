@@ -46,6 +46,12 @@ match($status) {
         @import pages/product.ts
       }
 
+      # Example:
+      with(/(shop-|brands|mobile-only|new-product-category)/) {
+        log("--> Importing pages/shop_by.ts in mappings.ts")
+        @import pages/shop_by.ts
+      }
+
       else() {
         log("--> No page match in mappings.ts")
       }

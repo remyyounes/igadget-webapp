@@ -1,7 +1,8 @@
 $("body") {
   # Transform product page html
-  insert("div", data-role:"page", id:"search") {
-    move_here("/html/body//div[@id='_header']") {
+  # Must be insert_top because JQM looks for first legitimate page to set as active...
+  insert_top("div", data-role:"page", id:"search") {
+    move_here("/html/body/div[@id='_header']") {
       $$("._logo") {
         add_class("_back")
         $$(".sprites-logo") {
@@ -11,7 +12,7 @@ $("body") {
         }
       }
     }
-    insert("div", class:"_content", data-role:"content") {
+    insert("div", class:"_content", data-role:"content", data-iscroll:"data-iscroll") {
       move_here("/html/body//div[@id='Container']") {
         # Make product images into jqm buttons
         $(".//div[contains(@class, 'ProductImage')]") {
@@ -54,19 +55,18 @@ $("body") {
         $$(".CompareButtonContainer, .FeedLink") {
           remove()
         }
-        
-        remove(".//br")
 
+        remove(".//br")
       }
     }
-    move_here("/html/body//div[@id='_footer']")
+    move_here("/html/body/div[@id='_footer']")
   }
 
   # Remove header content we don't want duplicated
   remove("/html/body//div[@id='AjaxLoading']")
   remove("/html/body//div[@id='TopMenu']")
   remove("/html/body//div[@id='Menu']")
-  remove("/html/body//div[@id='LayoutColumn1']")
+  remove("/html/body//div[@id='SideNewProducts']")
   remove("/html/body//div[@id='Header']")
   remove("/html/body//div[@id='Footer']")
 }
