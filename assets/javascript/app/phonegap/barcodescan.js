@@ -11,9 +11,8 @@ function success(concatResult) {
     */
     alert("Scanned Product:  " + concatResult);
 
-    resultArray = concatResult.split("|");
-    alert(resultArray[1]);
-    alert(resultArray[0]);
+    alert(concatResult[1]);
+    alert(concatResult[0]);
     //productURL = "http://" + window.location.hostname + "/sample-product-incase-sports-armband-for-ipod-nano";
     //alert(productURL);
     //window.location = productURL; 
