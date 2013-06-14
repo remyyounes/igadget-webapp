@@ -1,11 +1,8 @@
 $("body") {
-  # Transform product page html
-  # data-role="page"
-      # data-role="header"
-      # data-role="content"
-      # data-role="footer"
   # Must be insert_top because JQM looks for first legitimate page to set as active...
   insert_top("div", data-role:"page", id:"product") {
+    # adding iscroll
+    attribute("data-iscroll", "data-iscroll")
     move_here("/html/body/div[@id='_header']") {
       $$("._logo") {
         add_class("_back")
@@ -24,8 +21,6 @@ $("body") {
             attribute("data-role", "button")
           }
         }
-        # Product page transformations go here
-
         $$(".ProductThumbImage") {
           $$("a") {
             name("div")

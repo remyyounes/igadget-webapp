@@ -12,7 +12,9 @@ $("body") {
         }
       }
     }
-    insert("div", class:"_content", data-role:"content", data-iscroll:"data-iscroll") {
+    insert("div", class:"_content", data-role:"content") {
+      # adding iscroll
+      attribute("data-iscroll", "data-iscroll")
       move_here("/html/body//div[@id='Container']") {
         # Make product images into jqm buttons
         $(".//div[contains(@class, 'ProductImage')]") {

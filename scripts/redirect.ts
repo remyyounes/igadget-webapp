@@ -74,9 +74,17 @@ insert("html") {
     }
   }
 
+  # Some mobile optimize transformations similar to html.ts
+  rewrite_links()
+  absolutize_srcs()
+  # Add the mobile meta tags
+  clean_mobile_meta_tags()
+  # Needed to begin mobilizing
+  remove_all_styles()
+  remove_html_comments()
+  add_assets()
   # Important: scripts are backwards so they are in the proper order
   # Need to add assets and init JQM for full page reloads, since it's in the head it won't duplicate content if it's AJAXed in.
-  add_assets()
   $("head") {
     remove("//script[contains(@src, 'jquery')]")
     insert_top("script", src: asset("javascript/jquery.mobile.subpage.js"))
