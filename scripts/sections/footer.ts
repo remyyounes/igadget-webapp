@@ -49,9 +49,9 @@ $("./body") {
             insert("div", "More", class:"title")
 
             #disabling more href TBD
-            attribute("href"){
-              remove()
-            }
+            # attribute("href"){
+            #   remove()
+            # }
           }
         }
       }
