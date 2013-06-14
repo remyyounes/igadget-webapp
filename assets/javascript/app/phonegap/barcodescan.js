@@ -9,10 +9,8 @@ function success(concatResult) {
     navigator.notification.alert(resultArray[1]);
     alert("Scanned " + resultArray[0] + " code: " + resultArray[1]);
     */
-    alert("Scanned Product:  " + concatResult);
+    alert("SCANNED PRODUCT:  " + concatResult);
 
-    alert(concatResult[1]);
-    alert(concatResult[0]);
     //productURL = "http://" + window.location.hostname + "/sample-product-incase-sports-armband-for-ipod-nano";
     //alert(productURL);
     //window.location = productURL; 
@@ -27,7 +25,7 @@ function failure(error) {
 
 function ScanditSDK_Scan()
 {
-    alert("before scan")
+    //alert("before scan")
     cordova.exec(success, failure, "ScanditSDK", "scan",
                              ["McicjMNJEeKU5+0YSj0U2c769M7xrZaOVx+htZY7Ovk",
                               {"beep": true,
@@ -36,5 +34,5 @@ function ScanditSDK_Scan()
                               "scanningHotspot" : "0.5/0.5",
                               "vibrate" : true
                               }]);
-    alert("after scan")
+    //alert("after scan")
 }
