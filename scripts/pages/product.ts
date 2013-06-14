@@ -153,9 +153,9 @@ $("body") {
           #remove()
           #}
           $$("input[type='image']") {
-            name("div")
-            text("Add to Cart")
-            add_class("_btn_green1")
+            # name("div")
+            # text("Add to Cart")
+            # add_class("_btn_green1")
           }
         }
 

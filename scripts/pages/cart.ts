@@ -65,6 +65,13 @@ $("body") {
               }
             }
           }
+          $$("input[type='image'][alt='Update']") {
+            # attribute("src", " ")
+            # attribute("data-role", "none")
+            # # $("..") {
+            # #   add_class("_btn_green1")
+            # # }
+          }
         }
 
         $$("#SideCouponCodeBox") {

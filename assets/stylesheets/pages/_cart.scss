@@ -5,6 +5,18 @@
       background: $white;
       padding: 10px 20px;
     }
+    #CartStatusMessage {
+      @include bar_header;
+      padding: 0;
+      .SuccessMessage {
+        padding: 10px 20px;
+        background: $green1;
+      }
+      .ErrorMessage {
+        padding: 10px 20px;
+        background: red;
+      }
+    }
     #CartContent {
       background: $white;
       margin: 15px;
@@ -14,6 +26,9 @@
           position: relative;
           border-bottom: $border_gray2;
           padding: 10px;
+          ._flex_box_item_3 {
+            // max-width: 75%;
+          }
           .CartThumb {
             padding: 0 10px;
           }
