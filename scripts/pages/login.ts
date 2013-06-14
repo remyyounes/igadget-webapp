@@ -5,6 +5,7 @@ $("body") {
     move_here("/html/body/div[@id='_header']")
     insert("div", class:"_content", data-role:"content") {
       move_here("/html/body//div[@id='Container']") {
+        move_here("/html/body//a[contains(text(), 'Sign out')]")
         $$("#LoginBreadcrumb") {
           remove()
         }
