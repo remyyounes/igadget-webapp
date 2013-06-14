@@ -43,7 +43,7 @@ $("./body") {
 
       # Menu Button
       insert("a", "Browse Categories", data-role:"button",
-              href:"#categories", class:"ui-btn-right browse_btn") {
+              href:"http://"+$host+"/#categories", class:"ui-btn-right browse_btn") {
       }
     }
   }

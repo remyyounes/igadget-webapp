@@ -55,11 +55,34 @@ insert("html") {
         # has to be an AJAX 302 also, check for $x_requested_with header
         # $isAjax global variable using above header
       
+        $("/html") {        
+          # Some mobile optimize transformations similar to html.ts
+          rewrite_links()
+          absolutize_srcs()
+          # Add the mobile meta tags
+          clean_mobile_meta_tags()
+          # Needed to begin mobilizing
+          remove_all_styles()
+          remove_html_comments()
+          add_assets()
+          @import "app.ts"
+        }
+
         match($cors) {
           # Full page reload
           with("true") {
             insert("script", "window.location.href='"+$new_location+"';", type:"text/javascript")
             log("FULL PAGE RELOAD")
+            # Important: scripts are backwards so they are in the proper order
+            $("/html/head") {
+              remove("//script[contains(@src, 'jquery')]")
+              insert_top("script", src: asset("javascript/jquery.mobile.subpage.js"))
+              insert_top("link", rel: "stylesheet", href: "http://code.jquery.com/mobile/1.3.1/jquery.mobile.structure-1.3.1.css")
+              insert_top("script", src: asset("javascript/jquery.uranium.js"))
+              insert_top("script", src: "http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js")
+              insert_top("script", src: asset("javascript/jqm-custom-config.js"))
+              insert_top("script", src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+            }
           }
           # AJAX
           else() {
@@ -67,6 +90,16 @@ insert("html") {
             insert("script", "$.mobile.changePage('"+$new_location+"');", type:"text/javascript")
             insert("script", "$(document).ready(function(){$.mobile.changePage('"+$new_location+"')});", type:"text/javascript")
             log("AJAX PAGE")
+            $("/html/body") {
+              # Important: scripts are backwards so they are in the proper order
+              remove("//script[contains(@src, 'jquery')]")
+              insert_top("script", src: asset("javascript/jquery.mobile.subpage.js"))
+              insert_top("link", rel: "stylesheet", href: "http://code.jquery.com/mobile/1.3.1/jquery.mobile.structure-1.3.1.css")
+              insert_top("script", src: asset("javascript/jquery.uranium.js"))
+              insert_top("script", src: "http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js")
+              insert_top("script", src: asset("javascript/jqm-custom-config.js"))
+              insert_top("script", src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+            }
           }
         }
       }
@@ -74,26 +107,6 @@ insert("html") {
     }
   }
 
-  # Some mobile optimize transformations similar to html.ts
-  rewrite_links()
-  absolutize_srcs()
-  # Add the mobile meta tags
-  clean_mobile_meta_tags()
-  # Needed to begin mobilizing
-  remove_all_styles()
-  remove_html_comments()
-  add_assets()
-  @import "app.ts"
-  # Important: scripts are backwards so they are in the proper order
-  # Need to add assets and init JQM for full page reloads, since it's in the head it won't duplicate content if it's AJAXed in.
-  $("head") {
-    remove("//script[contains(@src, 'jquery')]")
-    insert_top("script", src: asset("javascript/jquery.mobile.subpage.js"))
-    insert_top("link", rel: "stylesheet", href: "http://code.jquery.com/mobile/1.3.1/jquery.mobile.structure-1.3.1.css")
-    insert_top("script", src: "http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js")
-    insert_top("script", src: asset("javascript/jqm-custom-config.js"))
-    insert_top("script", src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
-  }
   $("//a[not(@data-transition)]") {
     attribute("data-transition", "slide")
   }

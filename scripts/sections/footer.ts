@@ -8,7 +8,7 @@ $("./body") {
 
       $$("._shop") {
         insert("a") {
-          attributes(data-role:"button", href:"/")
+          attributes(data-role:"button", href:"http://"+$host)
           # Prefetching the home page
           attribute("data-prefetch", "data-prefetch")
           # Testing AJAX on Access-Control-Allow-Origin: "*"
@@ -49,9 +49,9 @@ $("./body") {
             insert("div", "More", class:"title")
 
             #disabling more href TBD
-            attribute("href"){
-              remove()
-            }
+            # attribute("href"){
+            #   remove()
+            # }
           }
         }
       }

@@ -13,3 +13,5 @@ window.addEventListener("load",function() {
     window.scrollTo(0, 1);
   }, 0);
 });
+
+console.log("Running app.js...")
