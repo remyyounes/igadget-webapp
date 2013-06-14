@@ -7,7 +7,7 @@ $("./body") {
     insert("div", class:"_content", data-role:"content") {
       # attribute("id", "wrapper")
       # adding iscroll
-      # attribute("data-iscroll", "data-iscroll")
+      attribute("data-iscroll", "data-iscroll")
       move_here("/html/body//div[@id='Container']") {
         # Make product images into jqm buttons
         # attribute("class", "scroller")
