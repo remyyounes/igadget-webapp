@@ -7,7 +7,7 @@ $("./body") {
     insert("div", class:"_content", data-role:"content") {
       # attribute("id", "wrapper")
       # adding iscroll
-      attribute("data-iscroll", "data-iscroll")
+      # attribute("data-iscroll", "data-iscroll")
       move_here("/html/body//div[@id='Container']") {
         # Make product images into jqm buttons
         # attribute("class", "scroller")
@@ -29,7 +29,7 @@ $("./body") {
             attribute("data-ur-id", fetch("@id"))
             attribute("data-ur-fill", "1")
             attribute("data-ur-clones", "0")
-            # attribute("data-ur-vertical-scroll", "disabled")
+            attribute("data-ur-vertical-scroll", "disabled")
             # insert("span", "-- count --",data-ur-carousel-component:"count")
             insert_top("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"prev") {
               insert("div", class:"sprites-caratGrayCarousel")

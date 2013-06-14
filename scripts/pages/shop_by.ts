@@ -14,7 +14,35 @@ $("body") {
     }
     insert("div", class:"_content", data-role:"content") {
       move_here("/html/body//div[@id='Container']") {
-
+        # remove sorting for now
+        $$(".SortBox, #CategoryBreadcrumb, .SubCategoryList") {
+          remove()
+        }
+        $$("h2") {
+          add_class("_h2 _bar_header")
+        }
+        $$(".ProductList") {
+          $$("li") {
+            add_class("_flex_box")
+            $$(".ProductImage") {
+              add_class("_flex_box_item_2")
+            }
+            $$(".ProductDetails") {
+              add_class("_flex_box_item_1")
+              move_here("../div[@class='ProductPriceRating']")
+              move_here("../div[@class='ProductActionAdd']")
+            }
+            $$(".ProductQty") {
+              remove()
+            }
+            $$("strong") {
+              move_to("..", "top")
+            }
+            $$(".ProductCompareButton") {
+              remove()
+            }
+          }
+        }
       }
     }
     move_here("/html/body/div[@id='_footer']")
