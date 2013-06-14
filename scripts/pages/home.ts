@@ -29,7 +29,7 @@ $("./body") {
             attribute("data-ur-id", fetch("@id"))
             attribute("data-ur-fill", "1")
             attribute("data-ur-clones", "0")
-            attribute("data-ur-vertical-scroll", "disabled")
+            # attribute("data-ur-vertical-scroll", "disabled")
             # insert("span", "-- count --",data-ur-carousel-component:"count")
             insert_top("div", data-ur-carousel-component:"button", data-ur-carousel-button-type:"prev") {
               insert("div", class:"sprites-caratGrayCarousel")
