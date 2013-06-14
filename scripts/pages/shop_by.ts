@@ -18,6 +18,9 @@ $("body") {
         $$(".SortBox, #CategoryBreadcrumb, .SubCategoryList, .CompareButton, .TopSellerNumber") {
           remove()
         }
+        $$("#BrandBreadcrumb, #SideBrandTagCloud") {
+          remove()
+        }
         remove(".//img[@alt='RSS']")
 
         $$("h2") {
