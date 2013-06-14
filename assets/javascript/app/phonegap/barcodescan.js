@@ -9,11 +9,16 @@ function success(concatResult) {
     navigator.notification.alert(resultArray[1]);
     alert("Scanned " + resultArray[0] + " code: " + resultArray[1]);
     */
-    alert("Success:  " + concatResult);
+    //alert("Success:  " + concatResult);
+    productURL = "http://" + window.location.hostname + "/sample-product-incase-sports-armband-for-ipod-nano";
+    //alert(productURL);
+    window.location = productURL; 
 }
             
 function failure(error) {
-    alert("Failed: " + error);
+    //alert("Scan Failed: " + error);
+    alert("Scan Fail: Item Unavailable or Not Supported");
+  
 }
 
 

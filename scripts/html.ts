@@ -37,9 +37,16 @@ $("/html") {
   {
     $("head") {
       
-      #ios specific
       insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/ios/cordova-2.7.0.js"))
+
+      #urbanairship
+      insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/ios/PushNotification.js"))
+      insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/ios/UA_PushInterface.js"))            
+
+      
       insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/ios/index.js"))            
+
+      
 
       #phonegap common js
       insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/barcodescan.js"))
