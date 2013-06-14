@@ -47,6 +47,11 @@ $("./body") {
             attributes(data-role:"button", class:"_cross_domain", data-ajax:"true", data-transition:"fade")
             insert("div", class:"sprites-moreOff")
             insert("div", "More", class:"title")
+
+            #disabling more href TBD
+            attribute("href"){
+              remove()
+            }
           }
         }
       }
