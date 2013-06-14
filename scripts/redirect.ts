@@ -69,19 +69,16 @@ insert("html") {
         }
 
         match($cors) {
-          # Full Page Reload
+          # Full page reload
           with("true") {
-            insert("script", "window.location.href='"+$new_location+"';", type:"text/javascript")
             log("FULL PAGE RELOAD")
+            insert("script", "window.location.href='"+$new_location+"';", type:"text/javascript")
           }
           # AJAX
           else() {
             # Need to change page either on document.ready() for full page reload or just once it's AJAXed in...
-            insert("script", "$.mobile.changePage('"+$new_location+"');", type:"text/javascript")
-            insert("script", "$(document).ready(function(){$.mobile.changePage('"+$new_location+"')});", type:"text/javascript")
             log("AJAX PAGE")
-            $("/html/body") {
-              # Important: scripts are backwards so they are in the proper order
+            $("/html/head") {
               remove("//script[contains(@src, 'jquery')]")
               insert_top("script", src: asset("javascript/jquery.mobile.subpage.js"))
               insert_top("link", rel: "stylesheet", href: "http://code.jquery.com/mobile/1.3.1/jquery.mobile.structure-1.3.1.css")
@@ -91,6 +88,8 @@ insert("html") {
               insert_top("script", src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
             }
           }
+          insert("script", "$.mobile.changePage('"+$new_location+"');", type:"text/javascript")
+          insert("script", "$(document).ready(function(){$.mobile.changePage('"+$new_location+"')});", type:"text/javascript")
         }
       }
       # insert("div", data-role:"footer")
