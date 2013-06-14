@@ -50,26 +50,18 @@ $("body") {
             remove()
         }
 
-
-
         # Move elements into proper structure
-
         # product name after price
         $(".//div[contains(@id,'ProductDetails')]/div[@class='BlockContent']/h2") {
           name("div")
           attribute("class", "DetailRow Title")
         }
-
         $(".//div[@class='DetailRow PriceRow']"){
           move_here("/html/body//div[@class='DetailRow Title']", "after")
         }
-
-        
-
         $(".//div[@class='ProductDetailsGrid']//div[contains(text(),'Rating')]/.."){
           attribute("class", "DetailRow Rating")
         }
-
         $(".//div[@class='ProductDetailsGrid']//div[contains(text(),'Brand')]"){
           $("../div[@class='Value']/a") {
 
@@ -85,8 +77,6 @@ $("body") {
         $(".//div[@class='productAddToCartRight']"){
           move_here("/html/body//div[@class='DetailRow Rating']", "after")    
         }
-
-
         #insert lines between
         $(".//div[@class='ProductDetailsGrid']"){
           insert_after("hr")
@@ -182,7 +172,6 @@ $("body") {
           attribute("class","ProdFeatures")
         } 
 
-
         #remove after changing attributes
         $(".//div[@class='ProductDescription']/hr"){
           remove()
@@ -191,7 +180,6 @@ $("body") {
         $(".//div[@class='product_container']/hr"){
           remove()
         }
-
       }
     }
     move_here("/html/body/div[@id='_footer']") {
@@ -199,6 +187,11 @@ $("body") {
         add_class("active")
       }
     }
+
+    # Image carousel for Also Viewed section...
+    # $$(".BlockContent") {
+    #   add_class("gjklsfsjk")
+    # }
   }
 
   # Remove persistent content that would be duplicated

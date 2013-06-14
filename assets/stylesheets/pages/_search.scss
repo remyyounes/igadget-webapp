@@ -22,6 +22,8 @@
             max-width: 66%;
             line-height: $line_height;
             padding: 10px;
+            max-height: 200px;
+            overflow: hidden;
             .ProductPrice {
               color: $green1;
               display: block;
