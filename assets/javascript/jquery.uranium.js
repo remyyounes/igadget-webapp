@@ -3,12 +3,6 @@
 
 (function ( $ ) {
 
-  // helper function for log
-  // TODO: Remove
-  var log = function (msg) {
-    return console.log(msg);
-  }
-
   // Keep a unique value for ID initialization
   var get_unique_uranium_id = function() {
     var count = 0;
@@ -20,20 +14,20 @@
 
   // Find elements for the widgets
   var findElements = function(fragment, type) {
-    // log("findElements");
+    // console.log("findElements");
     var groups = {};
-    // log(groups);
+    // console.log(groups);
     var set_elements = $(fragment).find("*[data-ur-set='" + type + "']");
     set_elements.each(function( index ) {
-      // log("set_elements");
-      // log(this);
-      // log(index);
+      // console.log("set_elements");
+      // console.log(this);
+      // console.log(index);
       var my_set_id = $(this).attr('data-ur-id');
-      // log(my_set_id);
+      // console.log(my_set_id);
 
       if ( my_set_id === undefined ) {
         // No explict ID set
-        // log($(this).find("*[data-ur-" + type + "-component]"));
+        // console.log($(this).find("*[data-ur-" + type + "-component]"));
         my_set_id = get_unique_uranium_id();
       }
 
@@ -50,7 +44,7 @@
   }
 
   var findComponents = function( element, component ) {
-    // log("findComponents");
+    // console.log("findComponents");
     var components = $(element).find("*[data-ur-" + component + "-component]");
     return components;
   }
@@ -58,7 +52,7 @@
   // Toggler
   var toggler = function( fragment ) {
 
-    log("Toggler");
+    // console.log("Toggler");
     var groups = findElements( fragment, "toggler" );
 
     if ( groups !== false ) {
@@ -107,7 +101,7 @@
   // Tabs
   var tabs = function( fragment ) {
 
-    log("Tabs");
+    // console.log("Tabs");
     var groups = findElements(fragment, "tabs");
 
     if ( groups !== false ) {
@@ -177,7 +171,7 @@
 
   // Input Clear
   var inputClear = function( fragment ) {
-    log("inputClear");
+    // console.log("inputClear");
 
     var groups = findElements ( fragment, "input-clear" );
     $.each(groups, function() {
@@ -221,7 +215,7 @@
 
   // Geocode
   var geoCode = function ( fragment ) {
-    log("geoCode");
+    // console.log("geoCode");
     var wgType = "reverse-geocode";
     var groups = findElements ( fragment, wgType )
 
@@ -429,7 +423,7 @@
 
   // Zoom
   var zoom = function ( fragment ) {
-    log("zoom");
+    // console.log("zoom");
 
     var wgType = "zoom"
     var groups = findElements( fragment, wgType );
@@ -744,7 +738,7 @@
 
   // Carousel
   var carousel = function ( fragment ) {
-    log("carousel");
+    // console.log("carousel");
     var groups = findElements(fragment, "carousel");
 
      // private methods
@@ -787,11 +781,9 @@
       var components = set.components;
       this.container = set["set"];
       this.items = $(components).filter("[data-ur-carousel-component='scroll_container']")[0];
-      if(this.items) {
-        if (this.items.length == 0) {
-          $.error("carousel missing item components");
-          return false;
-        }
+      if (this.items.length == 0) {
+        $.error("carousel missing item components");
+        return false;
       }
 
       // Optionally:
@@ -824,18 +816,18 @@
         touch: true,
         verticalScroll: true
       };
-      
+
       this.itemIndex = 0;
       this.translate = 0;
-      
+
       var $container = $(this.container);
       var preCoords = {x: 0, y: 0};
       var startPos = {x: 0, y: 0}, endPos = {x: 0, y: 0};
-      
+
       var snapWidth = 0;
-      
+
       var startingOffset = null;
-      
+
       var translatePrefix = "translate3d(", translateSuffix = ", 0px)";
 
 
@@ -846,8 +838,6 @@
           translatePrefix = "translate(";
           translateSuffix = ")";
         }
-
-        itemz = self.items;
 
         $(self.items).filter("[data-ur-carousel-component='item']").each(function(obj, i) {
           if ($(obj).attr("data-ur-state") == "active")
@@ -896,7 +886,7 @@
         if($(window).orientationchange != undefined) {
           $(window).orientationchange(resize);
         }
-        
+
         // orientationchange isn't supported on some androids
         $(window).on("resize", function() {
           resize();
@@ -914,7 +904,8 @@
       function readAttributes() {
 
         var oldAndroid = /Android [12]/.test(navigator.userAgent);
-        if (oldAndroid && $container.attr("data-ur-android3d")[0] != "enabled") {
+        var ios6Device = /iP(hone|od) OS 6/.test(navigator.userAgent);
+        if ((oldAndroid && $container.attr("data-ur-android3d")[0] != "enabled") || ios6Device ) {
           self.options.transform3d = false;
           var speed = parseFloat($container.attr("data-ur-speed"));
           self.options.speed = speed > 1 ? speed : 1.3;
@@ -1025,33 +1016,35 @@
             $(items[i]).width(length + "px");
             totalWidth += length;
           }
-          if (self.options.fill == 0) {
+          else if (self.options.fill == 0) {
+            //hacky - fix this
             if($(items[i]).width() > 0) {
-              totalWidth += $(items[i]).width();
-            }
-            else {
-              $(items[i]).on('load',function() {
-                totalWidth += $(this).width();
-              });
-            }
-          }
-        }
+                totalWidth += $(items[i]).width();
+              }
+              else {
+                $(items[i]).on('load',function() {
+                  totalWidth += $(this).width();
+                });
+              }
+           }
+      }
 
-        $(window).on('load', function() {
-          $(self.items).width(totalWidth + "px");
-        });
+        // $(window).load(function() {
+        //   $(self.items).width(totalWidth + "px");
+        // });
+
+        $(self.items).width(totalWidth + "px");
         
-        if(items[self.itemIndex]) {        
-          var cumulativeOffset = -items[self.itemIndex].offsetLeft; // initial offset
-          if (self.options.center) {
-            var centerOffset = parseInt((snapWidth - items[self.itemIndex].offsetWidth)/2);
-            cumulativeOffset += centerOffset; // CHECK
-          }
-          if (oldWidth)
-            self.destinationOffset = cumulativeOffset;
 
-          translateX(cumulativeOffset);
+        var cumulativeOffset = -items[self.itemIndex].offsetLeft; // initial offset
+        if (self.options.center) {
+          var centerOffset = parseInt((snapWidth - items[self.itemIndex].offsetWidth)/2);
+          cumulativeOffset += centerOffset; // CHECK
         }
+        if (oldWidth)
+          self.destinationOffset = cumulativeOffset;
+
+        translateX(cumulativeOffset);
 
       };
 
@@ -1108,7 +1101,7 @@
           else if (newIndex < 0)
             newIndex = 0;
         }
-        
+
         return newIndex;
 
       }
@@ -1142,8 +1135,8 @@
       }
 
       function startSwipe(e) {
-        // log("startSwipe");
-        // log("STARTINGOFFSET: " + startingOffset);
+        // console.log("startSwipe");
+        // console.log("STARTINGOFFSET: " + startingOffset);
         if (!self.options.verticalScroll)
           stifle(e);
         self.autoscrollStop();
@@ -1174,7 +1167,7 @@
           else
             // Fast swipe // CHECK THIS
             startingOffset = self.destinationOffset; //Factor incomplete previous swipe
-          
+
           startPos = endPos = coords;
         }
       }
@@ -1182,8 +1175,8 @@
       function continueSwipe(e) {
         if (!self.flag.touched) // For non-touch environments
           return;
-        // log("continueSwipe");
-        // log("STARTINGOFFSET: " + startingOffset);
+        // console.log("continueSwipe");
+        // console.log("STARTINGOFFSET: " + startingOffset);
         self.flag.click = false;
 
         var coords = getEventCoords(e);
@@ -1238,32 +1231,34 @@
       }
 
       function finishSwipe(e) {
+        // log("finishSwipe");
+        // log("STARTINGOFFSET: " + startingOffset);
         if (!self.flag.click || self.flag.lock)
           stifle(e);
         else if (e.target.tagName == "AREA")
           location.href = e.target.href;
-        
+
         self.flag.touched = false; // For non-touch environments
-        
+
         moveHelper(getDisplacementIndex());
       }
 
       function getDisplacementIndex() {
         var swipeDistance = swipeDist();
-        var displacementIndex = zeroCeil(swipeDistance/$(self.items).find("[data-ur-carousel-component='item']")[0].width);
+        var displacementIndex = zeroCeil(swipeDistance/$(self.items).find("[data-ur-carousel-component='item']")[0].offsetWidth);
         return displacementIndex;
       }
 
       function snapTo(displacement) {
         self.destinationOffset = displacement + startingOffset;
-        log("in snapTo(displacement): ")
-        log("  displacement! " + displacement);
-        log("  STARTINGOFFSET: " + startingOffset);
+        // console.log("in snapTo(displacement): ")
+        // console.log("  displacement! " + displacement);
+        // console.log("  STARTINGOFFSET: " + startingOffset);
         if(self.destinationOffset > 0 && self.options.infinite) {
           self.destinationOffset = -Math.abs(displacement);
         }
         //do something here if infinit scroll and destinationOffset is too close to the end of the width of the container
-        log("  self.destinationOffset: " + self.destinationOffset);
+        // console.log("  self.destinationOffset: " + self.destinationOffset);
         var maxOffset = -1*self.lastIndex*snapWidth;
         var minOffset = parseInt(snapWidth - $(self.items).find("[data-ur-carousel-component='item']")[0].width/2);
 
@@ -1296,18 +1291,18 @@
         self.autoscrollStop();
 
         var newIndex = getNewIndex(direction);
-        
+
         var items = $(self.items).find("[data-ur-carousel-component='item']");
-        log("direction: " + direction);
+        // console.log("direction: " + direction);
 
         if (self.options.infinite) {
           var oldTransform = getTranslateX();
           var altTransform = oldTransform;
 
-          // log("self.itemIndex: " + self.itemIndex);
-          // log("direction: " + direction);
-          // log("newIndex: " + newIndex);
-          // log("startingOffset: " + startingOffset);
+          // console.log("self.itemIndex: " + self.itemIndex);
+          // console.log("direction: " + direction);
+          // console.log("newIndex: " + newIndex);
+          // console.log("startingOffset: " + startingOffset);
 
           if (newIndex < 0) { //self.options.cloneLength) { // at the beginning of carousel
             var offset = items[self.options.cloneLength].offsetLeft - items[self.itemCount - self.options.cloneLength].offsetLeft;
@@ -1316,69 +1311,71 @@
               startingOffset += excess;
               newIndex -= Math.abs(direction) - self.options.cloneLength;
             }
-            // log("BEGINNING OF CAROUSEL");
-            //log("startingOffset: " + startingOffset);
+            // console.log("BEGINNING OF CAROUSEL");
+            //console.log("startingOffset: " + startingOffset);
             if (!self.flag.loop) {
               altTransform += offset;
               translateX(altTransform);
               startingOffset += offset;
             }
-            //log("startingOffset: " + startingOffset);
-            newIndex += self.realItemCount;
+            //console.log("startingOffset: " + startingOffset);
+            //make sure the new index is position (if the items are really tiny and the swipe distance is huge and there aren't enough clones to cover the distance)
+            newIndex += Math.ceil(Math.abs(newIndex) / self.realItemCount)*self.realItemCount;
             self.itemIndex = newIndex + direction;
             if(self.itemIndex > self.realItemCount + self.options.cloneLength) {
               self.itemIndex = self.realItemCount + self.options.cloneLength;
             }
           }
           else if (newIndex >= self.lastIndex - self.options.cloneLength) { // at the end of carousel
-            // log("END OF CAROUSEL");
-            // log("  newIndex: " + newIndex);
-            // log("  self.lastIndex - self.options.cloneLength: " + (self.lastIndex - self.options.cloneLength));
+            // console.log("END OF CAROUSEL");
+            // console.log("  newIndex: " + newIndex);
+            // console.log("  self.lastIndex - self.options.cloneLength: " + (self.lastIndex - self.options.cloneLength));
             var offset = items[self.itemCount - self.options.cloneLength].offsetLeft - items[self.options.cloneLength].offsetLeft;
             // if(Math.abs(direction) > self.options.cloneLength) {
             //   var excess = (Math.abs(direction) - self.options.cloneLength)*$(items[0]).width();
             //   startingOffset -= excess;
             //   newIndex -= Math.abs(direction) - self.options.cloneLength;
             // }
-            //log("END OF CAROUSEL");
-            // log(startingOffset);
-            // log("offset: " + offset);
+            //console.log("END OF CAROUSEL");
+            // console.log(startingOffset);
+            // console.log("offset: " + offset);
             if (!self.flag.loop) {
               altTransform += offset;
               translateX(altTransform);
               startingOffset += offset;
             }
-            newIndex -= self.realItemCount;
+            //make sure the new index is position (if the items are really tiny and the swipe distance is huge and there aren't enough clones to cover the distance)
+            newIndex -= Math.floor(Math.abs(newIndex) / self.realItemCount)*self.realItemCount;
             self.itemIndex = newIndex + direction;
-            // log("  newIndex: " + newIndex);
-            // log("  direction: " + direction);
-            // log("  self.itemIndex: " + self.itemIndex);
+            // console.log("  newIndex: " + newIndex);
+            // console.log("  direction: " + direction);
+            // console.log("  self.itemIndex: " + self.itemIndex);
             if(Math.abs(direction) > self.options.cloneLength) {
               //if the swipe amount is greater than clone length
               self.itemIndex += (Math.abs(direction) - self.options.cloneLength);
             }
-            // log("  self.itemIndex: " + self.itemIndex);
+            // console.log("  self.itemIndex: " + self.itemIndex);
             if(self.itemIndex < 0) {
               self.itemIndex = self.realItemCount + self.itemIndex - 1;
             }
-            // log("  newIndex: " + newIndex);
-            // log("  direction: " + direction);
-            // log("  self.itemIndex: " + self.itemIndex);
+            // console.log("  newIndex: " + newIndex);
+            // console.log("  direction: " + direction);
+            // console.log("  self.itemIndex: " + self.itemIndex);
 
           }
         }
         var newItem = items[newIndex];
         var currentItem = items[self.itemIndex];
-        // log("self.itemIndex: " + self.itemIndex);
+        // console.log("self.itemIndex: " + self.itemIndex);
         var displacement = currentItem.offsetLeft - newItem.offsetLeft; // CHECK
         startingOffset = -currentItem.offsetLeft;
         if(self.options.center) {
           var centerOffset = parseInt((snapWidth - items[self.itemIndex].offsetWidth)/2);
           startingOffset += centerOffset; // CHECK
         }
-        log(self.itemIndex + " (0-based currentindex) item's offsetleft: " + currentItem.offsetLeft);
-        log(newIndex + " (0-based newindex) item's offsetleft: " + newItem.offsetLeft);
-        log("startingOffset: " + startingOffset);
+        // console.log(self.itemIndex + " (0-based currentindex) item's offsetleft: " + currentItem.offsetLeft);
+        // console.log(newIndex + " (0-based newindex) item's offsetleft: " + newItem.offsetLeft);
+        // console.log("startingOffset: " + startingOffset);
         //for the bouncing backwards thing
         if(newIndex == self.itemIndex) {
           startingOffset = self.destinationOffset;
@@ -1389,7 +1386,7 @@
         if(self.itemIndex == newIndex) {
           displacement = 0;
         }
-        log("displacement: " + displacement);
+        // console.log("displacement: " + displacement);
         setTimeout(function() {
           snapTo(displacement);
           updateIndex(newIndex);
@@ -1469,16 +1466,11 @@
   var methods = {
     init : function( options ) {
       // Initialize the function here
-      log("Uranium init: " + options);
+      // console.log("Uranium init: " + options);
 
-      // log(this);
-      // log($(this));
+      // console.log(this);
+      // console.log($(this));
       if (! initialized) {
-
-        // Define the fragment
-        if (this === undefined) {
-          this = document.body;
-        }
 
         // Initialize the widgets
         var self = this;
@@ -1492,7 +1484,7 @@
     },
     lateInit : function( options ) {
       // Initialize the function here
-      log("Uranium lateInit: " + options);
+      console.log("Uranium lateInit: " + options);
 
       // Initialize the widgets
       $.each(widgets, function() {
@@ -1504,7 +1496,7 @@
       console.warn("Uranium Warning: " + msg);
     },
     initialized : function() {
-      log("initialized " + initialized);
+      // console.log("initialized " + initialized);
       return initialized;
     }
   }
