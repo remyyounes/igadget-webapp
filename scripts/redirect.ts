@@ -72,7 +72,14 @@ insert("html") {
           # Full page reload
           with("true") {
             log("FULL PAGE RELOAD")
-            insert("script", "window.location.href='"+$new_location+"';", type:"text/javascript")
+            # insert("script", "
+            #   window.history.replaceState({}, 'redirect', '/categories');"
+            #     , type:"text/javascript")
+
+            # JQM history for back button
+            insert("script", "$.mobile.urlHistory.add('http://mlocal.igadgetcommerce.com/categories');"
+                , type:"text/javascript")
+            # insert("script", "window.location.href='"+$new_location+"';", type:"text/javascript")
           }
           # AJAX
           else() {
@@ -88,8 +95,13 @@ insert("html") {
               insert_top("script", src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
             }
           }
-          insert("script", "$.mobile.changePage('"+$new_location+"', {reverse: false});", type:"text/javascript")
-          insert("script", "$(document).ready(function(){$.mobile.changePage('"+$new_location+"', {reverse: false})});", type:"text/javascript")
+          # insert("script", "
+          #   window.history.replaceState({}, 'redirect', 'http://mlocal.igadgetcommerce.com');"
+          #     , type:"text/javascript")
+          # insert("script", "$.mobile.urlHistory.add('http://mlocal.igadgetcommerce.com');"
+          #     , type:"text/javascript")
+          insert("script", "$.mobile.changePage('"+$new_location+"', {reverse: false, changeHash: false});", type:"text/javascript")
+          insert("script", "$(document).ready(function(){$.mobile.changePage('"+$new_location+"', {reverse: false, changeHash: false})});", type:"text/javascript")
         }
       }
       # insert("div", data-role:"footer")
