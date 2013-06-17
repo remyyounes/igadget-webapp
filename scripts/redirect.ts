@@ -77,9 +77,9 @@ insert("html") {
             #     , type:"text/javascript")
 
             # JQM history for back button
-            insert("script", "$.mobile.urlHistory.add('http://mlocal.igadgetcommerce.com/categories');"
-                , type:"text/javascript")
-            # insert("script", "window.location.href='"+$new_location+"';", type:"text/javascript")
+            # insert("script", "$.mobile.urlHistory.add('http://mlocal.igadgetcommerce.com/categories');"
+            #     , type:"text/javascript")
+            insert("script", "window.location.href='"+$new_location+"';", type:"text/javascript")
           }
           # AJAX
           else() {
