@@ -10,6 +10,9 @@ $("/html") {
 
     # insert_top("script", src: asset("javascript/jquery.mobile.iscrollview.js"))
     # insert_top("script", src: asset("javascript/iscroll.js"))
+    # insert_top("script", "(function() { 
+    #   $(document).live('pageshow', function(event, ui) { $('body').Uranium('lateInit'); }); 
+    #   $(document).ready(function() { $('body').Uranium('lateInit'); }); })();")
     insert_top("script", src: asset("javascript/jquery.uranium.js"))
     insert_top("script", src: "http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js")
     insert_top("script", src: asset("javascript/jqm-custom-config.js"))

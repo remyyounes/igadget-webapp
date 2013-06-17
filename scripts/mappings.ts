@@ -18,6 +18,15 @@ match($status) {
     log("--> STATUS: 200")
 
     match($path) {
+      # Category page
+      # with(/categories/) {
+      #   log("--> Importing pages/home.ts in mappings.ts")
+      #   @import "pages/home.ts"
+      #   $("/html/body//div[@id='home']/div[@data-role='content']") {          
+      #     insert("script", "$(document).ready(function(){$.mobile.changePage('#categories')});", type:"text/javascript")
+      #   }
+      # }
+
       # Home page
       with(/^\/$|^\/\?/) {
         log("--> Importing pages/home.ts in mappings.ts")
