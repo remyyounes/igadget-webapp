@@ -88,8 +88,8 @@ insert("html") {
               insert_top("script", src: "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
             }
           }
-          insert("script", "$.mobile.changePage('"+$new_location+"');", type:"text/javascript")
-          insert("script", "$(document).ready(function(){$.mobile.changePage('"+$new_location+"')});", type:"text/javascript")
+          insert("script", "$.mobile.changePage('"+$new_location+"', {reverse: false});", type:"text/javascript")
+          insert("script", "$(document).ready(function(){$.mobile.changePage('"+$new_location+"', {reverse: false})});", type:"text/javascript")
         }
       }
       # insert("div", data-role:"footer")
