@@ -12,9 +12,9 @@ $("/html/body") {
             name("a")
             attributes(data-rel:"back", data-role:"button")
             insert("span", "BACK", class:"_back_text")
-            attribute("onclick", "$('div').on('pageshow',function(event, ui){
-                                    $('body').Uranium('lateInit');
-                                  });")
+            # attribute("onclick", "$('div').on('pageshow',function(event, ui){
+            #                         $('body').Uranium('lateInit');
+            #                       });")
           }
         }
       }

@@ -15,9 +15,9 @@ $("./body") {
           # attributes(data-role:"button", href:"http://www.html5rocks.com/en/")
           insert("div", class:"sprites-shopOff")
           insert("div", "Shop", class:"title")
-          attribute("onclick", "$('div').on('pageshow',function(event, ui){
-                                  $('body').Uranium('lateInit');
-                                });")
+          # attribute("onclick", "$('div').on('pageshow',function(event, ui){
+          #                         $('body').Uranium('lateInit');
+          #                       });")
         }
       }
 
