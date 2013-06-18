@@ -21,18 +21,13 @@ $("/html") {
 
   add_assets()
 
-  @import "sections/header.ts"
-  @import "sections/footer.ts"
-  @import "sections/category.ts"
+  @import "app.ts"
 
   @import "mappings.ts"
 
   @import "jqm.ts"
 
   @import "optimize.ts"
-
-  @import "app.ts"
-
 }
 
 # Script for redirects, won't run otherwise because there is no HTML element and so mappings.ts won't be called...
