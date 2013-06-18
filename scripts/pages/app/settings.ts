@@ -9,10 +9,18 @@ $("html") {
           # Remove page not found content
           inner("")
           insert("div", class:"_notifications") {
-            insert_top("h2", "Notifications", class:"_h2")
+            insert("label", "Notifications", for:"flip-1")
+            insert("select", name:"flip-1", id:"flip-1", data-role:"slider") {
+              insert("option", "Off", value:"Off")
+              insert("option", "On", value:"On")
+            }
           }
           insert("div", class:"_locations") {
-            insert("h2", "Locations", class:"_h2")
+            insert("label", "Locations", for:"flip-2")
+            insert("select", name:"flip-2", id:"flip-2", data-role:"slider") {
+              insert("option", "Off", value:"Off")
+              insert("option", "On", value:"On")
+            }
           }
         }
       }

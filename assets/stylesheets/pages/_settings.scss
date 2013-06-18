@@ -4,5 +4,23 @@
     margin-top: 50px;
     margin-bottom: 62px;
     padding: 20px 0;
+    // Flip switch styles
+    .ui-slider-switch {
+      border-radius: 20px;
+      border: 3px solid $gray2;
+      background: $gray1;
+      color: $gray2;
+      .ui-slider-label-a {
+        // background: red;
+      }
+      .ui-slider-label-b {
+        // background: blue;
+      }
+      .ui-slider-handle {
+        border-radius: 20px;
+        margin: -1px -14px;
+        background: $gray2;
+      }
+    }
   }
 }
