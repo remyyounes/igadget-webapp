@@ -36,9 +36,9 @@ match($status, "302") {
 }
 match($status, "404") {
   match($path) {  
-    with(/notifications/) {
-      log("--> Importing pages/app/notifications.ts in mappings.ts")
-      @import pages/app/notifications.ts
+    with(/settings/) {
+      log("--> Importing pages/app/settings.ts in mappings.ts")
+      @import pages/app/settings.ts
     }
     else() {
       # Do nothing

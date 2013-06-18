@@ -10,7 +10,7 @@ match($status, "302") {
   replace(/^(HTTP.*?) .*/, "$1 " + $override_status + " " + var("status_" + $override_status))
 }
 match($path) {
-  with(/notifications/) {
+  with(/settings/) {
     match($status, "404") {
       $override_status = "200"
       $status_200 = "OK"
