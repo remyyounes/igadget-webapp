@@ -1,17 +1,18 @@
-insert("html") {
-  insert("head")
-  insert("body") {
-    insert("div", data-role:"page", id:"settings") {
-      move_here("/html/body/div[@id='_header']")
+$("html") {
+  $("body") {
+    insert_top("div", data-role:"page", id:"settings") {
+      move_here("/html/body/div[@id='_header']") {
+
+      }
       insert("div", class:"_content", data-role:"content") {
         move_here("/html/body//div[@id='Container']") {
           # Remove page not found content
           inner("")
           insert("div", class:"_notifications") {
-            insert_top("h2", "Notifications")
+            insert_top("h2", "Notifications", class:"_h2")
           }
           insert("div", class:"_locations") {
-            insert("h2", "Locations")
+            insert("h2", "Locations", class:"_h2")
           }
         }
       }
