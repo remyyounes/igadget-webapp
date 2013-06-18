@@ -9,9 +9,9 @@ match(this()) {
   #   # replace(/GET \/account\.php/, "GET /login.php?from=account")
   #   export("secure", "true")
   # }
-  with(/GET \/categories/) {
-    # replace(/GET \/account\.php/, "GET /login.php?from=account")
-  }
+  # with(/GET \/notifications/) {
+  #   replace(/GET \/notifications/, "GET /")
+  # }
   else() {
 
   }

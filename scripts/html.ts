@@ -34,3 +34,14 @@ $("/html") {
 match($status, "302") {
   @import "redirect.ts"
 }
+match($status, "404") {
+  match($path) {  
+    with(/notifications/) {
+      log("--> Importing pages/app/notifications.ts in mappings.ts")
+      @import pages/app/notifications.ts
+    }
+    else() {
+      # Do nothing
+    }
+  }
+}

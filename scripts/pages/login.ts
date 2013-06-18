@@ -5,7 +5,12 @@ $("body") {
     move_here("/html/body/div[@id='_header']")
     insert("div", class:"_content", data-role:"content") {
       move_here("/html/body//div[@id='Container']") {
-        move_here("/html/body//a[contains(text(), 'Sign out')]")
+        move_here("/html/body//a[contains(text(), 'Sign out')]") {
+          # Notifications Page
+          insert_after("div", class:"_notifications") {
+            insert("a", "Notifications", href:"/notifications")
+          }
+        }
         $$("#LoginBreadcrumb") {
           remove()
         }

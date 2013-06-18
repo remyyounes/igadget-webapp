@@ -10,14 +10,9 @@ $("./body") {
         insert("a") {
           attributes(data-role:"button", href:"http://"+$host+"/")
           # Prefetching the home page
-          # attribute("data-prefetch", "data-prefetch")
-          # Testing AJAX on Access-Control-Allow-Origin: "*"
-          # attributes(data-role:"button", href:"http://www.html5rocks.com/en/")
+          attribute("data-prefetch", "data-prefetch")
           insert("div", class:"sprites-shopOff")
           insert("div", "Shop", class:"title")
-          # attribute("onclick", "$('div').on('pageshow',function(event, ui){
-          #                         $('body').Uranium('lateInit');
-          #                       });")
         }
       }
 
@@ -27,7 +22,7 @@ $("./body") {
             text("")
             attribute("data-role", "button")
             # Prefetching the cart page
-            # attribute("data-prefetch", "data-prefetch")
+            attribute("data-prefetch", "data-prefetch")
             insert("div", class:"sprites-cartOff")
             insert("div", "Cart", class:"title")
           }
@@ -41,6 +36,8 @@ $("./body") {
           insert("div", class:"sprites-scanOff")
           insert("div", "Scan", class:"title")
         }
+        # Removing from the web app
+        remove()
       }
 
       $$("._more") {
@@ -58,9 +55,6 @@ $("./body") {
           }
         }
       }
-
-      # If you are launching a production site for free, you must leave this information.
-      # placeholder(".//div[@class='_info']", "Mobile Site Powered By Moovweb")
     }
   }
 }

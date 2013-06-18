@@ -39,6 +39,8 @@ $("./body") {
             }
             $$(".ProductList") {
               attribute("data-ur-carousel-component", "scroll_container")
+              remove(".//@style")
+              remove(".//div[@class='TopSellerNumber']")
               $$("li") {
                 attribute("data-ur-carousel-component", "item")
                 attribute("alt", index())
@@ -46,10 +48,10 @@ $("./body") {
                   wrap("div", class:"_flex_box _image") {
                     move_here("../div[@class='ProductDetails']")
                   }
-                  add_class("_flex_box_item_1")
+                  add_class("_flex_box_item_2")
                 }
                 $$(".ProductDetails") {
-                  wrap("div", class:"_flex_box_item_1 _details") {
+                  wrap("div", class:"_flex_box_item_2 _details") {
                     move_here("../../div[@class='ProductPriceRating'] |
                               ../../div[@class='ProductActionAdd']")
                   }
