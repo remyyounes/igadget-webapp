@@ -23,6 +23,9 @@ $("html") {
             }
           }
         }
+        insert("script", "
+          $('#flip-1').change(function(){alert('hi')})
+          ", type:"text/javascript")
       }
       move_here("/html/body/div[@id='_footer']") {
         $$("._shop, ._scan, ._cart") {
