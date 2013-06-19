@@ -106,6 +106,7 @@ function UrbanAirship(){
   })
 
   $('#flip-1').change(function() {
+    alert("inside bingo")
     if ($('#flip-1').val() == "on") {
     // This means we want to turn it on
       alert("enable push")
