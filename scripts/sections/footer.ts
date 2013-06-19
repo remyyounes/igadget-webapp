@@ -37,7 +37,9 @@ $("./body") {
           insert("div", "Scan", class:"title")
         }
         # Removing from the web app
-        remove()
+        match($is_app, "false") {
+          remove()  
+        }
       }
 
       $$("._more") {
@@ -55,7 +57,9 @@ $("./body") {
           }
         }
         # Removing from the web app
-        remove()
+        match($is_app, "false") {
+          remove()  
+        }
       }
     }
   }
