@@ -10,9 +10,14 @@ $("./body") {
         insert("a") {
           attributes(data-role:"button", href:"http://"+$host+"/")
           # Prefetching the home page
-          attribute("data-prefetch", "data-prefetch")
+          # Can't prefetch the home page because then there is no event for
+          # reloading the carouse
+          # attribute("data-prefetch", "data-prefetch")
           insert("div", class:"sprites-shopOff")
           insert("div", "Shop", class:"title")
+          # attribute("onclick", "$('#home').on('pageinit',function(event, ui){
+          #                         $('body').Uranium('init');
+          #                       });")
         }
       }
 
@@ -49,11 +54,6 @@ $("./body") {
             attributes(data-role:"button", class:"_cross_domain", data-ajax:"true", data-transition:"fade")
             insert("div", class:"sprites-moreOff")
             insert("div", "More", class:"title")
-
-            #disabling more href TBD
-            # attribute("href"){
-            #   remove()
-            # }
           }
         }
         # Removing from the web app

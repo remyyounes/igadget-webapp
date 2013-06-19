@@ -12,10 +12,11 @@
         border-bottom: $border_gray2;
         box-shadow: $box_shadow_wide;
         .ProductImage {
-          max-width: 50%;
+          width: 100% !important;
           text-align: center;
         }
         .ProductDetails {
+          width: 100% !important;
           line-height: $line_height;
           padding: 10px;
           max-height: 200px;

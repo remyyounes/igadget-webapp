@@ -73,6 +73,15 @@ $("./body") {
           }
         }
       }
+      # Init jQuery Uranium widgets on homepage
+      insert_top("script", "$('[data-role=\"page\"]').on('pageshow',function(event, ui) {
+                     $('body').Uranium('lateInit');
+                    });")
+      # For when it's AJAXed in
+      insert_top("script", "$(document).ajaxComplete(function() { 
+                              $('body').Uranium('init');
+                            });")
+      insert_top("script", src: asset("javascript/jquery.uranium.js"))
     }
     move_here("/html/body/div[@id='_footer']") {
       $$("._shop") {

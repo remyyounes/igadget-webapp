@@ -3,14 +3,7 @@ $("body") {
   # Must be insert_top because JQM looks for first legitimate page to set as active...
   insert_top("div", data-role:"page", id:"cart") {
     move_here("/html/body/div[@id='_header']") {
-      $$("._logo") {
-        add_class("_back")
-        $$(".sprites-logo") {
-          name("a")
-          attributes(data-rel:"back", data-role:"button")
-          insert("span", "BACK", class:"_back_text")
-        }
-      }
+      addBackBtn()
       $$("> div > a, #_search, ._divider") {
         remove()
       }
@@ -48,7 +41,7 @@ $("body") {
                 add_class("_flex_box_item_1")
               }
               $$(".ProductName") {
-                wrap("div", class:"_flex_box_item_3") {
+                wrap("div", class:"_flex_box_item_1") {
                   move_here("../div[contains(@class, 'CartItemQuantity')]") {
                     $(".//*") {
                       attribute("data-role", "none")
@@ -66,11 +59,9 @@ $("body") {
             }
           }
           $$("input[type='image'][alt='Update']") {
-            # attribute("src", " ")
-            # attribute("data-role", "none")
-            # # $("..") {
-            # #   add_class("_btn_green1")
-            # # }
+            wrap("div", class:"updateQuantity _btn_green1")
+            attribute("type", "submit")
+            attribute("value", "Update Quantity")
           }
         }
 
@@ -78,6 +69,13 @@ $("body") {
           remove(".//p | .//hr")
           $(".//*") {
             attribute("data-role", "none")
+          }
+          $$("input[type='image'][alt='Go']") {
+            wrap("div", class:"applyBtn _btn_green1") {
+              text("Apply")
+            }
+            attribute("type", "submit")
+            # attribute("value", "Apply")
           }
         }
 

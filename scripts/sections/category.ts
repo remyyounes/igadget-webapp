@@ -6,17 +6,7 @@ $("/html/body") {
     move_here("/html/body//div[@id='Wrapper']/div[@id='LayoutColumn1']") {
       copy_here("/html/body/div[@id='_header']") {
         move_to("..", "top")
-        $$("._logo") {
-          add_class("_back")
-          $$(".sprites-logo") {
-            name("a")
-            attributes(data-rel:"back", data-role:"button")
-            insert("span", "BACK", class:"_back_text")
-            # attribute("onclick", "$('div').on('pageshow',function(event, ui){
-            #                         $('body').Uranium('lateInit');
-            #                       });")
-          }
-        }
+        addBackBtn()
       }
       insert("div", data-role:"content") {
         # adding iscroll

@@ -4,14 +4,7 @@ $("body") {
     # adding iscroll
     attribute("data-iscroll", "data-iscroll")
     move_here("/html/body/div[@id='_header']") {
-      $$("._logo") {
-        add_class("_back")
-        $$(".sprites-logo") {
-          name("a")
-          attributes(data-rel:"back", data-role:"button")
-          insert("span", "BACK", class:"_back_text")
-        }
-      }
+      addBackBtn()
     }
     insert("div", class:"_content", data-role:"content") {
       move_here("/html/body//div[@id='Container']") {
@@ -36,6 +29,8 @@ $("body") {
         remove("/html/body//div[@id='SideProductRelated']")
         remove("/html/body//div[@id='SideProductRecentlyViewed']")
         remove("/html/body//div[@id='ProductByCategory']")
+        remove("/html/body//div[@id='SimilarProductsByCustomerViews']")
+        remove("/html/body//div[contains(@class, 'AddThisButtonBox')]")
 
         #
         remove("/html/body//div[@class='DetailRow PriceRow']/div[@class='Label']")
@@ -143,9 +138,9 @@ $("body") {
           #remove()
           #}
           $$("input[type='image']") {
-            # name("div")
-            # text("Add to Cart")
-            # add_class("_btn_green1")
+            wrap("div", class:"addCart _btn_green1")
+            attribute("type", "submit")
+            attribute("value", "Add to Cart")
           }
         }
 
