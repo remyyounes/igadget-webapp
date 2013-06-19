@@ -11,7 +11,7 @@ match($is_app) {
 
         #urbanairship
         insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/ios/PushNotification.js"))
-        insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/ios/UA_PushInterface.js"))                 
+        insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/ios/UrbanAir_Interface.js"))                 
         insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/ios/index.js"))  
 
         #phonegap common js

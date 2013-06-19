@@ -103,6 +103,7 @@ PushNotification.prototype.registerForNotificationTypes = function (types, callb
 // Top level enabling/disabling
 
 PushNotification.prototype.enablePush = function (callback) {
+  alert("enablePUsh inside main js")
   this.call_native(callback, "enablePush");
 }
 
