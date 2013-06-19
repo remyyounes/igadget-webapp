@@ -43,7 +43,7 @@ $("./body") {
 
       # Menu Button
       insert("a", "Browse Categories", data-role:"button",
-              href:"http://"+$host+"/#categories", class:"ui-btn-right browse_btn") {
+              href:"/?page=categories", class:"ui-btn-right browse_btn") {
         # attribute("data-prefetch", " ")
       }
     }

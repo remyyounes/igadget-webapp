@@ -1,0 +1,14 @@
+#categories {
+  #Container {  
+    margin-top: 21px;
+    margin-bottom: 62px;
+    #SideCategoryList {
+        li:first-child {
+        border-top: 0;
+      }
+    }
+    #SideNewsletterBox {
+      margin-bottom: 62px;
+    }
+  }
+}

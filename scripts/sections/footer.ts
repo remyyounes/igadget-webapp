@@ -15,9 +15,6 @@ $("./body") {
           # attribute("data-prefetch", "data-prefetch")
           insert("div", class:"sprites-shopOff")
           insert("div", "Shop", class:"title")
-          # attribute("onclick", "$('#home').on('pageinit',function(event, ui){
-          #                         $('body').Uranium('init');
-          #                       });")
         }
       }
 
