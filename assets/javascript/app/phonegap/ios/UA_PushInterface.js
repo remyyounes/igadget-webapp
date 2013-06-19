@@ -1,6 +1,8 @@
+push = window.pushNotification
+
 function UrbanAirship(){
     
-    push = window.pushNotification
+    //push = window.pushNotification
     
     //alert("push done")
     
