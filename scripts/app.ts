@@ -33,12 +33,12 @@ match($is_app) {
     # Other assets
     @import "sections/header.ts"
     @import "sections/app/footer.ts"
-    @import "sections/category.ts"
+    # @import "sections/category.ts"
   }
   # Web-App
   else() {
     @import "sections/header.ts"
     @import "sections/footer.ts"
-    @import "sections/category.ts"
+    # @import "sections/category.ts"
   }
 }

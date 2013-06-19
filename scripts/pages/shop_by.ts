@@ -60,4 +60,5 @@ $("body") {
   remove("/html/body//div[@id='SideNewProducts']")
   remove("/html/body//div[@id='Header']")
   remove("/html/body//div[@id='Footer']")
+  remove("/html/body//div[@id='LayoutColumn1']")
 }
