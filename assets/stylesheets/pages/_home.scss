@@ -16,9 +16,11 @@
         box-shadow: 0 1px 0 $gray2;
       }
     }
-    #LayoutColumn2 {
-      .Block {
-        overflow: hidden;
+    .Block {
+      margin-top: 10px;
+      overflow: hidden;
+      &#SidePopularProducts {
+        margin-top: 40px;
       }
     }
     [data-ur-set="carousel"] {
@@ -64,9 +66,9 @@
       [data-ur-carousel-component="dots"] {
         clear: both;
         margin: 10px 0;
-        position: absolute;
-        left: 50%;
-        bottom: -20px;
+        // position: absolute;
+        // left: 50%;
+        // bottom: -20px;
         > div {
           margin: 0 3px;
           height: 7px;
