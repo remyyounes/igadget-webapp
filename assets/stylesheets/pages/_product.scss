@@ -38,9 +38,22 @@
 	}
 
   .ProductThumbImage {
+    margin: 20px 0;
   	display: block;
   	margin-left: auto;
   	margin-right: auto;
+  }
+  .DetailRow {
+    a {
+      color: $text_color;
+    }
+  }
+  .addCart {
+    margin: 0;
+    padding: 0;
+    .ui-submit {
+      margin: 0;
+    }
   }
  
 	// Product page styling goes here

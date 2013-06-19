@@ -66,11 +66,9 @@ $("body") {
             }
           }
           $$("input[type='image'][alt='Update']") {
-            # attribute("src", " ")
-            # attribute("data-role", "none")
-            # # $("..") {
-            # #   add_class("_btn_green1")
-            # # }
+            wrap("div", class:"updateQuantity _btn_green1")
+            attribute("type", "submit")
+            attribute("value", "Update Quantity")
           }
         }
 
@@ -78,6 +76,13 @@ $("body") {
           remove(".//p | .//hr")
           $(".//*") {
             attribute("data-role", "none")
+          }
+          $$("input[type='image'][alt='Go']") {
+            wrap("div", class:"applyBtn _btn_green1") {
+              text("Apply")
+            }
+            attribute("type", "submit")
+            # attribute("value", "Apply")
           }
         }
 

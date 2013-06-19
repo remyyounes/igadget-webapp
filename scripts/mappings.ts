@@ -64,6 +64,7 @@ match($status) {
 
       else() {
         log("--> No page match in mappings.ts")
+        @import pages/catchall.ts
       }
     }
   }
