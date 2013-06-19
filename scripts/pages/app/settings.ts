@@ -41,6 +41,7 @@ $("html") {
     attribute("style", "padding: 0px")
   }
 
+  /*
   # Remove header content we don't want duplicated
   remove("/html/body//div[@id='AjaxLoading']")
   remove("/html/body//div[@id='TopMenu']")
@@ -48,4 +49,5 @@ $("html") {
   remove("/html/body//div[@id='SideNewProducts']")
   remove("/html/body//div[@id='Header']")
   remove("/html/body//div[@id='Footer']")
+  */
 }

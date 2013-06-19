@@ -35,9 +35,9 @@ function UrbanAirship(){
     push.enablePush()
     push.enableLocation()
     
-    alert("on_push done")
+    //alert("on_push done")
     
-    alert("before registeredfornotTypes")
+    //alert("before registeredfornotTypes")
     push.registerForNotificationTypes(push.notificationType.badge | push.notificationType.sound | push.notificationType.alert)
     alert("registeredfornotTypes")
     
@@ -213,5 +213,11 @@ function UrbanAirship(){
     $("#endHour").val(obj.endHour)
     $("#endMinute").val(obj.endMinute)
   })
+
+  if (device.platform != "Android") {
+        $("#soundEnabledSection").hide();
+        $("#vibrateEnabledSection").hide();
+    }
+
 
 }
