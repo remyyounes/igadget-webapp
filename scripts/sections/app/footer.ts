@@ -10,13 +10,13 @@ $("./body") {
         insert("a") {
           attributes(data-role:"button", href:"http://"+$host+"/")
           # Prefetching the home page
+          # Can't prefetch the home page because then there is no event for
+          # reloading the carouse
           # attribute("data-prefetch", "data-prefetch")
-          # Testing AJAX on Access-Control-Allow-Origin: "*"
-          # attributes(data-role:"button", href:"http://www.html5rocks.com/en/")
           insert("div", class:"sprites-shopOff")
           insert("div", "Shop", class:"title")
-          # attribute("onclick", "$('div').on('pageshow',function(event, ui){
-          #                         $('body').Uranium('lateInit');
+          # attribute("onclick", "$('#home').on('pageinit',function(event, ui){
+          #                         $('body').Uranium('init');
           #                       });")
         }
       }
@@ -27,7 +27,7 @@ $("./body") {
             text("")
             attribute("data-role", "button")
             # Prefetching the cart page
-            # attribute("data-prefetch", "data-prefetch")
+            attribute("data-prefetch", "data-prefetch")
             insert("div", class:"sprites-cartOff")
             insert("div", "Cart", class:"title")
           }
@@ -50,17 +50,9 @@ $("./body") {
             attributes(data-role:"button", class:"_cross_domain", data-ajax:"true", data-transition:"fade")
             insert("div", class:"sprites-moreOff")
             insert("div", "More", class:"title")
-
-            #disabling more href TBD
-            # attribute("href"){
-            #   remove()
-            # }
           }
         }
       }
-
-      # If you are launching a production site for free, you must leave this information.
-      # placeholder(".//div[@class='_info']", "Mobile Site Powered By Moovweb")
     }
   }
 }

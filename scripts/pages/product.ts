@@ -4,14 +4,7 @@ $("body") {
     # adding iscroll
     attribute("data-iscroll", "data-iscroll")
     move_here("/html/body/div[@id='_header']") {
-      $$("._logo") {
-        add_class("_back")
-        $$(".sprites-logo") {
-          name("a")
-          attributes(data-rel:"back", data-role:"button")
-          insert("span", "BACK", class:"_back_text")
-        }
-      }
+      addBackBtn()
     }
     insert("div", class:"_content", data-role:"content") {
       move_here("/html/body//div[@id='Container']") {
