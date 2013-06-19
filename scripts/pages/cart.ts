@@ -48,7 +48,7 @@ $("body") {
                 add_class("_flex_box_item_1")
               }
               $$(".ProductName") {
-                wrap("div", class:"_flex_box_item_3") {
+                wrap("div", class:"_flex_box_item_1") {
                   move_here("../div[contains(@class, 'CartItemQuantity')]") {
                     $(".//*") {
                       attribute("data-role", "none")

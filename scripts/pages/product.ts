@@ -36,6 +36,8 @@ $("body") {
         remove("/html/body//div[@id='SideProductRelated']")
         remove("/html/body//div[@id='SideProductRecentlyViewed']")
         remove("/html/body//div[@id='ProductByCategory']")
+        remove("/html/body//div[@id='SimilarProductsByCustomerViews']")
+        remove("/html/body//div[contains(@class, 'AddThisButtonBox')]")
 
         #
         remove("/html/body//div[@class='DetailRow PriceRow']/div[@class='Label']")

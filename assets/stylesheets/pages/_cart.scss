@@ -26,10 +26,11 @@
           position: relative;
           border-bottom: $border_gray2;
           padding: 10px;
-          ._flex_box_item_3 {
-            // max-width: 75%;
+          ._flex_box_item_1 {
+            width: 100% !important;
           }
           .CartThumb {
+            width: 100% !important;
             padding: 0 10px;
           }
           .ProductName {
