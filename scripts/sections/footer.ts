@@ -54,6 +54,8 @@ $("./body") {
             # }
           }
         }
+        # Removing from the web app
+        remove()
       }
     }
   }
