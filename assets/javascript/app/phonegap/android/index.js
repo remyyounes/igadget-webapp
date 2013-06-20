@@ -7,7 +7,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
     //navigator.notification.alert("bingo");
 
-    //alert("pg android is listening")
+    alert("pg android is listening");
 
     UrbanAirship();
 
