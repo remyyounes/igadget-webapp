@@ -48,7 +48,7 @@ $("./body") {
         move_here("/html/body//div[@id='TopMenu']//li[@class='First']") {
           $$("a") {
             text("")
-            attributes(data-role:"button", class:"_cross_domain", data-ajax:"true", data-transition:"fade")
+            attributes(data-role:"button", class:"_cross_domain", data-ajax:"true", data-transition:"fade", href:"/?page=settings")
             insert("div", class:"sprites-moreOff")
             insert("div", "More", class:"title")
           }

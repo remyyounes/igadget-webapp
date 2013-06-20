@@ -24,6 +24,12 @@ match($status) {
         @import "sections/category.ts"
       }
 
+      # Settings page
+      with(/settings/) {
+        log("--> Importing pages/app/settings.ts in mappings.ts")
+        @import pages/app/settings.ts
+      }
+
       # Home page
       with(/^\/$|^\/\?/) {
         log("--> Importing pages/home.ts in mappings.ts")

@@ -34,14 +34,3 @@ $("/html") {
 match($status, "302") {
   @import "redirect.ts"
 }
-match($status, "404") {
-  match($path) {  
-    with(/settings/) {
-      log("--> Importing pages/app/settings.ts in mappings.ts")
-      @import pages/app/settings.ts
-    }
-    else() {
-      # Do nothing
-    }
-  }
-}
