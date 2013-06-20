@@ -32,8 +32,8 @@ function UrbanAirship(){
     
     push.registerEvent('push', on_push)
     
-    push.enablePush()
-    push.enableLocation()
+    //push.enablePush()
+    //push.enableLocation()
     
     //alert("on_push done")
     
