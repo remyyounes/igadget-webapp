@@ -62,6 +62,7 @@ function UrbanAirship(){
     $("#setAliasField").val("")
   }
 
+  /*
   push.isPushEnabled(function(has_push) {
     if (has_push) {
       $('#flip-1').val('on').change();
@@ -72,6 +73,7 @@ function UrbanAirship(){
       //alert("push is diabled")
     }
    })
+*/
 
   push.isSoundEnabled(function(has_sound) {
     if (has_sound) {

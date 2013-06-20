@@ -1,33 +1,53 @@
 function controlNotifications() {
-  $('#flip-1').change(function() {
-    //alert("inside bingo")
+  $('#notifications').change(function() {
+    //alert("inside bingo");
 
-    push = window.pushNotification
+    push = window.pushNotification;
 
 
-    if ($('#flip-1').val() == "On") {
+    if ($('#notifications').val() == "On") {
     // This means we want to turn it on
-      push.enablePush()
-      //alert("enable push")
+      push.enablePush();
+      //alert("enable push");
     } else {
-      push.disablePush()
-      //alert("disable push")
+      push.disablePush();
+      //alert("disable push");
     }
   })
 }
 
 function controlLocation() {
-  $('#flip-2').change(function() {
+  $('#location').change(function() {
 
-    push = window.pushNotification
+    push = window.pushNotification;
 
-    if ($('#flip-2').val() == "On") {
+    if ($('#location').val() == "On") {
       //This means we want to turn it on
-      push.enableLocation()
+      push.enableLocation();
       //alert("enable Location")
     } else {
-      push.disableLocation()
+      push.disableLocation();
       //alert("disable Location")
     }
   })
+}
+
+function setSliderState(){
+
+  alert("setting slider state");
+
+  push = window.pushNotification;
+  
+  push.isPushEnabled(function(has_push) {
+    if (has_push) {
+      alert("has push");
+      $('#notifications').val('on').change();
+      //alert("push is enabled")
+    }
+    else {
+      alert("no push");
+      $('#notifications').val('off').change();
+      //alert("push is diabled")
+    }
+   })
 }
