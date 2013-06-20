@@ -24,10 +24,6 @@ match($cookie) {
 log("APPPP: is_app: ", $is_app)
 ######################
 
-# Temp
-# $is_app = "true"
-
-
 log("Detected Content Type: " + $detected_content_type)
 match($detected_content_type) {
   with(/html/) {
