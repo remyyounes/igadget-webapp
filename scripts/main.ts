@@ -19,7 +19,7 @@ match($cookie) {
 }
 
 //TEMP
-$is_app = "mw-phonegap-ios"
+# $is_app = "mw-phonegap-ios"
 
 log("APPPP: is_app: ", $is_app)
 ######################
