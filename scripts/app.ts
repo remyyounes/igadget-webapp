@@ -13,6 +13,7 @@ match($is_app) {
         insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/ios/PushNotification.js"))
         insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/ios/UrbanAir_Interface.js"))                 
         insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/ios/index.js"))  
+        insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/ios/Notification_Controls.js"))  
 
         #phonegap common js
         insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/barcodescan.js"))

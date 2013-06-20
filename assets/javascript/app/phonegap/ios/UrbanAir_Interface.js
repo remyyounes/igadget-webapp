@@ -2,7 +2,7 @@ function UrbanAirship(){
     
     push = window.pushNotification
     
-    alert("push done")
+    //alert("push done")
     
     // Reset Badge on resume
     document.addEventListener("resume", function() {
@@ -39,7 +39,7 @@ function UrbanAirship(){
     
     //alert("before registeredfornotTypes")
     push.registerForNotificationTypes(push.notificationType.badge | push.notificationType.sound | push.notificationType.alert)
-    alert("registeredfornotTypes")
+    //alert("registeredfornotTypes")
     
     
   function add_tag(tag) {
@@ -65,11 +65,11 @@ function UrbanAirship(){
   push.isPushEnabled(function(has_push) {
     if (has_push) {
       $('#flip-1').val('on').change();
-      alert("push is enabled")
+      //alert("push is enabled")
     }
     else {
       $('#flip-1').val('off').change();
-      alert("push is diabled")
+      //alert("push is diabled")
     }
    })
 
@@ -105,18 +105,6 @@ function UrbanAirship(){
     }
   })
 
-  $('#flip-1').change(function() {
-    alert("inside bingo")
-    if ($('#flip-1').val() == "on") {
-    // This means we want to turn it on
-      alert("enable push")
-      push.enablePush()
-    } else {
-      alert("disable push")
-      push.disablePush()
-    }
-  })
-
   $('#soundEnabled').change(function() {
     if ($('#soundEnabled').val() == "on") {
       //This means we want to turn it on
@@ -144,6 +132,7 @@ function UrbanAirship(){
     }
   })
 
+  /*
   $('#locationEnabled').change(function() {
     if ($('#locationEnabled').val() == "on") {
       //This means we want to turn it on
@@ -152,6 +141,7 @@ function UrbanAirship(){
       push.disableLocation()
     }
   })
+*/
 
   $("#addTagButton").click(function(ev) {
     var new_tag = $("#addTagField").val()
@@ -219,6 +209,4 @@ function UrbanAirship(){
         $("#soundEnabledSection").hide();
         $("#vibrateEnabledSection").hide();
     }
-
-
 }

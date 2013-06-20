@@ -25,9 +25,8 @@ $("html") {
             }
           }
         }
-        insert("script", "
-          $('#flip-1').change(function(){alert('hi')})
-          ", type:"text/javascript")
+        insert("script", "controlNotifications();", type:"text/javascript")
+        insert("script", "controlLocation();", type:"text/javascript")
       }
       
       move_here("/html/body/div[@id='_footer']") {

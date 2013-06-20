@@ -103,20 +103,23 @@ PushNotification.prototype.registerForNotificationTypes = function (types, callb
 // Top level enabling/disabling
 
 PushNotification.prototype.enablePush = function (callback) {
-  alert("enablePUsh inside main js")
   this.call_native(callback, "enablePush");
+  //alert("enabledPUsh inside main js")
 }
 
 PushNotification.prototype.disablePush = function (callback) {
   this.call_native(callback, "disablePush");
+  //alert("disabledPUsh inside main js")
 }
 
 PushNotification.prototype.enableLocation = function (callback) {
   this.call_native(callback, "enableLocation")
+  //alert("enabledLocation inside main js")
 }
 
 PushNotification.prototype.disableLocation = function (callback) {
   this.call_native(callback, "disableLocation")
+  //alert("disabledLocation inside main js")
 }
 
 PushNotification.prototype.enableBackgroundLocation = function (callback) {
