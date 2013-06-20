@@ -24,6 +24,8 @@ $("body") {
             insert("option", "On", value:"On")
           }
         }
+        insert("script", "controlNotifications();", type:"text/javascript")
+        insert("script", "controlLocation();", type:"text/javascript")
       }
       insert("script", "
         $('#flip-1').change(function(){alert('hi')})

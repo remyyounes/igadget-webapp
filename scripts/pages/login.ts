@@ -73,4 +73,3 @@ $("body") {
   remove("/html/body//div[@id='Footer']")
   remove("/html/body//div[@id='LayoutColumn1']")
 }
-
