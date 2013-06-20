@@ -5,15 +5,20 @@ $("body") {
       move_here("/html/body//div[@id='Container']") {
         # Remove page not found content
         inner("")
+        insert("h1", "Settings", class:"_h1")
+        insert("hr")
         insert("div", class:"_notifications") {
-          insert("label", "Notifications", for:"flip-1")
+          insert("label", "Push Notifications", for:"flip-1")
+          insert("p", "Receive push notifications on your device about packages and online deals.")
           insert("select", name:"flip-1", id:"flip-1", data-role:"slider") {
             insert("option", "Off", value:"Off")
             insert("option", "On", value:"On")
           }
         }
+        insert("hr")
         insert("div", class:"_locations") {
-          insert("label", "Locations", for:"flip-2")
+          insert("label", "Share Location", for:"flip-2")
+          insert("p", "Enable geolocation to locate the nearest stores in your area.")
           insert("select", name:"flip-2", id:"flip-2", data-role:"slider") {
             insert("option", "Off", value:"Off")
             insert("option", "On", value:"On")
