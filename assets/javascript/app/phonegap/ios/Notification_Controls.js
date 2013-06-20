@@ -1,6 +1,6 @@
 function controlNotifications() {
   $('#notifications').change(function() {
-    //alert("inside bingo");
+    alert("inside bingo");
 
     push = window.pushNotification;
 
@@ -8,10 +8,10 @@ function controlNotifications() {
     if ($('#notifications').val() == "On") {
     // This means we want to turn it on
       push.enablePush();
-      //alert("enable push");
+      alert("enable push");
     } else {
       push.disablePush();
-      //alert("disable push");
+      alert("disable push");
     }
   })
 }
@@ -24,10 +24,10 @@ function controlLocation() {
     if ($('#location').val() == "On") {
       //This means we want to turn it on
       push.enableLocation();
-      //alert("enable Location")
+      alert("enable Location")
     } else {
       push.disableLocation();
-      //alert("disable Location")
+      alert("disable Location")
     }
   })
 }
