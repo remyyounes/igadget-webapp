@@ -12,6 +12,7 @@ match($status) {
 
   with(/302/) {
     log("--> STATUS: 302, redirect.ts has been used to redirect.")
+    @import "redirect.ts"
   }
 
   with(/200/) {

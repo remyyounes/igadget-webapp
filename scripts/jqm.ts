@@ -2,7 +2,7 @@
 $("/html") {
   # Important: scripts are backwards so they are in the proper order
   # but also at the top above previously existing scripts.
-  $("./head") {
+  $("head") {
     remove("//script[contains(@src, 'jquery')]")
     insert_top("script", src: asset("javascript/jquery.mobile.subpage.js"))
     insert_top("link", rel: "stylesheet", href: asset("stylesheets/jquery.mobile.structure-1.3.1.css"))

@@ -6,14 +6,9 @@ insert("html") {
   insert("head")
   insert("body") {
     insert("div", data-role:"page", id:"redirect") {
-      # insert("div", data-role:"header")
       insert("div", data-role:"content") {
         # Rewriting location logic
-        # Don't forget to override the $status code in response_main.ts      
-
-        # problem: we need to check if it's cors or not, if it is we can't ajax we have to do a full page reload, if it's not we can ajax...
-        # solution: rewrite $location and compare it to $host, use $secure to see if it's true or false and compare to $location scheme().
-        # alternative: could also use $location before rewritten and compare to $source_host depending on when you want to do the comparison.
+        # Don't forget to override the $status code in response_main.ts
 
         # Check Scheme
         $cors = "true"
@@ -104,7 +99,6 @@ insert("html") {
           insert("script", "$(document).ready(function(){$.mobile.changePage('"+$new_location+"', {reverse: false, changeHash: false})});", type:"text/javascript")
         }
       }
-      # insert("div", data-role:"footer")
     }
   }
 

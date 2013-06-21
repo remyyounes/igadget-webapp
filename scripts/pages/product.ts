@@ -1,4 +1,4 @@
-$("body") {
+$("/html/body") {
   # Must be insert_top because JQM looks for first legitimate page to set as active...
   insert_top("div", data-role:"page", id:"product") {
     # adding iscroll

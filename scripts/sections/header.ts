@@ -1,5 +1,5 @@
 # Header
-$("./body") {
+$("/html/body") {
   # JQM Header
   template("_jqm_header", "_header", "top") {
     $$("div[data-role='header']") {

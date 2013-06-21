@@ -1,4 +1,4 @@
-$("body") {
+$("/html/body") {
   insert_top("div", data-role:"page", id:"settings") {
     move_here("/html/body/div[@id='_header']")
     insert("div", class:"_content", data-role:"content") {

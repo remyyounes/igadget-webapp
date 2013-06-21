@@ -1,5 +1,5 @@
 # Homepage Transformation
-$("./body") {
+$("/html/body") {
   # Homepage
   # Must be insert_top because JQM looks for first legitimate page to set as active...
   insert_top("div", id:"home", class:"_home", data-role:"page") {
