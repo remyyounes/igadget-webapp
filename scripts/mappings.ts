@@ -37,30 +37,31 @@ match($status) {
         @import "pages/home.ts"
       }
 
+      # Search page
       with(/search\.php/) {
         log("--> Importing pages/login.ts in mappings.ts")
         @import pages/search.ts
       }
 
+      # Cart page
       with(/cart\.php/) {
         log("--> Importing pages/cart.ts in mappings.ts")
         @import pages/cart.ts
       }      
 
-      # Login page has HTTPS access control issue
-      # Access-Control-Allow-Origin: https://www.mysite.com
+      # Login page
       with(/login\.php|account\.php/) {
         log("--> Importing pages/login.ts in mappings.ts")
         @import pages/login.ts
       }
 
-      # Example:
+      # Product page
       with(/(sample\-product|apple\-ipod\-socks|mac\-pro|logitech|higher\-ground\-shuttle)/) {
         log("--> Importing pages/product.ts in mappings.ts")
         @import pages/product.ts
       }
 
-      # Example:
+      # Shop by page
       with(/(shop-|brands|mobile-only|new-product-category)/) {
         log("--> Importing pages/shop_by.ts in mappings.ts")
         @import pages/shop_by.ts
