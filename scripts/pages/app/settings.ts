@@ -8,18 +8,18 @@ $("/html/body") {
         insert("h1", "Settings", class:"_h1")
         insert("hr")
         insert("div", class:"_notifications") {
-          insert("label", "Push Notifications", for:"flip-1")
+          insert("label", "Push Notifications", for:"notifications")
           insert("p", "Receive push notifications on your device about packages and online deals.")
-          insert("select", name:"flip-1", id:"flip-1", data-role:"slider") {
+          insert("select", name:"notifications", id:"notifications", data-role:"slider") {
             insert("option", "Off", value:"Off")
             insert("option", "On", value:"On")
           }
         }
         insert("hr")
         insert("div", class:"_locations") {
-          insert("label", "Share Location", for:"flip-2")
+          insert("label", "Share Location", for:"location")
           insert("p", "Enable geolocation to locate the nearest stores in your area.")
-          insert("select", name:"flip-2", id:"flip-2", data-role:"slider") {
+          insert("select", name:"location", id:"location", data-role:"slider") {
             insert("option", "Off", value:"Off")
             insert("option", "On", value:"On")
           }
@@ -27,9 +27,9 @@ $("/html/body") {
         insert("script", "controlNotifications();", type:"text/javascript")
         insert("script", "controlLocation();", type:"text/javascript")
       }
-      insert("script", "
-        $('#flip-1').change(function(){alert('hi')})
-        ", type:"text/javascript")
+      #insert("script", "
+      #  $('#notifications').change(function(){alert('hi')})
+      #  ", type:"text/javascript")
     }
     move_here("/html/body/div[@id='_footer']") {
       $$("._shop, ._scan, ._cart") {

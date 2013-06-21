@@ -1,6 +1,5 @@
 function controlNotifications() {
   $('#notifications').change(function() {
-    alert("inside bingo");
 
     push = window.pushNotification;
 

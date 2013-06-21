@@ -2,7 +2,7 @@ function UrbanAirship(){
     
     push = window.pushNotification
     
-    alert("UrbanAirship()")
+    //alert("UrbanAirship()")
     
     // Reset Badge on resume
     document.addEventListener("resume", function() {
