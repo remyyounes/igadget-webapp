@@ -42,14 +42,15 @@ match($content_type) {
   with(/javascript/) {
     # JavaScript transformations go here
   }
+  with(/json/) {    
+    #mw-app: hack to send empty response when phonegap requests for cordova_plugins.json
+    match($is_app, /phonegap/) {
+      match($path, /\A\/cordova\_plugins\.json\z/) {
+        set("")
+      }
+    }
+  }
   else() {
     log(concat("Passing through ", $content_type, " unmodified"))
-  }
-}
-
-#mw-app: hack to send empty response when phonegap requests for cordova_plugins.json
-match($is_app, /phonegap/) {
-  match($path, /\A\/cordova\_plugins\.json\z/) {
-    set("")
   }
 }
