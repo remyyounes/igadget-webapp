@@ -19,7 +19,7 @@ match($cookie) {
 }
 
 # temp for testing
-# $is_app = "mw-phonegap-ios"
+$is_app = "mw-phonegap-ios"
 
 match($content_type) {
   with(/html/) {
@@ -43,14 +43,16 @@ match($content_type) {
     # JavaScript transformations go here
   }
   with(/json/) {    
-    #mw-app: hack to send empty response when phonegap requests for cordova_plugins.json
-    match($is_app, /phonegap/) {
-      match($path, /\A\/cordova\_plugins\.json\z/) {
-        set("")
-      }
-    }
+    # JSON transformations go here
   }
   else() {
     log(concat("Passing through ", $content_type, " unmodified"))
+  }
+}
+
+#mw-app: hack to send empty response when phonegap requests for cordova_plugins.json
+match($path, /\A\/cordova\_plugins\.json\z/) {
+  match($is_app, /phonegap/) {
+    set("")
   }
 }

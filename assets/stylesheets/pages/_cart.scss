@@ -61,6 +61,7 @@
         margin: 0;
         padding: 0;
         font-size: $h3_size;
+        width: 80px;
         .ui-submit {
           margin: 0;
         }
@@ -107,17 +108,14 @@
         .BlockContent {
           margin: 0 10px;
         }
-        #couponcode {
-          max-width: 80%;
+        #couponcode, #giftcertificatecode {
+          width: 120px;
         }
         h2 {
           padding: 0 14px;
         }
         input {
           float: left;
-        }
-        input[type="image"] {
-          margin: 6px 10px;
         }
       }
     }

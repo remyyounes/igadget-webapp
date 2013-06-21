@@ -327,13 +327,6 @@
       name("a")
       attributes(data-rel:"back", data-role:"button")
       insert("span", "BACK", class:"_back_text")
-      # Using JQM events to lateInit Uranium
-      # match_not($detected_content_type, /ajax/) {      
-      #   attribute("onclick", "$('[data-role=\"page\"]').on('animationComplete',function(event, ui){
-      #                 $('body').Uranium('lateInit');
-      #                 console.log('running!');
-      #               });")
-      # }
     }
   }
 }
