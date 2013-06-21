@@ -19,7 +19,7 @@ match($cookie) {
 }
 
 # temp for testing
-$is_app = "mw-phonegap-ios"
+#$is_app = "mw-phonegap-ios"
 
 match($content_type) {
   with(/html/) {
