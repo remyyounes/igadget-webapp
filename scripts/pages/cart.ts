@@ -43,9 +43,6 @@ $("/html/body") {
               $$(".ProductName") {
                 wrap("div", class:"_flex_box_item_1") {
                   move_here("../div[contains(@class, 'CartItemQuantity')]") {
-                    $(".//*") {
-                      attribute("data-role", "none")
-                    }
                     $$("a") {
                       remove()
                     }
