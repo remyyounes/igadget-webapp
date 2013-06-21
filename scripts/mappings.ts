@@ -19,16 +19,18 @@ match($status) {
     log("--> STATUS: 200")
 
     match($path) {
-      # Category page
-      with(/categories/) {
-        log("--> Importing sections/category.ts in mappings.ts")
-        @import "sections/category.ts"
-      }
-
-      # Settings page
+      # App-specific settings page (new mobile content)
+      # Example: www.igadgetcommerce.com/?page=settings
       with(/settings/) {
         log("--> Importing pages/app/settings.ts in mappings.ts")
         @import pages/app/settings.ts
+      }
+
+      # Category page (using home page content)
+      # Example: www.igadgetcommerce.com/?page=categories
+      with(/categories/) {
+        log("--> Importing sections/category.ts in mappings.ts")
+        @import "sections/category.ts"
       }
 
       # Home page

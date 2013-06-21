@@ -1,14 +1,13 @@
 # The main file executed by Tritium. The start of all other files.
 
+# set ajax variable
 $is_ajax = "false"
 match($x_requested_with, /XMLHttpRequest/) {
   $is_ajax = "true"
 }
 
-######################
-#check for app cookie
+# set app variable
 $is_app = "false"
-
 match($cookie) {
   with(/mw-phonegap-ios\=true/){
     $is_app = "mw-phonegap-ios"
@@ -19,7 +18,7 @@ match($cookie) {
   log("$is_app = ", $is_app)
 }
 
-//TEMP
+# temp for testing
 # $is_app = "mw-phonegap-ios"
 
 match($content_type) {
