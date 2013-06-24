@@ -3,11 +3,13 @@
 #insert all plugin, other JS common to iOS, Android
 match_not($is_app, "false")
 {
+  $("/html/head") {
     insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/common/PushNotification.js"))
     insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/common/UrbanAir_Interface.js"))                 
     insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/common/Notification_Controls.js"))
     insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/common/barcodescan.js"))
     insert_bottom("script", type: "text/javascript", src: asset("javascript/app/phonegap/common/index.js"))  
+  }
 }
 
 #insert platform specific JS

@@ -30,27 +30,19 @@ insert("html") {
         }
 
         # Check Domain
+        match($new_host, $host) {
+          $cors = "false"
+        }
+        log("302 Location: " + $new_location)
+        # Rewrite new location
         $new_location {
           rewrite_link()
         }
-        match($new_host) {
-          with($host) {
-            $cors = "false"
-          }
-          else() {
-
-          }
-        }
-
         log("302 Location: " + $new_location)
       
         # Some mobile optimize transformations similar to html.ts that need to be rerun due to no HTML tag in 302s.
         $("/html") {        
-          rewrite_links()
-          absolutize_srcs()
           clean_mobile_meta_tags()
-          remove_all_styles()
-          remove_html_comments()
           add_assets()
           @import "app.ts"
         }

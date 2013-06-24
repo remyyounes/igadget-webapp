@@ -20,6 +20,7 @@ $("/html/body") {
             remove("@href")
             remove("@onclick")
           }
+          remove("@style")
         }
 
         # Remove unnecessary page elements
