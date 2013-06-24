@@ -16,6 +16,10 @@ $("/html/body") {
           insert("div", class:"sprites-shopOff")
           insert("div", "Shop", class:"title")
         }
+        # Removing from the web app
+        match($is_app, "false") {
+          remove()  
+        }
       }
 
       $$("._cart") {
@@ -28,6 +32,10 @@ $("/html/body") {
             insert("div", class:"sprites-cartOff")
             insert("div", "Cart", class:"title")
           }
+        }
+        # Removing from the web app
+        match($is_app, "false") {
+          remove()  
         }
       }
 

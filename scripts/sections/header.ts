@@ -15,7 +15,9 @@ $("/html/body") {
       }
 
       # Divider
-      insert("span", class:"_divider")
+      insert("span", class:"_divider") {
+        remove()
+      }
 
       # Search
       insert("div", id:"_search", data-role:"collapsible", href:"#search", data-inset:"false") {
@@ -45,6 +47,7 @@ $("/html/body") {
       insert("a", "Browse Categories", data-role:"button",
               href:"/?page=categories", class:"ui-btn-right browse_btn") {
         # attribute("data-prefetch", " ")
+        remove()
       }
     }
   }

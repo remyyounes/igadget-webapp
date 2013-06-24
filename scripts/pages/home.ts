@@ -19,6 +19,7 @@ $("/html/body") {
         $$("h2") {
           wrap_text_children("span", class:"_h2")
         }
+        
         insert_top("a", "Browse Categories", data-role:"button",
                 href:"/?page=categories", class:"browse_btn _bar_white1 orange")
 
