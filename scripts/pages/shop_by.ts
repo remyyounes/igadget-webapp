@@ -41,6 +41,7 @@ $("/html/body") {
             }
             $$(".ProductActionAdd") {
               add_class("_btn_green1")
+              remove()
             }
           }
         }

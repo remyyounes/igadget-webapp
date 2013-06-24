@@ -4,11 +4,15 @@
     margin-top: 50px;
     margin-bottom: 62px;
     background: $gray2;
+    ._h2 {
+      text-align: center;
+    }
     .ProductList {
-      background: $white;
       margin: 20px;
       ._flex_box {
+        background: $white;
         padding: 10px 0;
+        margin: 10px 0;
         border-bottom: $border_gray2;
         box-shadow: $box_shadow_wide;
         .ProductImage {

@@ -4,15 +4,19 @@
     margin-top: 50px;
     margin-bottom: 62px;
     background: $gray2;
+    ._bar_header {
+      text-align: center;
+    }
     #SearchResultsProduct {
       padding: 20px;
       .ProductRightCol {
         clear: both;
       }
       .ProductList {
-        background: $white;
         .ListView {
+          background: $white;
           padding: 10px 0;
+          margin: 10px 0;
           border-bottom: $border_gray2;
           box-shadow: $box_shadow_wide;
           .ProductImage {
@@ -31,6 +35,11 @@
             }
             a {
               color: $text_color;
+            }
+            .ProductDescription {
+              margin-top: 10px;
+              font-size: 11px;
+              line-height: $line_height;
             }
           }
         }
