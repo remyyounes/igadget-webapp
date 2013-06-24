@@ -14,4 +14,6 @@ window.addEventListener("load",function() {
   }, 0);
 });
 
-console.log("Running app.js...")
+// console.log("Running app.js...")
+
+window.alert = function() {}

@@ -54,7 +54,11 @@ $("/html/body") {
         remove(".//br")
       }
     }
-    move_here("/html/body/div[@id='_footer']")
+    move_here("/html/body/div[@id='_footer']") {
+      $$("._shop") {
+        add_class("active")
+      }
+    }
   }
 
   # Remove header content we don't want duplicated
