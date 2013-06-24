@@ -53,6 +53,10 @@
           @include sprites-moreOn;
         }
       }
+      .ui-btn-inner {
+        padding: 0;
+        padding-top: 5px;
+      }
     }
   }
 }

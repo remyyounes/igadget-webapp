@@ -101,14 +101,14 @@
       }
       .totals {
         float: right;
-        padding: 10px;
+        padding: 10px 0 10px 10px;
         .EstimateShippingLink {
           margin: 0;
           font-size: $h3_size;
         }
         div {
           float: left;
-          margin: 5px;
+          margin: 5px 0;
         }
         > div {
           float: right;
