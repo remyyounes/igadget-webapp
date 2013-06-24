@@ -7,6 +7,16 @@
     margin-bottom: 62px;
   }
 
+  ._bar_header {
+    text-align: center;
+    margin: 0 20px;
+    border-bottom: $border_gray2_thick;
+    font-family: GrotesqueMT Condensed;
+    text-transform: uppercase;
+    font-size: 22px;
+    padding-top: 15px;
+  }
+
   .ErrorMessage {
     @include bar_header;
     padding: 0;
@@ -65,13 +75,22 @@
 	.ProductMain {    
 		margin: 10px;
 		padding: 10px;
-		border: 1px solid;
+		border: $border_gray2_thick;
 		background-color: $gray4;
+    > div {
+      padding: 15px 0;
+      border-bottom: $border_gray2_thick;
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
   	.price {
   		text-align: center;
-      font-weight: bold;
+      padding-top: 5px;
+      padding-bottom: 10px;
       em {
-  		  font-size: $h1_size + 3;
+  		  font-size: $h1_size + 6;
+        font-family: GrotesqueMT Condensed;
   		  color: $green1;
       }
   	}
@@ -107,7 +126,7 @@
   			margin: 0;
   		}
       .ui-btn-inner {
-        padding: 10px 20px 10px 10px;
+        padding: 2px 25px 0 15px;
       }
   	}
   	.BulkDiscount {

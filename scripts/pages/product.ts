@@ -74,15 +74,15 @@ $("/html/body") {
           move_here("/html/body//div[@class='DetailRow Rating']", "after")    
         }
         #insert lines between
-        $(".//div[@class='ProductDetailsGrid']"){
-          insert_after("hr")
-        }
-        $(".//div[@class='productAddToCartRight']"){
-          insert_after("hr")
-        }
-        $(".//div[@class='DetailRow Rating']"){
-          insert_after("hr")
-        }
+        # $(".//div[@class='ProductDetailsGrid']"){
+        #   insert_after("hr")
+        # }
+        # $(".//div[@class='productAddToCartRight']"){
+        #   insert_after("hr")
+        # }
+        # $(".//div[@class='DetailRow Rating']"){
+        #   insert_after("hr")
+        # }
 
         #move product description in productmain
         $(".//div[@id='ProductDetails']/div[@class='BlockContent']"){
@@ -116,6 +116,9 @@ $("/html/body") {
         #title
         $(".//div[@class='DetailRow Title']"){
           attribute("class","title")
+          copy_to("./ancestor::div[@id='ProductDetails']", "top") {
+            add_class("_h2 _bar_header")
+          }
         }
 
         #sku
