@@ -59,15 +59,19 @@
   	margin-right: auto;
   }
   .DetailRow {
+    font-size: 11px;
     a {
       color: $text_color;
     }
   }
   .addCart {
-    margin: 0;
+    margin: 0 10px;
     padding: 0;
     .ui-submit {
       margin: 0;
+    }
+    .ui-btn-inner {
+      padding: 7px 5px 3px 5px;
     }
   }
  
@@ -108,9 +112,11 @@
 		  font-size: $h2_size;
   		display: inline;
   	}
-  	.ProductDescription {
-
-  	}
+    .ProductDescription {
+      p, li {
+        font-size: 11px;
+      }
+    }
   	.ui-select {
   		border: $border_gray2;
   		display: inline-block;
