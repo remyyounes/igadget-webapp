@@ -7,12 +7,21 @@
 // Fonts
 @font-face {
   font-family: 'GrotesqueMT';
-  src: image-url('fonts/GrotesqueMT.ttf') format('truetype');
-  // src: image-url('entypo-webfont.eot');
-  // src: image-url('entypo-webfont.eot?#iefix') format('embedded-opentype'),
-  //      image-url('entypo-webfont.woff') format('woff'),
-  //      image-url('entypo-webfont.ttf') format('truetype'),
-  //      image-url('entypo-webfont.svg#entyporegular') format('svg');
+  src: image-url('fonts/GrotesqueMTStd.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GrotesqueMT';
+  src: image-url('fonts/GrotesqueMTStd-Black.otf');
+  font-weight: bold;
+  font-style: normal, italic, oblique;
+}
+
+@font-face {
+  font-family: 'GrotesqueMT Condensed';
+  src: image-url('fonts/GrotesqueMTStd-Condensed.otf');
   font-weight: normal;
   font-style: normal;
 }

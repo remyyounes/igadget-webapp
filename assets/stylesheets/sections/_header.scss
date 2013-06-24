@@ -5,6 +5,7 @@
   position: fixed;
   z-index: 5;
   width: 100%;
+  overflow: hidden;
   .ui-header {    
     border-bottom: $border_gray1;
     position: relative;

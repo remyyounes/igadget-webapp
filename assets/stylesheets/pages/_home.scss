@@ -10,10 +10,13 @@
     h2 {
       text-align: center;
       padding: $spacing;
+      text-transform: uppercase;
       ._h2 {
+        font-size: 22px;
         padding: 5px 20px;
-        border-bottom: $border_gray1;
+        border-bottom: 1px solid $gray3;
         box-shadow: 0 1px 0 $gray2;
+        font-family: GrotesqueMT Condensed;
       }
     }
     .Block {
@@ -48,6 +51,7 @@
             .ProductDetails {
               a {
                 color: $text_color;
+                font-weight: bold;
               }
             }
             .ProductPriceRating {

@@ -15,6 +15,8 @@
   ._footer {
     padding: 0;
     ._flex_box_item_4 {
+      text-transform: uppercase;
+      font-weight: normal;
       a {
         margin: 0;
       }
@@ -25,6 +27,30 @@
       }
       li {
         list-style-type: none;
+      }
+      &._shop.active {
+        color: white;
+        .sprites-shopOff {
+          @include sprites-shopOn;
+        }
+      }
+      &._cart.active {
+        color: white;
+        .sprites-cartOff {
+          @include sprites-cartOn;
+        }
+      }
+      &._scan.active {
+        color: white;
+        .sprites-scanOff {
+          @include sprites-scanOn;
+        }
+      }
+      &._more.active {
+        color: white;
+        .sprites-moreOff {
+          @include sprites-moreOn;
+        }
       }
     }
   }
