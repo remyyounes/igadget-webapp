@@ -18,12 +18,15 @@ $("/html/body") {
       }
 
       # Divider
-      insert("span", class:"_divider") {
-        remove()
+      match($is_app, "false") {
+        insert("span", class:"_divider")
       }
 
       # Search
       insert("div", id:"_search", data-role:"collapsible", href:"#search", data-inset:"false") {
+        match_not($is_app, "false") {
+          add_class("is_app")
+        }
         insert("h3", class:"sprites-searchTap")
         insert("div", class:"_collapsible_content") {
           move_here("/html/body//div[@id='SearchForm']") {
@@ -43,6 +46,14 @@ $("/html/body") {
               remove()
             }
           }
+        }
+      }
+
+      # Cart Button
+      match($is_app, "false") {
+        insert("a", "", data-role:"button",
+                href:"/cart.php", class:"ui-btn-right cart_btn sprites-cartGray") {
+
         }
       }
 

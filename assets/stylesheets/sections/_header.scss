@@ -46,8 +46,8 @@
     ._divider {
       border: $border_gray2;
       float: right;
-      margin-right: 107px;
-      // margin-right: 50px;
+      // margin-right: 107px;
+      margin-right: 50px;
       margin-top: 5px;
       height: 40px;
     }
@@ -74,12 +74,13 @@
         text-align: left;
       }
     }
-    // .cart_btn {
-    //   padding: 0;
-    //   .ui-btn-inner {
-    //     padding: 4px;
-    //   }
-    // }
+    .cart_btn {
+      padding: 0;
+      margin: 4px;
+      .ui-btn-inner {
+        padding: 4px;
+      }
+    }
     #_search {
       display: block;
       clear: both;
@@ -94,9 +95,13 @@
         position: absolute;
         top: -35px;
         // right: 135px;
-        // right: 80px;
-        right: 25px;
+        right: 80px;
         display: block;
+      }
+      &.is_app {
+        .sprites-searchTap {
+          right: 25px;
+        }
       }
       ._collapsible_content {
         position: relative;
