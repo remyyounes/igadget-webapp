@@ -56,6 +56,7 @@ $("/html/body") {
         }
         $(".//div[@class='ProductDetailsGrid']//div[contains(text(),'Rating')]/.."){
           attribute("class", "DetailRow Rating")
+          remove("./@style")
         }
         $(".//div[@class='ProductDetailsGrid']//div[contains(text(),'Brand')]"){
           $("../div[@class='Value']/a") {
