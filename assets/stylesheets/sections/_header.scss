@@ -3,9 +3,8 @@
   overflow: hidden;
   background-color: $gray1;
   position: fixed;
-  z-index: 5;
+  z-index: 100;
   width: 100%;
-  overflow: hidden;
   .ui-header {    
     border-bottom: $border_gray1;
     position: relative;
