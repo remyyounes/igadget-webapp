@@ -321,12 +321,14 @@
 }
 
 @func XMLNode.addBackBtn() {
-  $$("._logo") {
-    add_class("_back")
-    $$(".sprites-logo") {
-      name("a")
-      attributes(data-rel:"back", data-role:"button")
-      insert("span", "BACK", class:"_back_text")
+  match_not($is_app, "false") {
+    $$("._logo") {
+      add_class("_back")
+      $$(".sprites-logo") {
+        name("a")
+        attributes(data-rel:"back", data-role:"button")
+        insert("span", "BACK", class:"_back_text")
+      }
     }
   }
 }

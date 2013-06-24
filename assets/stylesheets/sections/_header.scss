@@ -15,6 +15,9 @@
       padding: 17px 10px;
       font-weight: bold;
       float: left;
+      a {
+        display: block;
+      }
       &._back {
         margin-left: 5px;
         padding: 6px;

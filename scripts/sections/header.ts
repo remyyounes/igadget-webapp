@@ -7,8 +7,8 @@ $("/html/body") {
       insert("div", class:"_logo") {
         move_here("/html/body//div[@id='LogoContainer']") {
           $$("a") {
-            name("div")
-            attributes(href:"", data-role:"none", class:"sprites-logo")
+            # name("div")
+            attributes(href:"/", data-role:"none", class:"sprites-logo")
             text("")
           }
         }
