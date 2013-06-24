@@ -3,9 +3,13 @@
     margin-top: 21px;
     margin-bottom: 62px;
     #SideCategoryList {
-        li:first-child {
+      li:first-child {
         border-top: 0;
       }
+    }
+    li, a.ui-link {
+      color: $gray1;
+      text-transform: uppercase;
     }
     #SideNewsletterBox {
       margin-bottom: 62px;

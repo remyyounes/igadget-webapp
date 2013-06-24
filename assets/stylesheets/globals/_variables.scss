@@ -20,6 +20,13 @@
 }
 
 @font-face {
+  font-family: 'GrotesqueMT';
+  src: image-url('fonts/GrotesqueMTStd-Italic.otf');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
   font-family: 'GrotesqueMT Condensed';
   src: image-url('fonts/GrotesqueMTStd-Condensed.otf');
   font-weight: normal;
