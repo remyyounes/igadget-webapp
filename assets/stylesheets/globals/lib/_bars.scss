@@ -37,6 +37,11 @@
     content: "";
     padding: 0;
   }
+  &.orange {
+    &:after {
+      @include sprites-caratOrangeCarousel;
+    }
+  }
 }
 
 // Bars that are accordions
@@ -83,7 +88,7 @@
 @mixin bar_white1 {
   @include bar_link;
   border-top: $border_gray2;
-  border-bottom: $border_gray1;
+  border-bottom: $border_gray3;
   color: $text_color;
   font-weight: normal;
 }

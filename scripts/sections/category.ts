@@ -16,7 +16,7 @@ $("/html/body") {
             }
             # Style categories
             $$("li") {
-              add_class("_bar_white1")
+              add_class("_bar_white1 orange")
             }
         }
         remove(".//div[@id='LayoutColumn2']")

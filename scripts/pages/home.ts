@@ -10,7 +10,6 @@ $("/html/body") {
       attribute("data-iscroll", "data-iscroll")
       move_here("/html/body//div[@id='Container']") {
         # Make product images into jqm buttons
-        # attribute("class", "scroller")
         $(".//div[contains(@class, 'ProductImage')]") {
           $(".//a") {
             attribute("data-role", "button")
@@ -20,6 +19,8 @@ $("/html/body") {
         $$("h2") {
           wrap_text_children("span", class:"_h2")
         }
+        insert_top("a", "Browse Categories", data-role:"button",
+                href:"/?page=categories", class:"browse_btn _bar_white1 orange")
 
         $$("#LayoutColumn2, #LayoutColumn3") {
           $$(".BlockContent") {

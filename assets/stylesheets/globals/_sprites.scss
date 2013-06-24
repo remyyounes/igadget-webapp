@@ -1,7 +1,7 @@
 $sprites-url: url("/_moovweb_local_assets_/images/sprites.png");
 
 $sprites-width: 230px;
-$sprites-height: 1122px;
+$sprites-height: 1158px;
 
 $sprites-buttonArrow-x: 0px;
 $sprites-buttonArrow-y: 0px;
@@ -28,357 +28,376 @@ $sprites-caratOrangeBrowse-y: -201px;
 $sprites-caratOrangeBrowse-width: 8px;
 $sprites-caratOrangeBrowse-height: 5px;
 
+$sprites-caratOrangeCarousel-x: 0px;
+$sprites-caratOrangeCarousel-y: -207px;
+$sprites-caratOrangeCarousel-width: 11px;
+$sprites-caratOrangeCarousel-height: 17px;
+
 $sprites-cartOff-x: 0px;
-$sprites-cartOff-y: -207px;
+$sprites-cartOff-y: -225px;
 $sprites-cartOff-width: 35px;
 $sprites-cartOff-height: 30px;
 
 $sprites-cartOn-x: 0px;
-$sprites-cartOn-y: -238px;
+$sprites-cartOn-y: -256px;
 $sprites-cartOn-width: 35px;
 $sprites-cartOn-height: 30px;
 
 $sprites-formQtyTriangle-x: 0px;
-$sprites-formQtyTriangle-y: -269px;
+$sprites-formQtyTriangle-y: -287px;
 $sprites-formQtyTriangle-width: 4px;
 $sprites-formQtyTriangle-height: 4px;
 
 $sprites-logo-x: 0px;
-$sprites-logo-y: -274px;
+$sprites-logo-y: -292px;
 $sprites-logo-width: 115px;
 $sprites-logo-height: 14px;
 
 $sprites-moreOff-x: 0px;
-$sprites-moreOff-y: -289px;
+$sprites-moreOff-y: -307px;
 $sprites-moreOff-width: 35px;
 $sprites-moreOff-height: 30px;
 
 $sprites-moreOn-x: 0px;
-$sprites-moreOn-y: -320px;
+$sprites-moreOn-y: -338px;
 $sprites-moreOn-width: 35px;
 $sprites-moreOn-height: 30px;
 
 $sprites-scanOff-x: 0px;
-$sprites-scanOff-y: -351px;
+$sprites-scanOff-y: -369px;
 $sprites-scanOff-width: 35px;
 $sprites-scanOff-height: 30px;
 
 $sprites-scanOn-x: 0px;
-$sprites-scanOn-y: -382px;
+$sprites-scanOn-y: -400px;
 $sprites-scanOn-width: 35px;
 $sprites-scanOn-height: 30px;
 
 $sprites-search-x: 0px;
-$sprites-search-y: -413px;
+$sprites-search-y: -431px;
 $sprites-search-width: 20px;
 $sprites-search-height: 20px;
 
 $sprites-searchBar-x: 0px;
-$sprites-searchBar-y: -434px;
+$sprites-searchBar-y: -452px;
 $sprites-searchBar-width: 20px;
 $sprites-searchBar-height: 20px;
 
 $sprites-searchTap-x: 0px;
-$sprites-searchTap-y: -455px;
+$sprites-searchTap-y: -473px;
 $sprites-searchTap-width: 20px;
 $sprites-searchTap-height: 20px;
 
 $sprites-shopOff-x: 0px;
-$sprites-shopOff-y: -476px;
+$sprites-shopOff-y: -494px;
 $sprites-shopOff-width: 35px;
 $sprites-shopOff-height: 30px;
 
 $sprites-shopOn-x: 0px;
-$sprites-shopOn-y: -507px;
+$sprites-shopOn-y: -525px;
 $sprites-shopOn-width: 35px;
 $sprites-shopOn-height: 30px;
 
 $sprites-starGray-x: 0px;
-$sprites-starGray-y: -538px;
+$sprites-starGray-y: -556px;
 $sprites-starGray-width: 11px;
 $sprites-starGray-height: 11px;
 
 $sprites-starOrange-x: 0px;
-$sprites-starOrange-y: -550px;
+$sprites-starOrange-y: -568px;
 $sprites-starOrange-width: 11px;
 $sprites-starOrange-height: 11px;
 
 @mixin sprites-buttonArrow() {
   background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px 0px;
-  @include background-size(115px 561px);
+  @include background-size(115px 579px);
   width: 21px;
   height: 18px;
 }
 
 @mixin sprites-buttonCamera() {
   background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -19px;
-  @include background-size(115px 561px);
+  @include background-size(115px 579px);
   width: 55px;
   height: 55px;
 }
 
 @mixin sprites-cameraFocus() {
   background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -75px;
-  @include background-size(115px 561px);
+  @include background-size(115px 579px);
   width: 15px;
   height: 107px;
 }
 
 @mixin sprites-caratGrayCarousel() {
   background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -183px;
-  @include background-size(115px 561px);
+  @include background-size(115px 579px);
   width: 11px;
   height: 17px;
 }
 
 @mixin sprites-caratOrangeBrowse() {
   background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -201px;
-  @include background-size(115px 561px);
+  @include background-size(115px 579px);
   width: 8px;
   height: 5px;
 }
 
-@mixin sprites-cartOff() {
+@mixin sprites-caratOrangeCarousel() {
   background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -207px;
-  @include background-size(115px 561px);
+  @include background-size(115px 579px);
+  width: 11px;
+  height: 17px;
+}
+
+@mixin sprites-cartOff() {
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -225px;
+  @include background-size(115px 579px);
   width: 35px;
   height: 30px;
 }
 
 @mixin sprites-cartOn() {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -238px;
-  @include background-size(115px 561px);
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -256px;
+  @include background-size(115px 579px);
   width: 35px;
   height: 30px;
 }
 
 @mixin sprites-formQtyTriangle() {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -269px;
-  @include background-size(115px 561px);
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -287px;
+  @include background-size(115px 579px);
   width: 4px;
   height: 4px;
 }
 
 @mixin sprites-logo() {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -274px;
-  @include background-size(115px 561px);
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -292px;
+  @include background-size(115px 579px);
   width: 115px;
   height: 14px;
 }
 
 @mixin sprites-moreOff() {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -289px;
-  @include background-size(115px 561px);
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -307px;
+  @include background-size(115px 579px);
   width: 35px;
   height: 30px;
 }
 
 @mixin sprites-moreOn() {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -320px;
-  @include background-size(115px 561px);
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -338px;
+  @include background-size(115px 579px);
   width: 35px;
   height: 30px;
 }
 
 @mixin sprites-scanOff() {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -351px;
-  @include background-size(115px 561px);
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -369px;
+  @include background-size(115px 579px);
   width: 35px;
   height: 30px;
 }
 
 @mixin sprites-scanOn() {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -382px;
-  @include background-size(115px 561px);
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -400px;
+  @include background-size(115px 579px);
   width: 35px;
   height: 30px;
 }
 
 @mixin sprites-search() {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -413px;
-  @include background-size(115px 561px);
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -431px;
+  @include background-size(115px 579px);
   width: 20px;
   height: 20px;
 }
 
 @mixin sprites-searchBar() {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -434px;
-  @include background-size(115px 561px);
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -452px;
+  @include background-size(115px 579px);
   width: 20px;
   height: 20px;
 }
 
 @mixin sprites-searchTap() {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -455px;
-  @include background-size(115px 561px);
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -473px;
+  @include background-size(115px 579px);
   width: 20px;
   height: 20px;
 }
 
 @mixin sprites-shopOff() {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -476px;
-  @include background-size(115px 561px);
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -494px;
+  @include background-size(115px 579px);
   width: 35px;
   height: 30px;
 }
 
 @mixin sprites-shopOn() {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -507px;
-  @include background-size(115px 561px);
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -525px;
+  @include background-size(115px 579px);
   width: 35px;
   height: 30px;
 }
 
 @mixin sprites-starGray() {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -538px;
-  @include background-size(115px 561px);
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -556px;
+  @include background-size(115px 579px);
   width: 11px;
   height: 11px;
 }
 
 @mixin sprites-starOrange() {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -550px;
-  @include background-size(115px 561px);
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -568px;
+  @include background-size(115px 579px);
   width: 11px;
   height: 11px;
 }
 
 .sprites-buttonArrow {
   background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px 0px;
-  background-size: 115px 561px;
+  background-size: 115px 579px;
   width: 21px;
   height: 18px;
 }
 
 .sprites-buttonCamera {
   background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -19px;
-  background-size: 115px 561px;
+  background-size: 115px 579px;
   width: 55px;
   height: 55px;
 }
 
 .sprites-cameraFocus {
   background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -75px;
-  background-size: 115px 561px;
+  background-size: 115px 579px;
   width: 15px;
   height: 107px;
 }
 
 .sprites-caratGrayCarousel {
   background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -183px;
-  background-size: 115px 561px;
+  background-size: 115px 579px;
   width: 11px;
   height: 17px;
 }
 
 .sprites-caratOrangeBrowse {
   background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -201px;
-  background-size: 115px 561px;
+  background-size: 115px 579px;
   width: 8px;
   height: 5px;
 }
 
-.sprites-cartOff {
+.sprites-caratOrangeCarousel {
   background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -207px;
-  background-size: 115px 561px;
+  background-size: 115px 579px;
+  width: 11px;
+  height: 17px;
+}
+
+.sprites-cartOff {
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -225px;
+  background-size: 115px 579px;
   width: 35px;
   height: 30px;
 }
 
 .sprites-cartOn {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -238px;
-  background-size: 115px 561px;
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -256px;
+  background-size: 115px 579px;
   width: 35px;
   height: 30px;
 }
 
 .sprites-formQtyTriangle {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -269px;
-  background-size: 115px 561px;
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -287px;
+  background-size: 115px 579px;
   width: 4px;
   height: 4px;
 }
 
 .sprites-logo {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -274px;
-  background-size: 115px 561px;
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -292px;
+  background-size: 115px 579px;
   width: 115px;
   height: 14px;
 }
 
 .sprites-moreOff {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -289px;
-  background-size: 115px 561px;
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -307px;
+  background-size: 115px 579px;
   width: 35px;
   height: 30px;
 }
 
 .sprites-moreOn {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -320px;
-  background-size: 115px 561px;
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -338px;
+  background-size: 115px 579px;
   width: 35px;
   height: 30px;
 }
 
 .sprites-scanOff {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -351px;
-  background-size: 115px 561px;
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -369px;
+  background-size: 115px 579px;
   width: 35px;
   height: 30px;
 }
 
 .sprites-scanOn {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -382px;
-  background-size: 115px 561px;
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -400px;
+  background-size: 115px 579px;
   width: 35px;
   height: 30px;
 }
 
 .sprites-search {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -413px;
-  background-size: 115px 561px;
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -431px;
+  background-size: 115px 579px;
   width: 20px;
   height: 20px;
 }
 
 .sprites-searchBar {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -434px;
-  background-size: 115px 561px;
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -452px;
+  background-size: 115px 579px;
   width: 20px;
   height: 20px;
 }
 
 .sprites-searchTap {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -455px;
-  background-size: 115px 561px;
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -473px;
+  background-size: 115px 579px;
   width: 20px;
   height: 20px;
 }
 
 .sprites-shopOff {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -476px;
-  background-size: 115px 561px;
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -494px;
+  background-size: 115px 579px;
   width: 35px;
   height: 30px;
 }
 
 .sprites-shopOn {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -507px;
-  background-size: 115px 561px;
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -525px;
+  background-size: 115px 579px;
   width: 35px;
   height: 30px;
 }
 
 .sprites-starGray {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -538px;
-  background-size: 115px 561px;
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -556px;
+  background-size: 115px 579px;
   width: 11px;
   height: 11px;
 }
 
 .sprites-starOrange {
-  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -550px;
-  background-size: 115px 561px;
+  background: url("/_moovweb_local_assets_/images/sprites.png") no-repeat 0px -568px;
+  background-size: 115px 579px;
   width: 11px;
   height: 11px;
 }
