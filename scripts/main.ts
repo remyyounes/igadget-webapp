@@ -66,9 +66,9 @@ match($status) {
     @import "pages/error.ts"
     #mw-app: hack to send empty response when phonegap requests for cordova_plugins.json
     match($path, /\A\/cordova\_plugins\.json\z/) {
-      # match($is_app, /phonegap/) {
+      match($is_app, /phonegap/) {
         set("")
-      # }
+      }
     }
   }
 }
