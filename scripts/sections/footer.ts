@@ -8,7 +8,8 @@ $("/html/body") {
       $$("._footer") {
         inner("")
         move_here("/html/body/div[@id='Footer']") {
-          remove(".//a")
+          inner("")
+          insert("p", "All prices are in USD. Copyright 2013 iGadgetCommerce.")
           unwrap()
         }
         insert_after("p", "Mobile Site powered by Moovweb") 
