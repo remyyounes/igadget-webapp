@@ -7,11 +7,26 @@
   bottom: 0;
   left: 0;
   overflow: hidden;
-  background-color: black;
+  background-color: $gray5;
   border-top: $border_gray1;
   color: $gray2;
   text-align: center;
   padding: 0;
+  &.mobile_footer {
+    position: relative;
+    padding: 12px;
+    color: $gray4;
+    ._footer {
+      text-align: center;
+    }
+    p {
+      margin: 2px auto;
+      display: block;
+      clear: both;
+      font-size: 11px;
+      font-weight: normal;
+    }
+  }
   ._footer {
     padding: 0;
     ._flex_box_item_4 {

@@ -1,6 +1,9 @@
 #cart {
-  #Container {
+  ._content {
     background: $gray2;
+  }
+  #Container {
+    padding-bottom: 40px;
     #CartHeader {
       background: $white;
       padding: 10px 20px;

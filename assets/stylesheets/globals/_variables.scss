@@ -52,6 +52,7 @@ $gray1:                   #2C2C2C; // header background
 $gray2:                   #CCC; // icon colors
 $gray3:                   #898A8C; // image carousel arrows
 $gray4:                   #eee;
+$gray5:                   #151515; // footer background
 
 // Oranges
 $orange1:                 #FF3C0A; // arrow & button colors
@@ -61,7 +62,7 @@ $orange1:                 #FF3C0A; // arrow & button colors
 $font_family:             GrotesqueMT, "Helvetica Neue", Helvetica, Verdana;
 $base_font_size:          13px;
 $text_color:              #57585B;
-$body_background_color:   $white;
+$body_background_color:   $gray1;
 $link_color:              $blue1;
 
 // Header Sizes

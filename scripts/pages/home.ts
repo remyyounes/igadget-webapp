@@ -6,8 +6,6 @@ $("/html/body") {
     move_here("/html/body/div[@id='_header']")
     insert("div", class:"_content", data-role:"content") {
       # attribute("id", "wrapper")
-      # adding iscroll
-      attribute("data-iscroll", "data-iscroll")
       move_here("/html/body//div[@id='Container']") {
         # Make product images into jqm buttons
         $(".//div[contains(@class, 'ProductImage')]") {
@@ -86,6 +84,7 @@ $("/html/body") {
       insert_top("script", src: asset("javascript/jquery.uranium.js"))
     }
     move_here("/html/body/div[@id='_footer']") {
+      # App-specific tritium
       $$("._shop") {
         add_class("active")
       }

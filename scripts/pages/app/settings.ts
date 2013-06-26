@@ -26,6 +26,7 @@ $("/html/body") {
         }
         insert("script", "controlNotifications();", type:"text/javascript")
         insert("script", "controlLocation();", type:"text/javascript")
+        # need onload event listener which calls cordova to check
       }
       #insert("script", "
       #  $('#notifications').change(function(){alert('hi')})
