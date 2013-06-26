@@ -25,16 +25,10 @@ match($status) {
 
   with(/302/) {
     log("--> STATUS: 302.")
-    match($content_type, /html/) {
-      replace(/\<(\/?)(\w+)\:\w+\>/, "$2_mwns_")
-      # Force UTF-8 encoding. If you'd like to auto-detect the encoding,
-      # simply remove the "UTF-8" argument.  e.g. html(){ ... }
-      html("UTF-8") {
-        log("--> HTML content: redirect.ts has been used to redirect.")
-        @import "redirect.ts"
-      }
-      # Rewrite the xmlns nodes to restore them
-      replace(/(\<(\/?)(\w+))_mwns_(\:\w+\>)/, "$1$4") 
+    html("UTF-8") {
+      log("--> Importing redirect.ts from main.ts.")
+      inner("")
+      @import "redirect.ts"
     }
   }
 

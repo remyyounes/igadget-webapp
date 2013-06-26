@@ -6,7 +6,9 @@ insert("html") {
   insert("body") {
     insert("div", data-role:"page", id:"redirect") {
       insert("div", data-role:"content") {
-        # Import JQM
+        # 302 Imports
+        clean_mobile_meta_tags()
+        add_assets()
         @import "jqm.ts"
         
         # Rewriting location logic
