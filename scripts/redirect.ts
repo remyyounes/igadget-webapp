@@ -6,9 +6,11 @@ insert("html") {
   insert("body") {
     insert("div", data-role:"page", id:"redirect") {
       insert("div", data-role:"content") {
+        # Import JQM
+        @import "jqm.ts"
+        
         # Rewriting location logic
         # Don't forget to override the $status code in response_main.ts
-
         # Check Scheme
         $cors = "true"
         inner() {

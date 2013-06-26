@@ -1,31 +1,33 @@
 # HTML Transformations go here
-rewrite_links()
-absolutize_srcs()
+$("/html") {
+  rewrite_links()
+  absolutize_srcs()
 
-# Add the mobile meta tags
-clean_mobile_meta_tags()
+  # Add the mobile meta tags
+  clean_mobile_meta_tags()
 
-# Needed to begin mobilizing
-remove_all_styles()
-remove_html_comments()
+  # Needed to begin mobilizing
+  remove_all_styles()
+  remove_html_comments()
 
-# Late load all the images on the site
-# lateload()
+  # Late load all the images on the site
+  # lateload()
 
-# Remove all script tags not marked with "data-keep" attribute
-# remove_desktop_js();
+  # Remove all script tags not marked with "data-keep" attribute
+  # remove_desktop_js();
 
-# new performance logging function
-# print_asset_count()  
+  # new performance logging function
+  # print_asset_count()  
 
-add_assets()
+  add_assets()
 
-@import "app.ts"
+  @import "app.ts"
 
-@import "sections.ts"
+  @import "sections.ts"
 
-@import "mappings.ts"
+  @import "mappings.ts"
 
-@import "jqm.ts"
+  @import "jqm.ts"
 
-@import "optimize.ts"
+  @import "optimize.ts"
+}
