@@ -20,7 +20,7 @@ Then, just browse to [mlocal.igadgetcommerce.com](http://mlocal.igadgetcommerce.
 
 ## Deployment
 
-Moovweb uses a git-based deployment system. To deploy, just type
+Moovweb uses a git-based deployment system. To deploy, just type:
 
     git add --all
     git commit -m 'New code'
