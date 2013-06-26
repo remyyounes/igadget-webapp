@@ -19,10 +19,9 @@ match($cookie) {
 }
 
 # temp for testing
-# $is_app = "mw-phonegap-ios"
+$is_app = "mw-phonegap-ios"
 
 match($status) {
-
   with(/302/) {
     log("--> STATUS: 302.")
     html("UTF-8") {
@@ -31,7 +30,6 @@ match($status) {
       @import "redirect.ts"
     }
   }
-
   with(/200/) {
     log("--> STATUS: 200")
     match($content_type) {
@@ -63,17 +61,14 @@ match($status) {
       }
     }
   }
-
   else() {
-    # not 200 or 302 response status
     log("--> STATUS: " + $status + " assuming its an error code pages/error.ts")
     @import "pages/error.ts"
-  }
-}
-
-#mw-app: hack to send empty response when phonegap requests for cordova_plugins.json
-match($path, /\A\/cordova\_plugins\.json\z/) {
-  match($is_app, /phonegap/) {
-    set("")
+    #mw-app: hack to send empty response when phonegap requests for cordova_plugins.json
+    match($path, /\A\/cordova\_plugins\.json\z/) {
+      # match($is_app, /phonegap/) {
+        set("")
+      # }
+    }
   }
 }

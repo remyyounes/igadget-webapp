@@ -26,11 +26,8 @@ $("/html/body") {
         }
         insert("script", "controlNotifications();", type:"text/javascript")
         insert("script", "controlLocation();", type:"text/javascript")
-        # need onload event listener which calls cordova to check
+        # TODO: need onload event listener which calls cordova to check
       }
-      #insert("script", "
-      #  $('#notifications').change(function(){alert('hi')})
-      #  ", type:"text/javascript")
     }
     move_here("/html/body/div[@id='_footer']") {
       $$("._shop, ._scan, ._cart") {

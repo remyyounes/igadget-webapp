@@ -14,6 +14,5 @@ window.addEventListener("load",function() {
   }, 0);
 });
 
-// console.log("Running app.js...")
-
+// Disable alerts
 window.alert = function() {}

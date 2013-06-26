@@ -8,8 +8,6 @@ $(document).bind("mobileinit", function(){
   });
 });
 
-console.log("Running custom config...");
-
 // Enable CORS
 $.support.cors = true;
 $.support.touchOverflow = true;

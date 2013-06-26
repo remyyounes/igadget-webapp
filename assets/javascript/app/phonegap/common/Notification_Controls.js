@@ -7,10 +7,10 @@ function controlNotifications() {
     if ($('#notifications').val() == "On") {
     // This means we want to turn it on
       push.enablePush();
-      //alert("enable push");
+      // alert("enable push");
     } else {
       push.disablePush();
-      //alert("disable push");
+      // alert("disable push");
     }
   })
 }
